@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Theme Made By www.w3schools.com - No Copyright -->
+    <title>InsideMaps Template 2</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="img/favicon-terminal.ico" type="image/gif" sizes="16x16">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.4/ui-bootstrap-tpls.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+        var app = angular.module('InsideMapsData', ['ui.bootstrap']);
+        app.controller('MainCtrl', function($scope) {
+
+            $scope.toggles = [{
+                state: false
+            }];
+        });
+    </script>
+    <style>
+        .faq-card {
+            box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 4px 20px 0 rgba(0, 0, 0, 0.19);
+            padding: 3em;
+            margin: 1em 1em;
+            border: 2px solid #929292;
+        }
+
+        .faq-modal-body h4 {
+            padding: 10px 0;
+            color: #525975;
+            font-size: 20px;
+            font-family: Georgia, serif;
+            font-weight: 600;
+        }
+
+        .faq-modal-body p {
+            color: #656565;
+            font-family: 'Proxima Nova';
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 1.4;
+            -webkit-font-smoothing: auto;
+            /*padding: 0 0 10px 0;
+          color: #525975;
+          font-family: Arial, Helvetica, sans-serif;*/
+        }
+    </style>
+</head>
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+    <div ng-app="InsideMapsData">
+        <div ng-controller="MainCtrl">
+
+            <nav class="navbar navbar-inverse">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <!-- <a class="navbar-brand" href="#myPage"><img width="42px" height="auto" src="/home/vcubestc/logo.png"></img></a> -->
+                        <!-- <a class="navbar-brand" href="#myPage"><img width="42px" height="auto" src="logo.png"></img></a> -->
+
+                    </div>
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="#">HOME</a></li>
+                            <li><a href="#">ORDER</a></li>
+                            <li><a href="#">PRICING</a></li>
+                            <li><a href="#">SUPPORT</a></li>
+                            <li><a href="#"><span>GET STARTED</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- Container (Services Section) -->
+            <div class="container">
+                <div class="text-center">
+                    <h2>Frequently Asked Questions</h2>
+                    <small style="color: #565656; text-decoration: none; font-weight: bold;">Browse Our Knowledge Base.</small>
+                    <!-- <a style="color: #337ab7; text-decoration: none;" href="https://support.insidemaps.com/portal/kb" target="_blank"> For More Support &#x279A;</a> -->
+                    <hr></hr>
+                </div>
+                <div ng-repeat="toggle in toggles">
+                    <div class="text-center" ng-show="toggle.state== false" class="row modal-body" style="margin-left: 7em; cursor:pointer;">
+                        <div class="col-sm-3 faq-card" style="background: #388565; color:#fff" data-toggle="modal" data-target="#myModalApp">
+                            <i class="fa fa-mobile fa-3x" aria-hidden="true"></i>
+                            <h4>APP</h4>
+                        </div>
+                        <div class="col-sm-3 faq-card" style="background: #c37d25; color:#fff" data-toggle="modal" data-target="#myModalHero">
+                            <i class="fa fa-object-group fa-3x" aria-hidden="true"></i>
+                            <h4>HERO</h4>
+                        </div>
+
+                        <div ng-click="toggle.state = !toggle.state" class="col-sm-3 faq-card" style="background: #6a4348; color:#fff" data-toggle="modal" data-target="#myModalScan">
+                            <i class="fa fa-barcode fa-3x" aria-hidden="true"></i>
+                            <h4>SCANNING</h4>
+                        </div>
+
+
+                        <div class="col-sm-3 faq-card" style="background: #41342b; color:#fff" data-toggle="modal" data-target="#myModalPayments">
+                            <i class="fa fa-money fa-3x" aria-hidden="true"></i>
+                            <h4>PAYMENTS</h4>
+                        </div>
+                        <div class="col-sm-3 faq-card" style="background: #d14c42; color:#fff" data-toggle="modal" data-target="#myModalProjects">
+                            <i class="fa fa-building fa-3x" aria-hidden="true"></i>
+                            <h4>PROJECTS</h4>
+                        </div>
+                        <div class="col-sm-3 faq-card" style="background: #42586a; color:#fff" data-toggle="modal" data-target="#myModalVideos">
+                            <i class="fa fa-film fa-3x" aria-hidden="true"></i>
+                            <h4>VIDEOS</h4>
+                        </div>
+                    </div>
+                    <div ng-show="toggle.state!= false">
+                        <div class="modal-header" style="background: #6a4348; color:#fff">
+                            <button ng-click="toggle.state = !toggle.state" type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">SCANNING</h4>
+                        </div>
+                        <div class="modal-body faq-modal-body">
+                            <h4>What tripod should I use with InsideMaps?</h4>
+                            <p>
+                              We recommend a sturdy professional tripod (without a panning handle) suitable for DSLR cameras like this:
+                              <a href="https://www.amazon.com/dp/B003SQEAY0/ref=wl_it_dp_o_pC_nS_ttl?_encoding=UTF8&colid=17MTJJ7M4WA80&coliid=I2VOQE1SAJT130">Ravelli APGL4</a>
+                            </p>
+                            <h4>How long will it take to capture a property?</h4>
+                            <p>
+                              On average 1000 square feet will take 15-25 minutes.
+                            </p>
+                        </div>
+                        <div ng-click="toggle.state = !toggle.state" class="modal-footer" style="background: #aaa; color:#fff; text-align: center; cursor:pointer">
+                          <i class="fa fa-chevron-left" aria-hidden="true"> Go Back</i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="myModalApp" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header" style="background: #388565; color:#fff">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">APP</h4>
+                        </div>
+                        <div class="modal-body faq-modal-body">
+                            <h4>Why is it taking so long for my project to upload?</h4>
+                            <p>
+                                Upload speeds are based on your wifi signal and your internet connection. Place your iPhone / iPod close to your router, or the source of wifi, to ensure a good signal. Keep in mind streaming media, or other activities such as video games may use up a
+                                considerable amount of your internet bandwidth and thus slow down the upload of your project.
+                            </p>
+
+                            <!-- <h4>How should I configure the settings on my iPhone to use the InsideMaps app? (Optional)</h4>
+                                        <p>
+                                            The following settings change will improve the iPhone's battery life and prevent interruptions during a capture, Settings > Cellular > Disable Cellular Data
+                                        </p> -->
+
+                            <h4>How do I know if all my photos have uploaded successfully?</h4>
+                            <p>
+                                Once you select finish project, you will see a cloud icon with a progress bar appear next to your project, and a notification appears at the top of the screen letting you know your project is uploading. You must keep the InsideMaps Capture app window
+                                open until the upload is finished. If the app is minimized or closed the upload will pause. Keep in mind you must have access to wifi to upload, otherwise, the app will wait until a wifi connection is available. When the
+                                upload is complete the progress bar will disappear, and you will receive an email notification that your project has been submitted.
+                            </p>
+                            <h4>How much free space should I have on my iPhone / iPod?</h4>
+                            <p>At least 16gb is recommended.</p>
+                        </div>
+                        <div class="modal-footer" style="background: #aaa; color:#fff">
+                            <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="myModalHero" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header" style="background: #c37d25; color:#fff">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">HERO</h4>
+                        </div>
+                        <div class="modal-body faq-modal-body">
+                            <h4>What Batteries are compatible with the HERO device?</h4>
+                            <p>
+                                18650 3.7V High Drain Li-Ion batteries. We highly recommend the following batteries,
+                                <a style="text-decoration: none; color: #337ab7;" href="https://www.amazon.com/gp/product/B005CH28YC/ref=oh_aui_detailpage_o05_s00?ie=UTF8&psc=1">Orbtronic Button Top High Drain</a>
+                            </p>
+                        </div>
+                        <div class="modal-footer" style="background: #aaa; color:#fff">
+                            <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
