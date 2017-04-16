@@ -9,12 +9,14 @@
     <link rel="icon" href="img/favicon-terminal.ico" type="image/gif" sizes="16x16">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.4/ui-bootstrap-tpls.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+
     <script>
         var app = angular.module('InsideMapsData', ['ui.bootstrap']);
         app.controller('MainCtrl', function($scope) {
@@ -51,6 +53,40 @@
           color: #525975;
           font-family: Arial, Helvetica, sans-serif;*/
         }
+
+        .bg-faq {
+            padding: 0 0 3em 0;
+        }
+
+        .bg-user-guide {
+            padding: 2em 0 3em 0;
+            background: #f1f1f1;
+        }
+
+        .bg-user-guide hr {
+            border-top: 1px solid #c3c3c3;
+        }
+        .bg-contact {
+          padding: 0 0 3em 0;
+        }
+
+        .bg-contact span{
+          vertical-align: top;
+        }
+        .heading-small {
+            color: #565656;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .help-tutorials p {
+            padding: 25px 0 10px 0;
+            /*color: #42586a;*/
+            color: #115b94;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+        }
     </style>
 </head>
 
@@ -82,7 +118,7 @@
                 </div>
             </nav>
             <!-- Container (Services Section) -->
-            <div class="container">
+            <div class="container bg-faq">
                 <div class="text-center">
                     <h2>Frequently Asked Questions</h2>
                     <small style="color: #565656; text-decoration: none; font-weight: bold;">Browse Our Knowledge Base.</small>
@@ -127,16 +163,104 @@
                         <div class="modal-body faq-modal-body">
                             <h4>What tripod should I use with InsideMaps?</h4>
                             <p>
-                              We recommend a sturdy professional tripod (without a panning handle) suitable for DSLR cameras like this:
-                              <a href="https://www.amazon.com/dp/B003SQEAY0/ref=wl_it_dp_o_pC_nS_ttl?_encoding=UTF8&colid=17MTJJ7M4WA80&coliid=I2VOQE1SAJT130">Ravelli APGL4</a>
+                                We recommend a sturdy professional tripod (without a panning handle) suitable for DSLR cameras like this:
+                                <a href="https://www.amazon.com/dp/B003SQEAY0/ref=wl_it_dp_o_pC_nS_ttl?_encoding=UTF8&colid=17MTJJ7M4WA80&coliid=I2VOQE1SAJT130">Ravelli APGL4</a>
                             </p>
                             <h4>How long will it take to capture a property?</h4>
                             <p>
-                              On average 1000 square feet will take 15-25 minutes.
+                                On average 1000 square feet will take 15-25 minutes.
                             </p>
                         </div>
                         <div ng-click="toggle.state = !toggle.state" class="modal-footer" style="background: #aaa; color:#fff; text-align: center; cursor:pointer">
-                          <i class="fa fa-chevron-left" aria-hidden="true"> Go Back</i>
+                            <i class="fa fa-chevron-left" aria-hidden="true"> Go Back</i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid bg-user-guide">
+                <div class="text-center">
+                    <h2>User Guides</h2>
+                    <small class="heading-small">Watch Out to Know InsideMaps Scanning Procedure.</small>
+                    <div class="container">
+                        <hr></hr>
+                    </div>
+                </div>
+                <div class="help-tutorials text-center">
+                    <div class="col-sm-4">
+                        <p>Capture Prepartion Using HERO<sup>TM</sup> and InsideMaps Capture App</p>
+                        <iframe src="https://www.youtube.com/embed/ZKt_kK2xFYM?showinfo=0" frameborder="0" allowfullscreen="" width="85%" height="275px"></iframe>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <p>Tripod Placement</p>
+                        <iframe src="https://www.youtube.com/embed/XUT_ktTAiSo?showinfo=0" frameborder="0" allowfullscreen="" width="85%" height="275px"></iframe>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <p>HERO<sup>TM</sup> Setup with iPhone</p>
+                        <iframe src="https://www.youtube.com/embed/etvb2_oAxCA?showinfo=0" frameborder="0" allowfullscreen="" width="85%" height="275px"></iframe>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <p>Recommended iPhone Settings</p>
+                        <iframe src="https://www.youtube.com/embed/8oP_btda7QI?showinfo=0" frameborder="0" allowfullscreen="" width="85%" height="275px"></iframe>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <p>Upload Procedure</p>
+                        <iframe src="https://www.youtube.com/embed/154--C_z3uA?showinfo=0" frameborder="0" allowfullscreen="" width="85%" height="275px"></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container bg-contact">
+                <div class="text-center">
+                    <h2>Contact</h2>
+                    <small class="heading-small">Get in Touch With Us.</small>
+                    <hr></hr>
+                </div>
+                <div class="row">
+                    <form class="col s12">
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">account_circle</i>
+                                <input id="icon_prefix" type="text" class="validate">
+                                <label for="icon_prefix">Name</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">email</i>
+                                <input id="icon_email" type="email" class="validate">
+                                <label for="icon_email">Email</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">mode_edit</i>
+                                <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+                                <label for="icon_prefix2">Message</label>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <button class="btn waves-effect waves-light" type="submit" name="action">Send
+                          <i class="material-icons right">send</i>
+                        </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-panel grey">
+                    <div class="row">
+                        <div class="col s6">
+                            <a class="btn btn-default btn-circle blue" href="#" target="_blank"><i class="fa fa-twitter"></i></a>
+                            <a class="btn btn-default btn-circle blue darken-1" href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
+                            <a class="btn btn-default btn-circle blue darken-4" href="#" target="_blank"><i class="fa fa-facebook"></i></a>
+                            <a class="btn btn-default btn-circle deep-orange" href="#" target="_blank"><i class="fa fa-instagram"></i></a>
+                        </div>
+                        <div class="col s6 text-right">
+                          <i class="material-icons prefix">email</i>
+                          <span>support@insidemaps.com</span><br>
+                          <i class="material-icons prefix">email</i>
+                          <span>sales@insidemaps.com</span>
                         </div>
                     </div>
                 </div>
