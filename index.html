@@ -9,11 +9,12 @@
     <link rel="icon" href="img/favicon-terminal.ico" type="image/gif" sizes="16x16">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.4/ui-bootstrap-tpls.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
 
@@ -27,6 +28,19 @@
         });
     </script>
     <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            font-family: 'Sansita', sans-serif;
+        }
+
+        .navbar {
+            margin-bottom: 0;
+            border-radius: 0;
+        }
+
         .faq-card {
             box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 4px 20px 0 rgba(0, 0, 0, 0.19);
             padding: 3em;
@@ -66,13 +80,15 @@
         .bg-user-guide hr {
             border-top: 1px solid #c3c3c3;
         }
+
         .bg-contact {
-          padding: 0 0 3em 0;
+            padding: 0 0 3em 0;
         }
 
-        .bg-contact span{
-          vertical-align: top;
+        .bg-contact span {
+            vertical-align: top;
         }
+
         .heading-small {
             color: #565656;
             text-decoration: none;
@@ -90,29 +106,26 @@
     </style>
 </head>
 
-<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+<body>
     <div ng-app="InsideMapsData">
         <div ng-controller="MainCtrl">
 
             <nav class="navbar navbar-inverse">
-                <div class="container">
+                <div class="container-fluid">
                     <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar">
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <!-- <a class="navbar-brand" href="#myPage"><img width="42px" height="auto" src="/home/vcubestc/logo.png"></img></a> -->
-                        <!-- <a class="navbar-brand" href="#myPage"><img width="42px" height="auto" src="logo.png"></img></a> -->
-
                     </div>
                     <div class="collapse navbar-collapse" id="myNavbar">
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="#">HOME</a></li>
-                            <li><a href="#">ORDER</a></li>
-                            <li><a href="#">PRICING</a></li>
-                            <li><a href="#">SUPPORT</a></li>
-                            <li><a href="#"><span>GET STARTED</span></a></li>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Order</a></li>
+                            <li><a href="#">Pricing</a></li>
+                            <li><a href="#">Support</a></li>
+                            <li><a href="#">Get Started</a></li>
                         </ul>
                     </div>
                 </div>
@@ -126,37 +139,64 @@
                     <hr></hr>
                 </div>
                 <div ng-repeat="toggle in toggles">
-                    <div class="text-center" ng-show="toggle.state== false" class="row modal-body" style="margin-left: 7em; cursor:pointer;">
-                        <div class="col-sm-3 faq-card" style="background: #388565; color:#fff" data-toggle="modal" data-target="#myModalApp">
-                            <i class="fa fa-mobile fa-3x" aria-hidden="true"></i>
-                            <h4>APP</h4>
-                        </div>
-                        <div class="col-sm-3 faq-card" style="background: #c37d25; color:#fff" data-toggle="modal" data-target="#myModalHero">
-                            <i class="fa fa-object-group fa-3x" aria-hidden="true"></i>
-                            <h4>HERO</h4>
-                        </div>
-
-                        <div ng-click="toggle.state = !toggle.state" class="col-sm-3 faq-card" style="background: #6a4348; color:#fff" data-toggle="modal" data-target="#myModalScan">
-                            <i class="fa fa-barcode fa-3x" aria-hidden="true"></i>
-                            <h4>SCANNING</h4>
+                    <div class="row" ng-show="toggle.state== false">
+                        <div class="col-sm-4">
+                            <div class="card-panel teal text-center">
+                                <span class="white-text">
+                                  <i class="fa fa-mobile fa-3x" aria-hidden="true"></i>
+                                  <h4>APP</h4>
+                                </span>
+                            </div>
                         </div>
 
+                        <div class="col-sm-4">
+                            <div class="card-panel orange darken-4 text-center">
+                                <span class="white-text">
+                                  <i class="fa fa-object-group fa-3x" aria-hidden="true"></i>
+                                  <h4>HERO</h4>
+                                </span>
+                            </div>
+                        </div>
 
-                        <div class="col-sm-3 faq-card" style="background: #41342b; color:#fff" data-toggle="modal" data-target="#myModalPayments">
-                            <i class="fa fa-money fa-3x" aria-hidden="true"></i>
-                            <h4>PAYMENTS</h4>
+                        <div ng-click="toggle.state = !toggle.state" class="col-sm-4">
+                            <div class="card-panel brown text-center">
+                                <span class="white-text">
+                                  <i class="fa fa-barcode fa-3x" aria-hidden="true"></i>
+                                  <h4>SCANNING</h4>
+                                </span>
+                            </div>
                         </div>
-                        <div class="col-sm-3 faq-card" style="background: #d14c42; color:#fff" data-toggle="modal" data-target="#myModalProjects">
-                            <i class="fa fa-building fa-3x" aria-hidden="true"></i>
-                            <h4>PROJECTS</h4>
+
+                        <div class="col-sm-4">
+                            <div class="card-panel  brown darken-4 text-center">
+                                <span class="white-text">
+                                  <i class="fa fa-money fa-3x" aria-hidden="true"></i>
+                                  <h4>PAYMENTS</h4>
+                                </span>
+                            </div>
                         </div>
-                        <div class="col-sm-3 faq-card" style="background: #42586a; color:#fff" data-toggle="modal" data-target="#myModalVideos">
-                            <i class="fa fa-film fa-3x" aria-hidden="true"></i>
-                            <h4>VIDEOS</h4>
+
+                        <div class="col-sm-4">
+                            <div class="card-panel red darken-4 text-center">
+                                <span class="white-text">
+                                  <i class="fa fa-building fa-3x" aria-hidden="true"></i>
+                                  <h4>PROJECTS</h4>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <div class="card-panel light-blue darken-4 text-center">
+                                <span class="white-text">
+                                  <i class="fa fa-film fa-3x" aria-hidden="true"></i>
+                                  <h4>VIDEOS</h4>
+                                </span>
+                            </div>
                         </div>
                     </div>
+
                     <div ng-show="toggle.state!= false">
-                        <div class="modal-header" style="background: #6a4348; color:#fff">
+                        <div class="modal-header" style="background: #795548; color:#fff">
                             <button ng-click="toggle.state = !toggle.state" type="button" class="close" data-dismiss="modal">&times;</button>
                             <h4 class="modal-title">SCANNING</h4>
                         </div>
@@ -188,7 +228,7 @@
                 </div>
                 <div class="help-tutorials text-center">
                     <div class="col-sm-4">
-                        <p>Capture Prepartion Using HERO<sup>TM</sup> and InsideMaps Capture App</p>
+                        <p>HERO<sup>TM</sup> and InsideMaps Capture App</p>
                         <iframe src="https://www.youtube.com/embed/ZKt_kK2xFYM?showinfo=0" frameborder="0" allowfullscreen="" width="85%" height="275px"></iframe>
                     </div>
 
@@ -243,24 +283,25 @@
                         </div>
                         <div class="text-right">
                             <button class="btn waves-effect waves-light" type="submit" name="action">Send
-                          <i class="material-icons right">send</i>
-                        </button>
+                                <i class="material-icons right">send</i>
+                            </button>
                         </div>
                     </form>
                 </div>
                 <div class="card-panel grey">
                     <div class="row">
-                        <div class="col s6">
+                        <div style="margin: 10px 0 3px 0;" class="col-sm-8">
                             <a class="btn btn-default btn-circle blue" href="#" target="_blank"><i class="fa fa-twitter"></i></a>
                             <a class="btn btn-default btn-circle blue darken-1" href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
                             <a class="btn btn-default btn-circle blue darken-4" href="#" target="_blank"><i class="fa fa-facebook"></i></a>
                             <a class="btn btn-default btn-circle deep-orange" href="#" target="_blank"><i class="fa fa-instagram"></i></a>
                         </div>
-                        <div class="col s6 text-right">
-                          <i class="material-icons prefix">email</i>
-                          <span>support@insidemaps.com</span><br>
-                          <i class="material-icons prefix">email</i>
-                          <span>sales@insidemaps.com</span>
+                        <div class="col-sm-4 text-right">
+                            <i class="material-icons prefix">email</i>
+                            <span>support@insidemaps.com</span>
+                            <br>
+                            <i class="material-icons prefix">email</i>
+                            <span>sales@insidemaps.com</span>
                         </div>
                     </div>
                 </div>
