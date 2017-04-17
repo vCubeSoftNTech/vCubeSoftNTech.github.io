@@ -19,6 +19,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
 
     <script>
+        $(document).ready(function() {
+            // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+            $('.modal').modal();
+        });
         var app = angular.module('InsideMapsData', ['ui.bootstrap']);
         app.controller('MainCtrl', function($scope) {
 
@@ -40,13 +44,12 @@
             margin-bottom: 0;
             border-radius: 0;
         }
-
-        .faq-card {
+        /*.faq-card {
             box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 4px 20px 0 rgba(0, 0, 0, 0.19);
             padding: 3em;
             margin: 1em 1em;
             border: 2px solid #929292;
-        }
+        }*/
 
         .faq-modal-body h4 {
             padding: 10px 0;
@@ -139,8 +142,8 @@
                     <hr></hr>
                 </div>
                 <div ng-repeat="toggle in toggles">
-                    <div class="row" ng-show="toggle.state== false">
-                        <div class="col-sm-4">
+                    <div class="row" ng-show="toggle.state== false" style="cursor: pointer">
+                        <div class="col-sm-4" data-target="myModalApp">
                             <div class="card-panel teal text-center">
                                 <span class="white-text">
                                   <i class="fa fa-mobile fa-3x" aria-hidden="true"></i>
@@ -149,7 +152,7 @@
                             </div>
                         </div>
 
-                        <div class="col-sm-4">
+                        <div class="col-sm-4" data-target="myModalHero">
                             <div class="card-panel orange darken-4 text-center">
                                 <span class="white-text">
                                   <i class="fa fa-object-group fa-3x" aria-hidden="true"></i>
@@ -297,82 +300,54 @@
                             <a class="btn btn-default btn-circle deep-orange" href="#" target="_blank"><i class="fa fa-instagram"></i></a>
                         </div>
                         <div class="col-sm-4 text-right">
-                            <i class="material-icons prefix">email</i>
-                            <span>support@insidemaps.com</span>
-                            <br>
-                            <i class="material-icons prefix">email</i>
-                            <span>sales@insidemaps.com</span>
+                            <p><i class="material-icons prefix">email</i><span> support@insidemaps.com</span></p>
+
+                            <p><i class="material-icons prefix">email</i><span> sales@insidemaps.com</span></p>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- Modal -->
-            <div class="modal fade" id="myModalApp" role="dialog">
-                <div class="modal-dialog">
+            <div class="modal modal-fixed-footer" id="myModalApp">
+                <div class="modal-content">
 
                     <!-- Modal content-->
-                    <div class="modal-content">
-                        <div class="modal-header" style="background: #388565; color:#fff">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">APP</h4>
-                        </div>
-                        <div class="modal-body faq-modal-body">
-                            <h4>Why is it taking so long for my project to upload?</h4>
-                            <p>
-                                Upload speeds are based on your wifi signal and your internet connection. Place your iPhone / iPod close to your router, or the source of wifi, to ensure a good signal. Keep in mind streaming media, or other activities such as video games may use up a
-                                considerable amount of your internet bandwidth and thus slow down the upload of your project.
-                            </p>
-
-                            <!-- <h4>How should I configure the settings on my iPhone to use the InsideMaps app? (Optional)</h4>
-                                        <p>
-                                            The following settings change will improve the iPhone's battery life and prevent interruptions during a capture, Settings > Cellular > Disable Cellular Data
-                                        </p> -->
-
-                            <h4>How do I know if all my photos have uploaded successfully?</h4>
-                            <p>
-                                Once you select finish project, you will see a cloud icon with a progress bar appear next to your project, and a notification appears at the top of the screen letting you know your project is uploading. You must keep the InsideMaps Capture app window
-                                open until the upload is finished. If the app is minimized or closed the upload will pause. Keep in mind you must have access to wifi to upload, otherwise, the app will wait until a wifi connection is available. When the
-                                upload is complete the progress bar will disappear, and you will receive an email notification that your project has been submitted.
-                            </p>
-                            <h4>How much free space should I have on my iPhone / iPod?</h4>
-                            <p>At least 16gb is recommended.</p>
-                        </div>
-                        <div class="modal-footer" style="background: #aaa; color:#fff">
-                            <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
-                        </div>
-                    </div>
-
+                    <h3 style="background: #009688; color:#fff; text-align: center; padding: 5px 0;">APP</h3>
+                    <h4>Why is it taking so long for my project to upload?</h4>
+                    <p>
+                        Upload speeds are based on your wifi signal and your internet connection. Place your iPhone / iPod close to your router, or the source of wifi, to ensure a good signal. Keep in mind streaming media, or other activities such as video games may use up a
+                        considerable amount of your internet bandwidth and thus slow down the upload of your project.
+                    </p>
+                    <h4>How do I know if all my photos have uploaded successfully?</h4>
+                    <p>
+                        Once you select finish project, you will see a cloud icon with a progress bar appear next to your project, and a notification appears at the top of the screen letting you know your project is uploading. You must keep the InsideMaps Capture app window
+                        open until the upload is finished. If the app is minimized or closed the upload will pause. Keep in mind you must have access to wifi to upload, otherwise, the app will wait until a wifi connection is available. When the upload
+                        is complete the progress bar will disappear, and you will receive an email notification that your project has been submitted.
+                    </p>
+                    <h4>How much free space should I have on my iPhone / iPod?</h4>
+                    <p>At least 16gb is recommended.</p>
+                </div>
+                <div class="modal-footer" style="background: #aaa;">
                 </div>
             </div>
 
             <!-- Modal -->
-            <div class="modal fade" id="myModalHero" role="dialog">
-                <div class="modal-dialog">
-
-                    <!-- Modal content-->
-                    <div class="modal-content">
-                        <div class="modal-header" style="background: #c37d25; color:#fff">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">HERO</h4>
-                        </div>
-                        <div class="modal-body faq-modal-body">
-                            <h4>What Batteries are compatible with the HERO device?</h4>
-                            <p>
-                                18650 3.7V High Drain Li-Ion batteries. We highly recommend the following batteries,
-                                <a style="text-decoration: none; color: #337ab7;" href="https://www.amazon.com/gp/product/B005CH28YC/ref=oh_aui_detailpage_o05_s00?ie=UTF8&psc=1">Orbtronic Button Top High Drain</a>
-                            </p>
-                        </div>
-                        <div class="modal-footer" style="background: #aaa; color:#fff">
-                            <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
-                        </div>
-                    </div>
-
+            <div class="modal modal-fixed-footer" id="myModalHero">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <h3 style="background: #e65100; color:#fff; text-align: center; padding: 5px 0;">HERO</h3>
+                    <h4>What Batteries are compatible with the HERO device?</h4>
+                    <p>
+                        18650 3.7V High Drain Li-Ion batteries. We highly recommend the following batteries,
+                        <a style="text-decoration: none; color: #337ab7;" href="https://www.amazon.com/gp/product/B005CH28YC/ref=oh_aui_detailpage_o05_s00?ie=UTF8&psc=1">Orbtronic Button Top High Drain</a>
+                    </p>
+                </div>
+                <div class="modal-footer" style="background: #aaa;">
                 </div>
             </div>
 
         </div>
     </div>
 </body>
-
 </html>
