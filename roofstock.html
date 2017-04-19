@@ -21,6 +21,7 @@
     <script>
         var app = angular.module('InsideMapsData', ['ui.bootstrap']);
         app.controller('MainCtrl', function($scope) {
+          $scope.qasCategory = '';
             $scope.categories = ["Scanning", "App", "Hero", "Payments", "Projects"];
             $scope.filterQuestionsByCategory = function(category) {
                 console.log(category);
@@ -235,7 +236,7 @@
                         <div class="category-all">
                             <h3>Search FAQs</h3><br><br>
                             <div class="input-group input-group-lg">
-                                <input type="text" class="form-control" ng-model="search" placeholder="Search" placeholder="Search">
+                                <input type="text" class="form-control" ng-model="search" placeholder="Search">
                             </div><br><br>
                             <h3>Categories</h3>
                             <p ng-class="{'category-highlight': qasCategory == ''}" ng-click="filterQuestionsByCategory('')">All FAQs</p>
