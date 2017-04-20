@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Inside Maps</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="controller.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <style>
+        .team-member-name h4 {
+            color: #545454;
+            font-weight: bold;
+            margin-bottom: 3px;
+        }
+
+        .listview a>h4 {
+            color: #080808;
+            font-weight: bold;
+        }
+
+        .listview h5,
+        p {
+            color: #333;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        .listview i {
+            color: #111;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <div ng-app='myapp' ng-controller="ProjectManagement" ng-init="listColorCSS()">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-1 col-md-1"></div>
+                <div class="col-sm-3 col-md-3 text-center">
+                    <h2>Project Management</h2>
+                </div>
+            </div>
+            <hr></hr>
+            <div class="row">
+                <div class="col-sm-1 col-md-1"></div>
+                <div class="col-sm-3 col-md-3 team-member-name">
+                    <div class="text-center">
+                        <img src="pp.jpg" class="img-circle" alt="Cinque Terre" width="225" height="225" />
+                        <h4>Abdullah Al Kaes</h4>
+                    </div>
+                    <ul class="list-group">
+                        <li style="font-weight: bold" class="list-group-item">New Projects <span class="badge">12</span></li>
+                        <li class="list-group-item">Projects in Progress</li>
+                        <li class="list-group-item">Completed Projects</li>
+                    </ul>
+                </div>
+                <div class="col-sm-1 col-md-1"></div>
+
+                <div class="col-sm-6 col-md-6 list-group">
+                    <div data-ng-repeat="project in projects" class="row list-group-item listview" style="background-color: {{project.bgcolor}}">
+                        <div class="col-sm-10 col-md-10">
+                            <a data-ng-href="{{project.link}}" target="_blank"><h4 data-ng-bind="project.name"></h4></a>
+                            <h5 data-ng-bind="project.company"></h5>
+                            <i ng-click="expand($index);" class="glyphicon glyphicon-comment"></i>
+                            <!-- <i data-toggle="modal" data-target="#myModal" class="glyphicon glyphicon-comment"></i> -->
+                        </div>
+                        <!-- <div class="modal fade" id="myModal" role="dialog">
+                            <div class="modal-dialog">
+
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">Report Issue</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="form-group">
+                                            <textarea class="form-control" rows="3" id="comment"></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Send</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+                        <div class="col-sm-2 col-md-2 text-right">
+                            <p data-ng-bind="project.type"></p>
+                            <p data-ng-bind="project.priority"></p>
+                            <p data-ng-bind="project.time"></p>
+                        </div>
+                        <div ng-show="projects[$index].cmntdiv==true">
+                            <div class="form-group">
+                                <textarea class="form-control" rows="3" ng-model="todoInput" placeholder="Add Comment ..."></textarea>
+                                <br>
+                                <div class="text-right">
+                                    <button ng-click="todoAdd();" type="button" class="btn btn-default">Send</button>
+                                    <button ng-click="collapse($index);" type="button" class="btn btn-default">Cancel</button>
+                                </div>
+                            </div>
+                            <div ng-repeat="x in todoList">
+                              <input type="checkbox" ng-model="x.done"> <strong> <span ng-bind="x.todoText"></span> </strong>
+                            </div>
+                            <br>
+                            <p><button class="btn btn-danger btn-sm" ng-click="remove()">Remove marked</button></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-1 col-md-1"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

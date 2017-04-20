@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Theme Made By www.w3schools.com - No Copyright -->
+    <title>InsideMaps Template 1</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="img/favicon-terminal.ico" type="image/gif" sizes="16x16">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.4/ui-bootstrap-tpls.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+
+    var app = angular.module('InsideMapsData', ['ui.bootstrap']);
+    app.controller('MainCtrl', function($scope) {
+      console.log("Loaded");
+      $scope.slides = [
+        {
+          image: './img/1.jpg',
+          text: "Granite Shoals"
+        },
+        {
+          image: './img/2.jpg',
+          text: "Shoals Granite"
+        },
+        {
+          image: './img/3.jpg',
+          text: "Mendis Lane"
+        },
+        {
+            image: './img/4.jpg',
+            text: "Street Gate"
+        },
+        {
+            image: './img/5.jpg',
+            text: "California"
+        },
+        {
+            image: './img/6.jpg',
+            text: "Arizoana 12989"
+        },
+        {
+            image: './img/7.jpg',
+            text: "Boston 89822"
+        },
+        {
+            image: './img/8.jpg',
+            text: "Arizoana Lane"
+        },
+        {
+            image: './img/9.jpg',
+            text: "Street Gate"
+        },
+        {
+            image: './img/10.jpg',
+            text: "Park Lane"
+        },
+        {
+            image: './img/11.jpg',
+            text: "Street Gate"
+        },
+        {
+            image: './img/12.jpg',
+            text: "Shoals Granite"
+        }
+      ];
+    });
+
+
+    </script>
+    <style>
+        /*body {
+      font: 20px Montserrat, sans-serif;
+      line-height: 1.8;
+      color: #f5f6f7;
+  }*/
+
+        body,
+        html {
+            height: 100%;
+        }
+
+        p {
+            font-size: 16px;
+        }
+
+        .margin {
+            margin-bottom: 45px;
+        }
+
+        .bg-1 {
+            background-color: #ffffff;
+            color: #7b7b7b;
+        }
+
+        .bg-2 {
+            background-color: #dddddd;
+            /* White */
+            color: #000000;
+        }
+
+        .bg-3 {
+            background-color: #eeeeee;
+            /* Dark Blue */
+            color: #ffffff;
+        }
+
+        .bg-4 {
+            background-color: #2f2f2f;
+            /* Black Gray */
+            color: #fff;
+        }
+
+        .container-fluid {
+            padding-top: 70px;
+            padding-bottom: 70px;
+        }
+
+        .navbar {
+            padding-top: 15px;
+            padding-bottom: 15px;
+            border: 0;
+            border-radius: 0;
+            margin-bottom: 0;
+            font-size: 12px;
+            letter-spacing: 5px;
+        }
+
+        .navbar-nav li a:hover {
+            color: #1abc9c !important;
+        }
+        /* ------------  Custom CSS Extra ------------  */
+
+        a:hover {
+          color: #fff;
+          text-decoration: none;
+        }
+
+        .navbar-inverse .navbar-nav>.active>a {
+          background-color: transparent;
+        }
+
+        .navbar-inverse {
+            background-color: rgba(51, 51, 51, 0.9);
+        }
+
+        .bg-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+            /*transform: translateX(0) translateY(0);
+            background-position: center;
+            background-repeat: no-repeat;
+            background: url('//demosthenes.info/assets/images/polina.jpg') no-repeat;
+            background-size: cover;
+            transition: 1s opacity;*/
+        }
+        /*.img-gal-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }*/
+        /*.image {
+            display: block;
+            width: 100%;
+            height: auto;
+        }*/
+
+        .img-thumbnail {
+            border: 2px solid #ddd;
+            border-radius: 0;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 6px;
+            bottom: 0;
+            left: 5px;
+            right: 0;
+            height: 94%;
+            width: 98%;
+            width: 98%;
+            opacity: 0;
+            transition: .5s ease;
+            background-color: #444;
+        }
+
+        .img-gal-container:hover .overlay {
+            opacity: 0.7;
+        }
+
+        .img-gal-container img {
+            vertical-align: super;
+        }
+
+        .text {
+            color: white;
+            font-size: 20px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+        }
+
+        .floor-plan-heading {
+            text-align: center;
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 39px;
+        }
+
+        .tourfloorplan {
+            border: 0;
+            background: #d6d2d0;
+        }
+
+        .grow {
+            transition: all .5s ease-in-out;
+        }
+
+        .grow:hover {
+            transform: scale(1.02);
+        }
+
+        .photo-gallery h1 {
+            color: #333;
+            font-size: 45px;
+            font-weight: 700;
+        }
+
+        .photo-gallery div {
+            padding: 0 0 0 0;
+        }
+
+        .property-details h1 {
+            color: #333;
+            font-size: 45px;
+            font-weight: 700;
+        }
+
+        .property-details div {
+            padding: 30px 0 20px 0;
+        }
+
+        .property-details-btn {
+            display: inline-block;
+            border: 0;
+            border-radius: 0;
+            background: #666666;
+            color: #ffffff;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 700;
+            padding: 5px 15px;
+            text-decoration: none;
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .share-on-social-media {
+            color: #333;
+            font-size: 28px;
+            line-height: 39px;
+            font-weight: 700;
+        }
+
+        .video {
+            width: 100%;
+            border: 1px solid black;
+        }
+
+        .wrapper {
+            display: table;
+            width: auto;
+            position: relative;
+            width: 35%;
+            float: left;
+            /*padding: 0 0 0 50px;*/
+        }
+
+        .video-detail {
+            width: 40%;
+            float: left;
+            padding: 0 0 0 3%;
+        }
+
+        .playpause {
+            background-image: url(img/play-icon.png);
+            /*background-color: #333;*/
+            background-repeat: no-repeat;
+            width: 50%;
+            height: 50%;
+            position: absolute;
+            left: 0%;
+            right: 0%;
+            top: 0%;
+            bottom: 0%;
+            margin: auto;
+            background-size: contain;
+            background-position: center;
+        }
+
+        .con-hq {
+            background: rgba(0, 0, 0, 0.55);
+            display: inline-block;
+            position: relative;
+            padding: 2%;
+            min-width: 300px;
+            margin: 0 1%;
+            vertical-align: top;
+        }
+
+        .con-office-detail {
+            color: #fff;
+            font-family: 'Lato', sans-serif;
+        }
+
+        .con-form-label label {
+            font-weight: 300;
+            font-size: xx-large;
+            color: #fff;
+            font-family: 'Lato', sans-serif;
+        }
+        /* ------------  Custom CSS Extra ------------  */
+    </style>
+</head>
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+    <div ng-app="InsideMapsData">
+        <div ng-controller="MainCtrl">
+            <!-- Navbar -->
+            <nav class="navbar navbar-inverse navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">Arlington Tx</a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="#myPage">HOME</a></li>
+                            <li><a href="#floorPlan">FLOOR PLAN</a></li>
+                            <li><a href="#videoGallery">VIDEO GALLERY</a></li>
+                            <li><a href="#photoGallery">PHOTO GALLERY</a></li>
+                            <li><a href="#contact">CONTACT</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- First Container -->
+            <div id="myPage" class="container-fluid text-center">
+                <video class="bg-video" playsinline autoplay muted loop>
+                  <source src="video.mp4" type="video/mp4">
+                  </video>
+            </div>
+
+            <!-- Second Container -->
+            <div id="floorPlan" class="bg-1" style="margin-top: 48%; padding-top: 10px;">
+                <h3 class="floor-plan-heading">Granite Shoals, TX 78654</h3>
+                <div style="width: 18px; height: 28px;"></div>
+                <div class="text-center">
+                    <iframe class="tourfloorplan" src="http://youriguide.com/1375_plaza_de_sonadores_montecito_ca?unbranded&amp;autostart=1&amp;nomenu=1" style="width: 1200px; height: 600px;"></iframe>
+
+                    <div class="property-details">
+                        <h1>PROPERTY DETAILS</h1>
+                        <h3>Price: $1,650,000
+                        <h3>Beds: 6</h3>
+                        <h3>Baths: 6</h3>
+                        <h3>Garage: 3</h3>
+                        <div>
+                            <a class="property-details-btn" style="margin: 0px 0.5% 1%; font-size: 28px; line-height: 39px; max-width: 1361.6px;" href="#"> &nbsp; School Info &nbsp; </a>
+                            <a class="property-details-btn" style="margin: 0px 0.5% 1%; font-size: 28px; line-height: 39px; max-width: 1361.6px;" href="#"> &nbsp; Floor Plan &nbsp; </a>
+                            <a class="property-details-btn" style="margin: 0px 0.5% 1%; font-size: 28px; line-height: 39px; max-width: 1361.6px;" href="#"> &nbsp; Property Video &nbsp; </a>
+                        </div>
+                        <div>
+                            <span class="share-on-social-media">SHARE THIS ON &nbsp;</span>
+                            <a href="https://www.facebook.com/" target="_blank" title="Share This Property on Facebook"><img src="img/fb.png" alt="Share This Property on Facebook" width="64" height="64"></a>
+                            <a href="https://plus.google.com/" target="_blank" title="Share This Property on Facebook"><img src="img/gpl.png" alt="Share This Property on Facebook" width="64" height="64"></a>
+                            <a href="https://twitter.com/" target="_blank" title="Share This Property on Facebook"><img src="img/twt.png" alt="Share This Property on Facebook" width="64" height="64"></a>
+                            <a href="https://www.linkedin.com/" target="_blank" title="Share This Property on Facebook"><img src="img/lnin.png" alt="Share This Property on Facebook" width="64" height="64"></a>
+                            <a href="https://www.pinterest.com/" target="_blank" title="Share This Property on Facebook"><img src="img/pntr.png" alt="Share This Property on Facebook" width="64" height="64"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="property-details text-center" style="padding: 15px 0 10px 0">
+                    <h1>VIDEO GALLERY</h1>
+                </div>
+            </div>
+            <div id="videoGallery" class="container-fluid bg-2">
+                <div class="col-sm-1"></div>
+
+                <div class="col-sm-11" style="display: inline">
+                    <div class="wrapper">
+                        <video class="video">
+                      <source src="video.mp4" type="video/mp4"/>
+                    </video>
+                        <div class="playpause"></div>
+                    </div>
+                    <div class="video-detail">
+                        <h1>Stunning Waterfront Home</h1>
+                        <h4>Extraordinary waterfront location with luxurious amenities.</h4>
+                    </div>
+                </div>
+
+            </div>
+            <!-- Fourth Container -->
+            <div id="photoGallery" class="container-fluid bg-3 photo-gallery">
+                <h1 class="text-center">PHOTO GALLERY</h1>
+                <div class="col-sm-3 img-gal-container grow" ng-repeat="slide in slides">
+                    <img ng-src="{{slide.image}}" width="460" height="270" class=" img-thumbnail"></img>
+                    <div class="overlay">
+                        <div class="text">{{slide.text}}</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="contact" class="text-center" style="padding: 5% 0">
+                <video class="bg-video" playsinline autoplay muted loop>
+                  <source src="video.mp4" type="video/mp4">
+                </video>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6 con-hq">
+                            <div class="bg-3">
+                                <img src="img/logo-black.png" width="350" height="auto"></img>
+                            </div>
+                            <div class="text-center con-office-detail">
+                                <h1>InsideMaps Inc Headquarters</h1>
+                                <p>Broadway Redwood City, CA 94404 United States</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-5 con-hq">
+                            <form class="form">
+                                <div class="form-group form-group-lg text-left con-form-label">
+                                    <label class="" for="">Your Name (Required)</label>
+                                    <div class="">
+                                        <input class="form-control" type="text" id="">
+                                    </div>
+                                </div>
+
+                                <div class="form-group form-group-lg text-left con-form-label">
+                                    <label class="" for="">Your Email (Required)</label>
+                                    <div class="">
+                                        <input class="form-control" type="text" id="">
+                                    </div>
+                                </div>
+
+                                <div class="form-group form-group-lg text-left con-form-label">
+                                    <label class="" for="">Message</label>
+                                    <div class="">
+                                        <textarea class="form-control" rows="5" type="text" id=""></textarea>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <input style="font-weight: 800" type="submit" class="btn btn-basic btn-lg" value="Send Message">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer class="container-fluid bg-4 text-center">
+              <a href="#myPage" title="To Top">
+                <span class="glyphicon glyphicon-chevron-up"></span>
+              </a>
+                <p>&copy; InsideMaps Inc 2017</p>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+    $(document).ready(function(){
+      // Add smooth scrolling to all links in navbar + footer link
+      $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== "") {
+          // Prevent default anchor click behavior
+          event.preventDefault();
+
+          // Store hash
+          var hash = this.hash;
+
+          // Using jQuery's animate() method to add smooth page scroll
+          // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 900, function(){
+
+            // Add hash (#) to URL when done scrolling (default click behavior)
+            window.location.hash = hash;
+          });
+        } // End if
+      });
+    });
+        $('.video').parent().click(function() {
+            if ($(this).children(".video").get(0).paused) {
+                $(this).children(".video").get(0).play();
+                $(this).children(".playpause").fadeOut();
+            } else {
+                $(this).children(".video").get(0).pause();
+                $(this).children(".playpause").fadeIn();
+            }
+        });
+    </script>
+</body>
+
+</html>
+<!--
+http://codepen.io/BuiltBySam/pen/merjWp
+https://vimeo.com/193884055
+http://jsfiddle.net/qrhjdfmd/
+https://codepen.io/dudleystorey/pen/knqyK
+-->

@@ -3,33 +3,20 @@
 
 <head>
     <!-- Theme Made By www.w3schools.com - No Copyright -->
-    <title>InsideMaps Template 2</title>
+    <title>InsideMaps Template</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="img/favicon-terminal.ico" type="image/gif" sizes="16x16">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.4/ui-bootstrap-tpls.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
 
     <script>
-        $(document).ready(function() {
-            // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
-            $('.modal').modal();
-        });
         var app = angular.module('InsideMapsData', ['ui.bootstrap']);
-        app.controller('MainCtrl', function($scope) {
-
-            $scope.toggles = [{
-                state: false
-            }];
-        });
+        app.controller('MainCtrl', function($scope) {});
     </script>
     <style>
         html,
@@ -39,72 +26,17 @@
             background-color: #fff;
             font-family: 'Sansita', sans-serif;
         }
-
-        .navbar {
-            margin-bottom: 0;
-            border-radius: 0;
+        .table>thead>tr>th {
+          text-align: center;
         }
-        /*.faq-card {
-            box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 4px 20px 0 rgba(0, 0, 0, 0.19);
-            padding: 3em;
-            margin: 1em 1em;
-            border: 2px solid #929292;
-        }*/
-
-        .faq-modal-body h4 {
-            padding: 10px 0;
-            color: #525975;
-            font-size: 20px;
-            font-family: Georgia, serif;
-            font-weight: 600;
+        .table>tbody>tr>td>a {
+          text-decoration: none;
+          cursor: pointer;
         }
-
-        .faq-modal-body p {
-            color: #656565;
-            font-family: 'Proxima Nova';
-            font-size: 16px;
-            font-weight: 300;
-            line-height: 1.4;
-            -webkit-font-smoothing: auto;
-            /*padding: 0 0 10px 0;
-          color: #525975;
-          font-family: Arial, Helvetica, sans-serif;*/
-        }
-
-        .bg-faq {
-            padding: 0 0 3em 0;
-        }
-
-        .bg-user-guide {
-            padding: 2em 0 3em 0;
-            background: #f1f1f1;
-        }
-
-        .bg-user-guide hr {
-            border-top: 1px solid #c3c3c3;
-        }
-
-        .bg-contact {
-            padding: 0 0 3em 0;
-        }
-
-        .bg-contact span {
-            vertical-align: top;
-        }
-
-        .heading-small {
-            color: #565656;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .help-tutorials p {
-            padding: 25px 0 10px 0;
-            /*color: #42586a;*/
-            color: #115b94;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 18px;
+        .sub-heading{
+          font-weight: bold;
+          color: #ec4646;
+          padding: 5px 0 25px 0;
         }
     </style>
 </head>
@@ -112,241 +44,56 @@
 <body>
     <div ng-app="InsideMapsData">
         <div ng-controller="MainCtrl">
-
-            <nav class="navbar navbar-inverse">
-                <div class="container-fluid">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar">
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                    </div>
-                    <div class="collapse navbar-collapse" id="myNavbar">
-                        <ul class="nav navbar-nav navbar-right">
-                            <li><a href="#">Home</a></li>
-                            <li><a href="./roofstock.html" target="_blank">Template-2</a></li>
-                            <li><a href="#">Pricing</a></li>
-                            <li><a href="#">Support</a></li>
-                            <li><a href="#">Get Started</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-            <!-- Container (Services Section) -->
-            <div class="container bg-faq">
+            <div class="container">
                 <div class="text-center">
-                    <h2>Frequently Asked Questions</h2>
-                    <small style="color: #565656; text-decoration: none; font-weight: bold;">Browse Our Knowledge Base.</small>
-                    <!-- <a style="color: #337ab7; text-decoration: none;" href="https://support.insidemaps.com/portal/kb" target="_blank"> For More Support &#x279A;</a> -->
-                    <hr></hr>
+                    <h2>InsideMaps Inc. Template Showcase</h2>
+                    <hr>
+                    <h4 class="sub-heading">Please Find the Template from the Following Table</h4>
                 </div>
-                <div ng-repeat="toggle in toggles">
-                    <div class="row" ng-show="toggle.state== false" style="cursor: pointer">
-                        <div class="col-sm-4" data-target="myModalApp">
-                            <div class="card-panel teal text-center">
-                                <span class="white-text">
-                                  <i class="fa fa-mobile fa-3x" aria-hidden="true"></i>
-                                  <h4>APP</h4>
-                                </span>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-4" data-target="myModalHero">
-                            <div class="card-panel orange darken-4 text-center">
-                                <span class="white-text">
-                                  <i class="fa fa-object-group fa-3x" aria-hidden="true"></i>
-                                  <h4>HERO</h4>
-                                </span>
-                            </div>
-                        </div>
-
-                        <div ng-click="toggle.state = !toggle.state" class="col-sm-4">
-                            <div class="card-panel brown text-center">
-                                <span class="white-text">
-                                  <i class="fa fa-barcode fa-3x" aria-hidden="true"></i>
-                                  <h4>SCANNING</h4>
-                                </span>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-4">
-                            <div class="card-panel  brown darken-4 text-center">
-                                <span class="white-text">
-                                  <i class="fa fa-money fa-3x" aria-hidden="true"></i>
-                                  <h4>PAYMENTS</h4>
-                                </span>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-4">
-                            <div class="card-panel red darken-4 text-center">
-                                <span class="white-text">
-                                  <i class="fa fa-building fa-3x" aria-hidden="true"></i>
-                                  <h4>PROJECTS</h4>
-                                </span>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-4">
-                            <div class="card-panel light-blue darken-4 text-center">
-                                <span class="white-text">
-                                  <i class="fa fa-film fa-3x" aria-hidden="true"></i>
-                                  <h4>VIDEOS</h4>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div ng-show="toggle.state!= false">
-                        <div class="modal-header" style="background: #795548; color:#fff">
-                            <button ng-click="toggle.state = !toggle.state" type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">SCANNING</h4>
-                        </div>
-                        <div class="modal-body faq-modal-body">
-                            <h4>What tripod should I use with InsideMaps?</h4>
-                            <p>
-                                We recommend a sturdy professional tripod (without a panning handle) suitable for DSLR cameras like this:
-                                <a href="https://www.amazon.com/dp/B003SQEAY0/ref=wl_it_dp_o_pC_nS_ttl?_encoding=UTF8&colid=17MTJJ7M4WA80&coliid=I2VOQE1SAJT130">Ravelli APGL4</a>
-                            </p>
-                            <h4>How long will it take to capture a property?</h4>
-                            <p>
-                                On average 1000 square feet will take 15-25 minutes.
-                            </p>
-                        </div>
-                        <div ng-click="toggle.state = !toggle.state" class="modal-footer" style="background: #aaa; color:#fff; text-align: center; cursor:pointer">
-                            <i class="fa fa-chevron-left" aria-hidden="true"> Go Back</i>
-                        </div>
-                    </div>
+                <div class="table-responsive">
+                    <table class="table table-hover text-center">
+                        <thead>
+                            <tr>
+                                <th>Design Idea</th>
+                                <th>Requirement By</th>
+                                <th>Template Link</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                              <td>InsideMaps Project Showcase-1H</td>
+                              <td>Hunter Peterson</td>
+                              <td><a href="./Support-Showcase/exit-realty.html" target="_blank">EXIT Realty Corp.-Design</a></td>
+                          </tr>
+                            <tr>
+                                <td>InsideMaps Support-02</td>
+                                <td>Hunter Peterson</td>
+                                <td><a href="./Support-Showcase/roofstock.html" target="_blank">Roofstock-Design</a></td>
+                            </tr>
+                            <tr>
+                                <td>InsideMaps Support-01</td>
+                                <td>Hunter Peterson</td>
+                                <td><a href="./Support-Showcase/proposed-design-1.html" target="_blank">Proposed-Design-1</a></td>
+                            </tr>
+                            <tr>
+                                <td>InsideMaps Project Showcase-1G</td>
+                                <td>George Bolanos</td>
+                                <td><a href="./Project-Showcase/Project-Template1/index.html" target="_blank">TourFactory Design-1</a></td>
+                            </tr>
+                            <tr>
+                                <td>QA Operator Dashboard</td>
+                                <td>George Bolanos</td>
+                                <td><a href="./QADashboard/index.html" target="_blank">Dashboard Design</a></td>
+                            </tr>
+                            <tr>
+                                <td>HVAC Item Age Calculation</td>
+                                <td>George Bolanos</td>
+                                <td><a href="./HVAC-Age-Calculator/find_age_HVAC.html" target="_blank">HVAC Age Calculator</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
-
-            <div class="container-fluid bg-user-guide">
-                <div class="text-center">
-                    <h2>User Guides</h2>
-                    <small class="heading-small">Watch Out to Know InsideMaps Scanning Procedure.</small>
-                    <div class="container">
-                        <hr></hr>
-                    </div>
-                </div>
-                <div class="help-tutorials text-center">
-                    <div class="col-sm-4">
-                        <p>HERO<sup>TM</sup> and InsideMaps Capture App</p>
-                        <iframe src="https://www.youtube.com/embed/ZKt_kK2xFYM?showinfo=0" frameborder="0" allowfullscreen="" width="85%" height="275px"></iframe>
-                    </div>
-
-                    <div class="col-sm-4">
-                        <p>Tripod Placement</p>
-                        <iframe src="https://www.youtube.com/embed/XUT_ktTAiSo?showinfo=0" frameborder="0" allowfullscreen="" width="85%" height="275px"></iframe>
-                    </div>
-
-                    <div class="col-sm-4">
-                        <p>HERO<sup>TM</sup> Setup with iPhone</p>
-                        <iframe src="https://www.youtube.com/embed/etvb2_oAxCA?showinfo=0" frameborder="0" allowfullscreen="" width="85%" height="275px"></iframe>
-                    </div>
-
-                    <div class="col-sm-4">
-                        <p>Recommended iPhone Settings</p>
-                        <iframe src="https://www.youtube.com/embed/8oP_btda7QI?showinfo=0" frameborder="0" allowfullscreen="" width="85%" height="275px"></iframe>
-                    </div>
-
-                    <div class="col-sm-4">
-                        <p>Upload Procedure</p>
-                        <iframe src="https://www.youtube.com/embed/154--C_z3uA?showinfo=0" frameborder="0" allowfullscreen="" width="85%" height="275px"></iframe>
-                    </div>
-                </div>
-            </div>
-
-            <div class="container bg-contact">
-                <div class="text-center">
-                    <h2>Contact</h2>
-                    <small class="heading-small">Get in Touch With Us.</small>
-                    <hr></hr>
-                </div>
-                <div class="row">
-                    <form class="col s12">
-                        <div class="row">
-                            <div class="input-field col s6">
-                                <i class="material-icons prefix">account_circle</i>
-                                <input id="icon_prefix" type="text" class="validate">
-                                <label for="icon_prefix">Name</label>
-                            </div>
-                            <div class="input-field col s6">
-                                <i class="material-icons prefix">email</i>
-                                <input id="icon_email" type="email" class="validate">
-                                <label for="icon_email">Email</label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <i class="material-icons prefix">mode_edit</i>
-                                <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
-                                <label for="icon_prefix2">Message</label>
-                            </div>
-                        </div>
-                        <div class="text-right">
-                            <button class="btn waves-effect waves-light" type="submit" name="action">Send
-                                <i class="material-icons right">send</i>
-                            </button>
-                        </div>
-                    </form>
-                </div>
-                <div class="card-panel grey">
-                    <div class="row">
-                        <div style="margin: 10px 0 3px 0;" class="col-sm-8">
-                            <a class="btn btn-default btn-circle blue" href="#" target="_blank"><i class="fa fa-twitter"></i></a>
-                            <a class="btn btn-default btn-circle blue darken-1" href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
-                            <a class="btn btn-default btn-circle blue darken-4" href="#" target="_blank"><i class="fa fa-facebook"></i></a>
-                            <a class="btn btn-default btn-circle deep-orange" href="#" target="_blank"><i class="fa fa-instagram"></i></a>
-                        </div>
-                        <div class="col-sm-4 text-right">
-                            <p><i class="material-icons prefix">email</i><span> support@insidemaps.com</span></p>
-
-                            <p><i class="material-icons prefix">email</i><span> sales@insidemaps.com</span></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Modal -->
-            <div class="modal modal-fixed-footer" id="myModalApp">
-                <div class="modal-content">
-
-                    <!-- Modal content-->
-                    <h3 style="background: #009688; color:#fff; text-align: center; padding: 5px 0;">APP</h3>
-                    <h4>Why is it taking so long for my project to upload?</h4>
-                    <p>
-                        Upload speeds are based on your wifi signal and your internet connection. Place your iPhone / iPod close to your router, or the source of wifi, to ensure a good signal. Keep in mind streaming media, or other activities such as video games may use up a
-                        considerable amount of your internet bandwidth and thus slow down the upload of your project.
-                    </p>
-                    <h4>How do I know if all my photos have uploaded successfully?</h4>
-                    <p>
-                        Once you select finish project, you will see a cloud icon with a progress bar appear next to your project, and a notification appears at the top of the screen letting you know your project is uploading. You must keep the InsideMaps Capture app window
-                        open until the upload is finished. If the app is minimized or closed the upload will pause. Keep in mind you must have access to wifi to upload, otherwise, the app will wait until a wifi connection is available. When the upload
-                        is complete the progress bar will disappear, and you will receive an email notification that your project has been submitted.
-                    </p>
-                    <h4>How much free space should I have on my iPhone / iPod?</h4>
-                    <p>At least 16gb is recommended.</p>
-                </div>
-                <div class="modal-footer" style="background: #aaa;">
-                </div>
-            </div>
-
-            <!-- Modal -->
-            <div class="modal modal-fixed-footer" id="myModalHero">
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <h3 style="background: #e65100; color:#fff; text-align: center; padding: 5px 0;">HERO</h3>
-                    <h4>What Batteries are compatible with the HERO device?</h4>
-                    <p>
-                        18650 3.7V High Drain Li-Ion batteries. We highly recommend the following batteries,
-                        <a style="text-decoration: none; color: #337ab7;" href="https://www.amazon.com/gp/product/B005CH28YC/ref=oh_aui_detailpage_o05_s00?ie=UTF8&psc=1">Orbtronic Button Top High Drain</a>
-                    </p>
-                </div>
-                <div class="modal-footer" style="background: #aaa;">
-                </div>
-            </div>
-
         </div>
     </div>
 </body>

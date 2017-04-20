@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>HVAC Age Calculator</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>Home Appliance(HVAC) Age Calculator</h2>
+        <hr>
+        <div class="text-center" ng-app="myApp" ng-controller="formCtrl">
+            <form name="find_age" action="http://www.appliance411.com/service/date-code.php" method="POST" onsubmit="return runSubmit(this)">
+                <div class="form-group">
+
+                    <!-- <input type="hidden" name="tries" value=""> -->
+                    <table class="table table-striped" border="1" width="350">
+                        <thead>
+                            <tr>
+                                <th align="center" colspan="2">
+                                    <b><font size="+1" face="Verdana,Arial,Helvetica">Enter Product Details</font></b>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+
+                            <!-- <tr>
+                                    <td align="center" colspan="2"> </td>
+                                </tr> -->
+
+                            <tr>
+                                <td align="center">
+                                    <font size="-1" face="Verdana,Arial,Helvetica"><b>Brand Name</b></font>
+                                </td>
+                                <td>
+                                    &nbsp;<select name="brand" onchange="CheckBosch(this.value)" fsf_color="">
+                                <option value="">Select Brand</option><option value="Absocold">Absocold</option><option value="Admiral">Admiral</option><option value="Alliance Laundry">Alliance Laundry</option><option value="Amana">Amana</option><option value="Americana">Americana</option><option value="ASKO">ASKO</option><option value="Badger">Badger</option><option value="Baycrest">Baycrest</option><option value="Beaty">Beaty</option><option value="Beaumark">Beaumark</option><option value="Blomberg">Blomberg</option><option value="Bosch">Bosch</option><option value="Broan">Broan</option><option value="Caloric">Caloric</option><option value="Camco">Camco</option><option value="Coldspot">Coldspot</option><option value="Coronado">Coronado</option><option value="Crosley">Crosley</option><option value="Dacor">Dacor</option><option value="Daewoo">Daewoo</option><option value="Danby">Danby</option><option value="DCS">DCS</option><option value="Dometic">Dometic</option><option value="Dynasty">Dynasty</option><option value="Electrolux">Electrolux</option><option value="Emerson">Emerson</option><option value="Estate">Estate</option><option value="Eurotech">Eurotech</option><option value="Ewave">Ewave</option><option value="Fagor">Fagor</option><option value="Fedders">Fedders</option><option value="Fisher &amp; Paykel">Fisher &amp; Paykel</option><option value="Friedrich">Friedrich</option><option value="Frigidaire">Frigidaire</option><option value="Gaffers and Sattler">Gaffers and Sattler</option><option value="General Electric">General Electric</option><option value="General Freezer">General Freezer</option><option value="Gibson">Gibson</option><option value="Glenwood">Glenwood</option><option value="Goldstar">Goldstar</option><option value="GSW">GSW</option><option value="Haier">Haier</option><option value="Hampton Bay">Hampton Bay</option><option value="Hardwick">Hardwick</option><option value="Holiday">Holiday</option><option value="Hotpoint">Hotpoint</option><option value="Huebsch">Huebsch</option><option value="Ikea">Ikea</option><option value="In-Sink-Erator">In-Sink-Erator</option><option value="Inglis">Inglis</option><option value="Jade">Jade</option><option value="JC Penney">JC Penney</option><option value="Jenn Air">Jenn Air</option><option value="Kelvinator">Kelvinator</option><option value="Kenmore">Kenmore</option><option value="KitchenAid">KitchenAid</option><option value="Kirkland">Kirkland</option><option value="Leonard">Leonard</option><option value="LG">LG</option><option value="Magic Chef">Magic Chef</option><option value="Marvel">Marvel</option><option value="Maytag">Maytag</option><option value="McClary">McClary</option><option value="Midea">Midea</option><option value="Modern Maid">Modern Maid</option><option value="Moffat">Moffat</option><option value="Montgomery Ward">Montgomery Ward</option><option value="Norge">Norge</option><option value="Nutone">Nutone</option><option value="Panasonic">Panasonic</option><option value="Peerless Premier">Peerless Premier</option><option value="RCA">RCA</option><option value="Roper">Roper</option><option value="Roy">Roy</option><option value="Samsung">Samsung</option><option value="Sanyo">Sanyo</option><option value="Scotsman">Scotsman</option><option value="Sharp">Sharp</option><option value="Siemens">Siemens</option><option value="Signature">Signature</option><option value="Sinkmaster">Sinkmaster</option><option value="Speed Queen">Speed Queen</option><option value="State Industries">State Industries</option><option value="Sub-Zero">Sub-Zero</option><option value="Sunbeam">Sunbeam</option><option value="Sunray">Sunray</option><option value="Tappan">Tappan</option><option value="Thermador">Thermador</option><option value="U-Line">U-Line</option><option value="Ultraline">Ultraline</option><option value="Vesta">Vesta</option><option value="Viking">Viking</option><option value="Wards">Wards</option><option value="Waste King">Waste King</option><option value="Whirlaway">Whirlaway</option><option value="Whirlpool">Whirlpool</option><option value="White-Westinghouse">White-Westinghouse</option><option value="Woods">Woods</option></select><b><font color="red">&nbsp;*</font></b>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td bgcolor="E0E0E0" align="center" colspan="2"> </td>
+                            </tr>
+
+                            <tr>
+                                <td align="center">
+                                    <font size="-1" face="Verdana,Arial,Helvetica"><b>Appliance Type</b></font>
+                                </td>
+                                <td>&nbsp;<select size="1" name="type"><option value="Air Conditioner">Air Conditioner</option><option value="Clothes Washer">Clothes Washer</option><option value="Clothes Dryer">Clothes Dryer</option><option value="Cooktop/Cartridge">Cooktop/Cartridge</option><option value="Dehumidifier">Dehumidifier</option><option value="Dishwasher">Dishwasher</option><option value="Dryer">Dryer</option><option value="Fridge">Fridge</option><option value="Freezer">Freezer</option><option value="Garbage Disposal">Garbage Disposal</option><option value="Humidifier">Humidifier</option><option value="Ice Maker">Ice Maker</option><option value="Microwave Oven">Microwave Oven</option><option value="Range/Stove/Oven">Range/Stove/Oven</option><option value="Refrigerator">Refrigerator</option><option value="Trash Compactor">Trash Compactor</option><option value="Washing Machine">Washing Machine</option><option value="Wine Cooler">Wine Cooler</option></select><b><font color="red">&nbsp;*</font></b></td>
+                            </tr>
+                            <tr>
+                                <td bgcolor="E0E0E0" align="center" colspan="2"> </td>
+                            </tr>
+
+                            <tr>
+                                <td align="center">
+                                    <font size="-1" face="Verdana,Arial,Helvetica"><b>Location</b></font>
+                                </td>
+                                <td>&nbsp;<select name="country" co_color=""><option value="Canada">Canada</option><option value="USA" selected="selected">USA</option></select><b><font color="red">&nbsp;*</font></b></td>
+                            </tr>
+
+                            <tr>
+                                <td bgcolor="E0E0E0" align="center" colspan="2"> </td>
+                            </tr>
+
+                            <tr>
+                                <td align="center">
+                                    <font size="-1" face="Verdana,Arial,Helvetica"><b>Model No.</b></font>
+                                </td>
+                                <td>&nbsp;<input type="text" name="model" ng-model="model" size="20" maxlength="20" value="" m_color="">
+                                    <font size="-1" face="Verdana,Arial,Helvetica"><b><font color="red">*</font></b>&nbsp;&nbsp;[<a href="http://www.appliance411.com/parts/tagsearch.cgi" target="411" title="Click for model number tag HELP">Help</a>]</font>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td bgcolor="E0E0E0" align="center" colspan="2"> </td>
+                            </tr>
+
+                            <tr>
+                                <td align="center">
+                                    <font size="-1" face="Verdana,Arial,Helvetica"><b><span id="FD">Serial No.</span></b></font>
+                                </td>
+                                <td>&nbsp;<input type="text" name="serial" ng-model="serial" size="20" maxlength="24" value="" s_color="">
+                                    <font size="-1" face="Verdana,Arial,Helvetica"><b><font color="red">*</font></b>&nbsp;&nbsp;[<a href="http://www.appliance411.com/parts/tagsearch.cgi" target="411" title="Click for model number tag HELP">Help</a>]</font>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td bgcolor="E0E0E0" align="center" colspan="2"> </td>
+                            </tr>
+
+                            <tr>
+                                <td align="center" colspan="2">
+                                    <div align="center">
+                                        <font size="-1" face="Verdana,Arial,Helvetica" color="red"><b>*Required fields</b></font>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <!-- <td bgcolor="#E0E0E0" colspan="2">
+                                  <center><input class="btn btn-primary" type="submit" name="mybutton" value="Find Date"></center>
+                                </td> -->
+                                <td bgcolor="#E0E0E0" colspan="2">
+                                    <center><input class="btn btn-primary" type="submit" name="mybutton" value="Date it!"></center>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </form>
+            <hr>
+        </div>
+    </div>
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('formCtrl', function($scope) {
+            $scope.model = "ZTN730A100AC";
+            $scope.serial = "AXN227A100VD";
+
+        });
+    </script>
+</body>
+
+</html>
