@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Theme Made By www.w3schools.com - No Copyright -->
+    <title>InsideMaps Template 2</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="img/favicon-terminal.ico" type="image/gif" sizes="16x16">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css"> -->
+    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.4/ui-bootstrap-tpls.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script> -->
+
+
+    <script>
+        var app = angular.module('InsideMapsData', ['ui.bootstrap']);
+        app.controller('MainCtrl', function($scope) {
+
+        });
+    </script>
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            font-family: 'Sansita', sans-serif;
+        }
+
+        .navbar {
+            margin-bottom: 0;
+            border-radius: 0;
+            /*padding: 20px 0;*/
+        }
+
+        .navbar-color {
+            background-color: #333;
+            border-color: transparent;
+        }
+
+        .navbar-nav>li>a {
+            padding-top: 25px;
+            padding-bottom: 25px;
+            color: #ddd;
+        }
+
+        .icon-bar {
+            color: #ddd;
+            border-color: #ddd;
+            background-color: #ddd;
+        }
+
+        .nav>li>a:focus,
+        .navbar-nav>li>a:hover {
+            background-color: #222222;
+            color: #fff;
+        }
+        .bg-3D-tour{
+          padding-top: 4%;
+        }
+        .bg-project-show {
+            padding: 1em 0 3em 0;
+            background: #f1f1f1;
+        }
+    </style>
+</head>
+
+<body>
+    <div ng-app="InsideMapsData">
+        <div ng-controller="MainCtrl">
+          <nav class="navbar navbar-color navbar-fixed-top">
+              <div class="container-fluid">
+                  <div class="navbar-header">
+                    <img class="navbar-brand" src="img/logo-black.png" width="125" height="auto">Logo</img>
+                      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                      </button>
+                  </div>
+                  <div class="navbar-collapse collapse" id="myNavbar">
+                      <ul class="nav navbar-nav">
+                          <li><a href="#">Home</a></li>
+                          <li><a href="#">Order</a></li>
+                          <li><a href="#">Pricing</a></li>
+                          <li><a href="#">Support</a></li>
+                          <li><a href="#">Get Started</a></li>
+                      </ul>
+                      <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                      </ul>
+                  </div>
+              </div>
+          </nav>
+          <div class="container bg-3D-tour">
+            <h2>3D Tour</h2>
+
+          </div>
+          <div class="container bg-project-show">
+            <h2>Projects</h2>
+            <hr>
+          </div>
+        </div>
+    </div>
+</body>
+</html>
