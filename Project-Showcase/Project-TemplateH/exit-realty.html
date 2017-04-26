@@ -9,6 +9,7 @@
     <link rel="icon" href="img/favicon-terminal.ico" type="image/gif" sizes="16x16">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Titillium Web' rel='stylesheet'>
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css"> -->
     <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js"></script>
@@ -30,7 +31,6 @@
             width: 100%;
             height: 100%;
             background-color: #fff;
-            font-family: 'Sansita', sans-serif;
         }
 
         .navbar {
@@ -61,12 +61,83 @@
             background-color: #222222;
             color: #fff;
         }
-        .bg-3D-tour{
-          padding-top: 4%;
-        }
+
         .bg-project-show {
+            padding: 4% 0;
+        }
+
+        .bg-project-show h1, .bg-3D-tour h1 {
+            text-align: center;
+            padding: 5px 0;
+            color: #212d3a;
+            font-family: 'Titillium Web';
+        }
+
+        .bg-project-show hr {
+            text-align: center;
+            max-width: 83%;
+        }
+
+        .bg-3D-tour {
             padding: 1em 0 3em 0;
             background: #f1f1f1;
+        }
+
+        .bg-3D-tour hr {
+            max-width: 67%;
+            border-top: 1px solid #ccc;
+        }
+
+        .video {
+            width: 100%;
+            border: 1px solid black;
+        }
+
+        .wrapper {
+            display: table;
+            width: auto;
+            position: relative;
+            width: 100%;
+            text-align: center;
+            /*float: left;*/
+            /*padding: 0 0 0 50px;*/
+        }
+        /*.video-detail {
+           width: 40%;
+           float: left;
+           padding: 0 0 0 3%;
+       }*/
+
+        .playpause {
+            background-image: url(img/play-icon.png);
+            /*background-color: #333;*/
+            background-repeat: no-repeat;
+            width: 50%;
+            height: 50%;
+            position: absolute;
+            left: 0%;
+            right: 0%;
+            top: 0%;
+            bottom: 0%;
+            margin: auto;
+            background-size: contain;
+            background-position: center;
+        }
+
+        .copybar {
+            background: #333;
+            padding: 1em 0em 0.15em 0em;
+            margin: 0;
+        }
+
+        .copybar h3, .copybar p {
+            padding: 1% 0;
+            color: #f1f1f1;
+            font-weight: bold;
+        }
+
+        .icon-footer a>i {
+            padding: 5px;
         }
     </style>
 </head>
@@ -74,40 +145,89 @@
 <body>
     <div ng-app="InsideMapsData">
         <div ng-controller="MainCtrl">
-          <nav class="navbar navbar-color navbar-fixed-top">
-              <div class="container-fluid">
-                  <div class="navbar-header">
-                    <img class="navbar-brand" src="img/logo-black.png" width="125" height="auto">Logo</img>
-                      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <nav class="navbar navbar-color navbar-fixed-top">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <img class="navbar-brand" src="img/logo-black.png" width="125" height="auto">Logo</img>
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                           <span class="icon-bar"></span>
                           <span class="icon-bar"></span>
                           <span class="icon-bar"></span>
                       </button>
-                  </div>
-                  <div class="navbar-collapse collapse" id="myNavbar">
-                      <ul class="nav navbar-nav">
-                          <li><a href="#">Home</a></li>
-                          <li><a href="#">Order</a></li>
-                          <li><a href="#">Pricing</a></li>
-                          <li><a href="#">Support</a></li>
-                          <li><a href="#">Get Started</a></li>
-                      </ul>
-                      <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                      </ul>
-                  </div>
-              </div>
-          </nav>
-          <div class="container bg-3D-tour">
-            <h2>3D Tour</h2>
+                    </div>
+                    <div class="navbar-collapse collapse" id="myNavbar">
+                        <ul class="nav navbar-nav">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Order</a></li>
+                            <li><a href="#">Pricing</a></li>
+                            <li><a href="#">Support</a></li>
+                            <li><a href="#">Get Started</a></li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div class="container-fluid bg-project-show">
+                <h1>Project</h1>
+                <hr>
+                <div class="col-sm-1 col-md-1"></div>
 
-          </div>
-          <div class="container bg-project-show">
-            <h2>Projects</h2>
-            <hr>
-          </div>
+                <div class="col-sm-6 col-md-6">
+                    <div class="wrapper">
+                        <video class="video">
+                     <source src="./img/video.mp4" type="video/mp4"/>
+                   </video>
+                        <div class="playpause"></div>
+                    </div>
+                </div>
+                <!-- <div class="col-sm-1 col-md-1"></div> -->
+                <div class="col-sm-4 col-md-4">
+                    <h3>Project of the Month</h3>
+                    <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in
+                        Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections
+                        1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC.</p>
+                </div>
+                <div class="col-sm-1 col-md-1"></div>
+
+
+            </div>
+
+            <div class="container-fluid text-center bg-3D-tour">
+                <h1>3D Tour</h1>
+                <hr>
+                <iframe src="https://www.insidemaps.com/app/walkthrough?projectId=ETAYgE7Dyn&env=prod" style="width: 1200px; height: 600px;"></iframe>
+            </div>
+            <!-- <iframe class="tourfloorplan" src="http://youriguide.com/1375_plaza_de_sonadores_montecito_ca?unbranded&amp;autostart=1&amp;nomenu=1" style="width: 1200px; height: 600px;"></iframe> -->
         </div>
+
     </div>
+    </div>
+    <footer class="copybar text-center">
+        <h3>Follow Us</h3>
+        <span class="icon-footer">
+          <a style="color: #1da1f2" href="#" target="_blank"><i class="fa fa-twitter fa-3x"></i></a>
+          <a style="color: #ccc" href="#" target="_blank"><i class="fa fa-google-plus fa-3x"></i></a>
+          <a style="color: #3b579d" href="#" target="_blank"><i class="fa fa-facebook fa-3x"></i></a>
+          <a style="color: #f1312f" href="#" target="_blank"><i class="fa fa-youtube fa-3x text-Cyan"></i></a>
+          <a style="color: #007bb6" href="#" target="_blank"><i class="fa fa-linkedin fa-3x"></i></a>
+          <a style="color: #bd081c" href="#" target="_blank"><i class="fa fa-pinterest fa-3x"></i></a>
+          <a style="color: #ddd" href="#" target="_blank"><i class="fa fa-instagram fa-3x"></i></a>
+        </span>
+        <p>&copy; 2017 InsideMaps Inc.</p>
+    </footer>
+    <script>
+        $('.video').parent().click(function() {
+            if ($(this).children(".video").get(0).paused) {
+                $(this).children(".video").get(0).play();
+                $(this).children(".playpause").fadeOut();
+            } else {
+                $(this).children(".video").get(0).pause();
+                $(this).children(".playpause").fadeIn();
+            }
+        });
+    </script>
 </body>
 </html>
