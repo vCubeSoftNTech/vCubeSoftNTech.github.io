@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Inside Maps</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+
+    <script>
+        var HomeAppliance = function($scope) {
+            console.log("Hello");
+            $scope.demoDatas = [{
+                name: "Furnace",
+                img: "./img/furnace-ss.png",
+                brand: "Goodman 60,000 BTU Furnace",
+                sn: "#WEG67G9S"
+            }, {
+                name: "AC",
+                img: "./img/aco.png",
+                brand: "Goodman 29,000 BTU",
+                sn: "#GSX160301"
+            }, {
+                name: "Disposal",
+                img: "./img/disposal.png",
+                brand: "InSinkErator 333",
+                sn: "#BCI2851769"
+            }, {
+                name: "Dishwasher",
+                img: "./img/dishwasher.png",
+                brand: "GE Top Control Dishwasher",
+                sn: "#GDT545PSJSS"
+            }, {
+                name: "Water Heater",
+                img: "./img/waterheater.png",
+                brand: "Kenmore Elite 30",
+                sn: "#02231113000P"
+            }, {
+                name: "Stove",
+                img: "./img/stove.png",
+                brand: "LG Electronics 7.3 cu. ft",
+                sn: "#29052391"
+            }, {
+                name: "Refrigerator",
+                img: "./img/refrigerator.png",
+                brand: "LG Electronics 7.3 cu. ft",
+                sn: "#LUPX3186N"
+            }, {
+                name: "Water Heater",
+                img: "./img/lgwh.png",
+                brand: "LG Electronics 7.3 cu. ft",
+                sn: "#LUPX3186N"
+            }, {
+                name: "Washing Machine",
+                img: "./img/wm.png",
+                brand: "Samsung 4.3 cu. ft Front Load",
+                sn: "#WEG67G9S"
+
+            }, {
+                name: "Dryer",
+                img: "./img/dryer.png",
+                brand: "Samsung 4.3 cu. ft Front Load",
+                sn: "#DS42H5200AW"
+            }]
+        };
+
+        angular.module('myapp', []).controller('HomeAppliance', ['$scope', HomeAppliance]);
+    </script>
+
+    <style>
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            background: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <div ng-app='myapp' ng-controller="HomeAppliance">
+        <div class="container-fluid">
+            <div class="text-center">
+                <h4>650 Paradise Way</h4>
+                <h5>Lakeview CA 93222</h5>
+                <hr>
+            </div>
+            <div class="row">
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                    <div data-ng-repeat="data in demoDatas.slice(0, 5)" class="card-panel grey lighten-5 z-depth-1">
+                      <div class="row">
+                          <div class="col-sm-4">
+                              <img ng-src="{{data.img}}" alt="" class="circle responsive-img">
+                          </div>
+                          <div class="col-sm-8">
+                              <h5 data-ng-bind="data.name"></h5>
+                              <p style="font-weight: bold" data-ng-bind="data.brand"></p>
+                              <p data-ng-bind="data.sn"></p>
+                          </div>
+                      </div>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <img src="./img/home.png" class="img-thumbnail" alt="Cinque Terre" style="padding: 28% 0">
+                </div>
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                    <div data-ng-repeat="data in demoDatas.slice(5, demoDatas.length)" class="card-panel grey lighten-5 z-depth-4">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <img ng-src="{{data.img}}" alt="" class="circle responsive-img">
+                            </div>
+                            <div class="col-sm-8">
+                                <h5 data-ng-bind="data.name"></h5>
+                                <p style="font-weight: bold" data-ng-bind="data.brand"></p>
+                                <p data-ng-bind="data.sn"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
