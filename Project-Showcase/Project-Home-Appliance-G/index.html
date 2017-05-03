@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
-
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Dancing+Script">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -80,7 +80,58 @@
         body {
             height: 100%;
             width: 100%;
-            background: #ccc;
+        }
+        .heading-project{
+          padding-bottom: 3%;
+        }
+        .heading-project h4, .heading-project h5 {
+          font-family: "Dancing Script";
+        }
+        .img-thumbnail {
+            border: 1px solid #111;
+        }
+
+        .center-image {
+            margin-left: -10%;
+        }
+
+        .heading-img-block {
+            font-weight: 900;
+            font-weight: larger;
+        }
+        .img-block {
+          cursor: pointer;
+        }
+        .img-block img{
+            height: 100px;
+            width: 100px;
+        }
+
+        .footer-elements {
+            padding: 3% 0 1% 0
+        }
+
+        .footer-elements div:nth-child(1) {
+            color: #6d6d6d;
+            font-size: large;
+        }
+
+        .footer-elements div:nth-child(2) {
+            color: #a4a2a3;
+            font-weight: bolder;
+            font-size: large;
+        }
+
+        @media only screen and (max-width: 550px) {
+            .center-image {
+                width: 200px;
+            }
+        }
+
+        @media only screen and (min-width: 550px) and (max-width: 768px) {
+            .center-image {
+                width: 400px;
+            }
         }
     </style>
 </head>
@@ -88,44 +139,53 @@
 <body>
     <div ng-app='myapp' ng-controller="HomeAppliance">
         <div class="container-fluid">
-            <div class="text-center">
+            <div class="heading-project text-center">
                 <h4>650 Paradise Way</h4>
-                <h5>Lakeview CA 93222</h5>
-                <hr>
+                <h5>Lakeview, Calif 93222</h5>
             </div>
             <div class="row">
                 <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                    <div data-ng-repeat="data in demoDatas.slice(0, 5)" class="card-panel grey lighten-5 z-depth-1">
-                      <div class="row">
-                          <div class="col-sm-4">
-                              <img ng-src="{{data.img}}" alt="" class="circle responsive-img">
-                          </div>
-                          <div class="col-sm-8">
-                              <h5 data-ng-bind="data.name"></h5>
-                              <p style="font-weight: bold" data-ng-bind="data.brand"></p>
-                              <p data-ng-bind="data.sn"></p>
-                          </div>
-                      </div>
+                    <div data-ng-repeat="data in demoDatas.slice(0, 5)">
+                        <div class="row img-block">
+                            <div class="col-sm-4">
+                                <a href="listing.html" target="_blank"><img ng-src="{{data.img}}" alt="" class="img-thumbnail"></a>
+                            </div>
+                            <div class="col-sm-8">
+                                <p class="heading-img-block" data-ng-bind="data.name"></p>
+                                <p data-ng-bind="data.brand"></p>
+                                <p data-ng-bind="data.sn"></p>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                    <img src="./img/home.png" class="img-thumbnail" alt="Cinque Terre" style="padding: 28% 0">
+                    <img class="center-image" src="./img/home.png" alt="Cinque Terre" width="1000">
                 </div>
                 <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                    <div data-ng-repeat="data in demoDatas.slice(5, demoDatas.length)" class="card-panel grey lighten-5 z-depth-4">
-                        <div class="row">
+                    <div data-ng-repeat="data in demoDatas.slice(5, demoDatas.length)">
+                        <div class="row img-block">
                             <div class="col-sm-4">
-                                <img ng-src="{{data.img}}" alt="" class="circle responsive-img">
+                                <img ng-src="{{data.img}}" alt="" class="img-thumbnail">
                             </div>
                             <div class="col-sm-8">
-                                <h5 data-ng-bind="data.name"></h5>
-                                <p style="font-weight: bold" data-ng-bind="data.brand"></p>
+                                <p class="heading-img-block" data-ng-bind="data.name"></p>
+                                <p data-ng-bind="data.brand"></p>
                                 <p data-ng-bind="data.sn"></p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <footer>
+                <div class="row footer-elements">
+                    <div class="col-xs-4 col-sm-4 col-md-6 col-lg-4">
+                        <p>powered by <img src="./img/insidemaps.png" width="150"></p>
+                    </div>
+                    <div class="col-xs-4 col-sm-4 col-md-6 col-lg-4">
+                        <p class="text-center">Homeonwer's Manual</p>
+                    </div>
+                </div>
+            </footer>
         </div>
     </div>
 </body>
