@@ -22,53 +22,63 @@
                 name: "Furnace",
                 img: "./img/furnace-ss.png",
                 brand: "Goodman 60,000 BTU Furnace",
-                sn: "#WEG67G9S"
+                sn: "#WEG67G9S",
+                link: "./product-details.html"
             }, {
                 name: "AC",
                 img: "./img/aco.png",
                 brand: "Goodman 29,000 BTU",
-                sn: "#GSX160301"
+                sn: "#GSX160301",
+                link: "#"
             }, {
                 name: "Disposal",
                 img: "./img/disposal.png",
                 brand: "InSinkErator 333",
-                sn: "#BCI2851769"
+                sn: "#BCI2851769",
+                link: "#"
             }, {
                 name: "Dishwasher",
                 img: "./img/dishwasher.png",
                 brand: "GE Top Control Dishwasher",
-                sn: "#GDT545PSJSS"
+                sn: "#GDT545PSJSS",
+                link: "#"
             }, {
                 name: "Water Heater",
                 img: "./img/waterheater.png",
                 brand: "Kenmore Elite 30",
-                sn: "#02231113000P"
+                sn: "#02231113000P",
+                link: "#"
             }, {
                 name: "Stove",
                 img: "./img/stove.png",
                 brand: "LG Electronics 7.3 cu. ft",
-                sn: "#29052391"
+                sn: "#29052391",
+                link: "#"
             }, {
                 name: "Refrigerator",
                 img: "./img/refrigerator.png",
                 brand: "LG Electronics 7.3 cu. ft",
-                sn: "#LUPX3186N"
+                sn: "#LUPX3186N",
+                link: "#"
             }, {
                 name: "Water Heater",
                 img: "./img/lgwh.png",
                 brand: "LG Electronics 7.3 cu. ft",
-                sn: "#LUPX3186N"
+                sn: "#LUPX3186N",
+                link: "#"
             }, {
                 name: "Washing Machine",
                 img: "./img/wm.png",
                 brand: "Samsung 4.3 cu. ft Front Load",
-                sn: "#WEG67G9S"
+                sn: "#WEG67G9S",
+                link: "#"
 
             }, {
                 name: "Dryer",
                 img: "./img/dryer.png",
                 brand: "Samsung 4.3 cu. ft Front Load",
-                sn: "#DS42H5200AW"
+                sn: "#DS42H5200AW",
+                link: "#"
             }]
         };
 
@@ -128,9 +138,14 @@
             }
         }
 
-        @media only screen and (min-width: 550px) and (max-width: 768px) {
+        @media only screen and (min-width: 551px) and (max-width: 768px) {
             .center-image {
                 width: 400px;
+            }
+        }
+        @media only screen and (min-width: 769px) and (max-width: 1400px) {
+            .center-image {
+                width: 700px;
             }
         }
     </style>
@@ -148,7 +163,7 @@
                     <div data-ng-repeat="data in demoDatas.slice(0, 5)">
                         <div class="row img-block">
                             <div class="col-sm-4">
-                                <a href="product-details.html" target="_blank"><img ng-src="{{data.img}}" alt="" class="img-thumbnail"></a>
+                                <a href="{{data.link}}"><img ng-src="{{data.img}}" alt="" class="img-thumbnail"></a>
                             </div>
                             <div class="col-sm-8">
                                 <p class="heading-img-block" data-ng-bind="data.name"></p>
