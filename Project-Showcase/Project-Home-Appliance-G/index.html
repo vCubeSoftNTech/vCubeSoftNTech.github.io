@@ -118,6 +118,11 @@
             width: 100px;
         }
 
+        .img-block a{
+            text-decoration: none;
+            color: #333;
+        }
+
         .footer-elements {
             padding: 3% 0 1% 0
         }
@@ -163,14 +168,16 @@
                 <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
                     <div data-ng-repeat="data in demoDatas.slice(0, 5)">
                         <div class="row img-block">
+                          <a href="{{data.link}}">
                             <div class="col-sm-4">
-                                <a href="{{data.link}}"><img ng-src="{{data.img}}" alt="" class="img-thumbnail"></a>
+                                <img ng-src="{{data.img}}" alt="" class="img-thumbnail">
                             </div>
                             <div class="col-sm-8">
                                 <p class="heading-img-block" data-ng-bind="data.name"></p>
                                 <p data-ng-bind="data.brand"></p>
                                 <p data-ng-bind="data.sn"></p>
                             </div>
+                            <a>
                         </div>
                     </div>
                 </div>
