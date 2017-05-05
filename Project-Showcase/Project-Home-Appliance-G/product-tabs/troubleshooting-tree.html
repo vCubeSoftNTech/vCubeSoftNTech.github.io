@@ -16,40 +16,29 @@
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script> -->
 
     <script>
-        var parts = function($scope) {
-            console.log("Hello");
+        var troubleshootingTree = function($scope) {
             $scope.link = {
-                partSeller: [{
-                        link: "http://www.reliableparts.com",
-                        name: "Reliable Parts",
-                        tag: "The House Of A Million Parts"
+              problems: ["Lack of Maintenance", "Dirty Filters", "Wear and Tear", "Electric Ignition", "Malfunctioning Thermostat", "The Furnace Doesn’t Heat at All", "The Furnace Doesn’t Heat Enough", "Frequent Cycling", "The Blower Continuously Runs", "The Furnace is too Noisy"]
+            }
+
+            $scope.vdolink = {
+                vdoLinks: [{
+                        link: "https://www.youtube.com/watch?v=LakkvgNoBIw",
+                        name: "Furnace Not Heating"
                     },
                     {
-                        link: "http://www.dimplex.com",
-                        name: "Make An Electrical Arc Furnace",
-                        tag: "Better Solution Through Innovation"
+                        link: "https://www.youtube.com/watch?v=uOP_so5_3wA",
+                        name: "Troubleshoot Your Furnace"
                     },
                     {
-                        link: "http://www.arnoldservice.com",
-                        name: "Arnold's Service Co Inc",
-                        tag: "HAVC Parts Supplier"
-                    },
-                    {
-                        link: "http://www.bryant.com",
-                        name: "bryant",
-                        tag: "Heating & Cooling Systems"
-                    },
-                    {
-                        link: "http://www.carrierenterprise.com/",
-                        name: "Carrier Enterprise",
-                        tag: "AHRI System Builder"
+                        link: "https://www.youtube.com/watch?v=rAtcvPqUsBA",
+                        name: "7 Tips and Tricks to Repair Furnace"
                     }
                 ]
             }
-
         };
 
-        angular.module('myapp', []).controller('parts', ['$scope', parts]);
+        angular.module('myapp', []).controller('troubleshootingTree', ['$scope', troubleshootingTree]);
     </script>
 
 
@@ -68,12 +57,23 @@
         }
 
         .tab-href a {
-          text-align: center;
+            text-align: center;
             text-decoration: none;
             color: #777;
             font-size: larger;
             font-weight: bold;
             padding: 0 2.1%;
+        }
+        .link-block h4 {
+            text-align: center;
+            padding: 1% 0;
+        }
+
+        .link-block p {
+            text-decoration: none;
+            color: #666;
+            font-weight: bolder;
+            line-height: 2em;
         }
 
         .link-block a {
@@ -81,13 +81,18 @@
             color: #666;
             font-weight: bolder;
             line-height: 2em;
+            padding-bottom: 3%;
         }
 
+        .troubleshooting-tree img {
+            width: 55%;
+            height: auto;
+        }
     </style>
 </head>
 
 <body>
-    <div ng-app='myapp' ng-controller="parts">
+    <div ng-app='myapp' ng-controller="troubleshootingTree">
         <div class="tab-href">
             <a href="./../product-details.html"><span class="fa fa-chevron-left" aria-hidden="true"></span> Go Back</a>
             <a href="./../index.html">| Home |</a>
@@ -100,13 +105,29 @@
         </div>
         <div class="container">
             <div class="heading-block text-center">
-                <h2>Electric Parts Seller</h2>
+                <h2>Troubleshooting Tree</h2>
                 <hr></hr>
             </div>
-            <div class="link-block" ng-repeat="link in link.partSeller">
-                <a href="{{link.link}}" target="_blank"><span class="fa fa-hand-o-right fa-lg" aria-hidden="true"></span>  {{link.name}} <sub>{{link.tag}}</sub></a>
+            <div class="troubleshooting-tree text-center">
+                <img src="./../img/tshting.png"></img>
+            </div>
+            <div class="link-block" >
+              <hr>
+                <h4>Most Common Furnace Problems</h4>
+                <hr>
+                <p ng-repeat="link in link.problems"><span class="fa fa-dot-circle-o fa-lg" aria-hidden="true"></span> {{link}}</p>
+            </div>
+
+            <div class="link-block" >
+              <hr>
+                <h4>Videos for Furnace Troubleshooting</h4>
+                <hr>
+                <div data-ng-repeat = "link in vdolink.vdoLinks">
+                <a href="{{link.link}}" target="_blank"><span class="fa fa-hand-o-right fa-lg" aria-hidden="true"></span>  {{link.name}}</a>
+              </div>
             </div>
         </div>
     </div>
 </body>
+
 </html>

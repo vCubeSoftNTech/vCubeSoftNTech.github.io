@@ -16,41 +16,31 @@
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script> -->
 
     <script>
-        var parts = function($scope) {
+        var diy = function($scope) {
             console.log("Hello");
             $scope.link = {
-                partSeller: [
-                    {
-                        link: "www.reliableparts.com",
-                        name: "Reliable Parts",
-                        tag: "The House Of A Million Parts"
+                vdoLink: [{
+                        link: "https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Delectronics&field-keywords=furnace&rh=n%3A172282%2Ck%3Afurnace&ajr=0",
+                        name: "Amazon"
                     },
                     {
-                        link: "www.dimplex.com",
-                        name: "Make An Electrical Arc Furnace",
-                        tag:  "Better Solution Through Innovation"
+                        link: "http://www.ebay.com/sch/i.html?_from=R40&_trksid=p2050601.m570.l1313.TR12.TRC2.A0.H0.Xfurnace.TRS0&_nkw=furnace&_sacat=0",
+                        name: "ebay"
                     },
                     {
-                        link: "www.arnoldservice.com",
-                        name: "Arnold's Service Co Inc",
-                        tag: "HAVC Parts Supplier"
+                        link: "https://www.walmart.com/search/?query=furnace",
+                        name: "Walmart"
                     },
                     {
-                        link: "www.bryant.com",
-                        name: "bryant",
-                        tag: "Heating & Cooling Systems"
-                    },
-                    {
-                        link: "http://www.carrierenterprise.com/",
-                        name: "Carrier Enterprise",
-                        tag: "AHRI System Builder"
+                        link: "http://www.mobilehomestuffstore.com/search.htm",
+                        name: "Mobile Home Stuff Store Inc"
                     }
                 ]
             }
 
         };
 
-        angular.module('myapp', []).controller('parts', ['$scope', parts]);
+        angular.module('myapp', []).controller('diy', ['$scope', diy]);
     </script>
 
 
@@ -61,8 +51,20 @@
             width: 100%;
         }
 
-        .heading-block {
-            padding-top: 4%;
+        .tab-href {
+            border-top: 1px solid #333;
+            border-bottom: 1px solid #333;
+            padding: 1% 0;
+            text-align: center;
+        }
+
+        .tab-href a {
+            text-align: center;
+            text-decoration: none;
+            color: #777;
+            font-size: larger;
+            font-weight: bold;
+            padding: 0 2.1%;
         }
 
         .heading-small {
@@ -72,69 +74,37 @@
         }
 
         .link-block a {
-          text-decoration: none;
-          color: #666;
-          font-weight: bolder;
-          line-height: 2em;
-        }
-        .navbar-color {
-            background-color: #31708F;
-            border-color: transparent;
-        }
-
-        .navbar-nav>li>a {
-            color: #ddd;
-        }
-
-        .navbar-nav>li>a:hover,
-        .navbar-nav>li>a:focus {
-            color: #fff;
-            background-color: transparent;
-        }
-
-        .icon-bar {
-            color: #ddd;
-            border-color: #ddd;
-            background-color: #ddd;
+            text-decoration: none;
+            color: #666;
+            font-weight: bolder;
+            line-height: 2em;
         }
     </style>
 </head>
 
 <body>
-    <div ng-app='myapp' ng-controller="parts">
-        <nav class="navbar navbar-color navbar-fixed-top">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <a href="https://www.insidemaps.com/" target="_blank"><img class="navbar-brand-custom" src="./../img/insidemaps.png" width="125" height="auto"></img>
-                    </a>
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                  </button>
-                </div>
-                <div class="navbar-collapse collapse" id="myNavbar">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="./../index.html">Home</a></li>
-                        <li><a href="#">Order</a></li>
-                        <li><a href="./../product-details.html">Product</a></li>
-                        <li><a href="#">Support</a></li>
-                        <li><a href="#">Get Started</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+    <div ng-app='myapp' ng-controller="diy">
+        <div class="tab-href">
+            <a href="./../product-details.html"><span class="fa fa-chevron-left" aria-hidden="true"></span> Go Back</a>
+            <a href="./../index.html">| Home |</a>
+            <a href="./../files/furnace_um.pdf" target="_blank">| User Manual |</a>
+            <a href="troubleshooting-tree.html" target="_blank">| Troubleshooting Tree |</a>
+            <a href="diy.html" target="_blank">| DIY |</a>
+            <a href="parts.html" target="_blank">| Parts |</a>
+            <a href="./../listing.html" target="_blank">| Repair Service |</a>
+            <a href="replacement-options.html" target="_blank">| Replacement Option |</a>
+        </div>
 
         <div class="container">
-                <div class="heading-block text-center">
-                    <h2>Electric Parts Seller</h2>
-                    <small class="heading-small">Check Out Websites.</small>
-                    <hr></hr>
-                </div>
-                <div class="link-block" ng-repeat="link in link.partSeller">
-                    <a href="{{link.link}}" target="_blank"><span class="fa fa-hand-o-right fa-lg" aria-hidden="true"></span>  {{link.name}} <sub>{{link.tag}}</sub></a>
-                </div>
+            <div class="text-center">
+                <h2>Replacement Options</h2>
+                <hr></hr>
+            </div>
+            <div class="link-block" ng-repeat="link in link.vdoLink">
+                <a href="{{link.link}}" target="_blank"><span class="fa fa-hand-o-right fa-lg" aria-hidden="true"></span>  {{link.name}}</a>
+            </div>
         </div>
     </div>
 </body>
+
 </html>
