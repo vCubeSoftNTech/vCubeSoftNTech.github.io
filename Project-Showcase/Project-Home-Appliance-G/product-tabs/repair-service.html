@@ -81,7 +81,7 @@
 
         .third-party-rating p {
             /*padding: 0 5% 140% 5%;*/
-            padding: 3% 5%;
+            padding: 3%;
             display: inline;
             font-weight: bold;
             color: #004263;
@@ -107,6 +107,13 @@
             font-weight: bold;
             padding: 0 2.1%;
         }
+
+        @media only screen and (max-width: 750px) {
+          .third-party-rating{
+            text-align: right;
+            padding-bottom: 1%;
+          }
+        }
     </style>
 </head>
 
@@ -131,9 +138,9 @@
                 <div class="col-md-8 col-sm-8"></div>
 
                 <div class="col-md-3 col-sm-3 text-right third-party-rating-logo">
-                    <i class="fa fa-amazon fa-2x"></i>
-                    <i class="fa fa-ge fa-2x"></i>
-                    <i class="fa fa-yelp fa-2x"></i>
+                    <i style="color: #7cc04b" class="fa fa-houzz fa-2x"></i>
+                    <i style="color: #f47621" class="fa fa-thumb-tack fa-2x"></i>
+                    <i style="color: #bf2519" class="fa fa-yelp fa-2x"></i>
                 </div>
             </div>
             <div class="row" data-ng-repeat="data in demoDatas"><!-- Text Left for responsive -->
