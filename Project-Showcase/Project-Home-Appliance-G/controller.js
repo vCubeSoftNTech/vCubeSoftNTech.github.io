@@ -1,4 +1,4 @@
-var HomeAppliance = function($scope) {
+var repairService = function($scope) {
     //  $scope.cmntdiv = false;
 
     $scope.demoDatas = [{
@@ -107,5 +107,4 @@ var HomeAppliance = function($scope) {
 
 };
 
-
-angular.module('myapp', []).controller('HomeAppliance', ['$scope', HomeAppliance]);
+angular.module('myapp', []).controller('repairService', ['$scope', repairService]);
