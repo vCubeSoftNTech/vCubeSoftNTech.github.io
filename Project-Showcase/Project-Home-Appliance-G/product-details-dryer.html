@@ -19,13 +19,13 @@
         var HomeApplianceProductDetails = function($scope) {
             console.log("Hello");
             $scope.demoDatas = [{
-                brand: "Lennox",
-                images: ["./img/furnace/f1.png", "./img/furnace/f2.jpg", "./img/furnace/f3.png"],
-                model: "SLP98V",
-                domnufctr: "July, 2001",
-                appliance: "Furnace",
-                sn: "4140720328",
-                specification: "Lennox-SLP98V furnace uses smart designs, high quality materials & innovations like precise comfort variable capacity technology so that you can enjoy years of trouble free operation and consistent comfort."
+                brand: "Maytag",
+                images: ["./img/dryer/d1.jpg", "./img/dryer/d2.jpg"],
+                model: "MED5740TQ0",
+                domnufctr: "July, 2008",
+                appliance: "Dryer",
+                sn: "MW2852526",
+                specification: "Dryer with sanitize cycle has Energy Preferred, Freshen Up, Less Dry, More Dry, Timed Dry 20, Timed Dry 30, Timed Dry 40, Timed Dry 50, Timed Dry 60, Timed Dry 70 dryer cycle selection feature and automatic dry control system."
             }];
 
             $scope.thumbnailSelected = $scope.demoDatas[0].images[0];
@@ -134,11 +134,11 @@
         <div class="tab-href text-center">
             <a href="./index.html">| Home |</a>
             <a href="./files/furnace_um.pdf" target="_blank">| User Manual |</a>
-            <a href="./product-tabs/troubleshooting-tree.html" target="_blank">| Troubleshooting Tree |</a>
-            <a href="./product-tabs/diy.html" target="_blank">| DIY |</a>
-            <a href="./product-tabs/parts.html" target="_blank">| Parts |</a>
-            <a href="./product-tabs/repair-service.html" target="_blank">| Repair Service |</a>
-            <a href="./product-tabs/replacement-options.html" target="_blank">| Replacement Option |</a>
+            <a href="./product-tabs-dryer/troubleshooting-tree.html" target="_blank">| Troubleshooting Tree |</a>
+            <a href="./product-tabs-dryer/diy.html" target="_blank">| DIY |</a>
+            <a href="./product-tabs-dryer/parts.html" target="_blank">| Parts |</a>
+            <a href="./product-tabs-dryer/repair-service.html" target="_blank">| Repair Service |</a>
+            <a href="./product-tabs-dryer/replacement-options.html" target="_blank">| Replacement Option |</a>
         </div>
         <div class="container heading-block" data-ng-repeat="data in demoDatas">
             <div class="text-center">
