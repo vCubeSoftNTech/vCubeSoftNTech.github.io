@@ -20,9 +20,13 @@
             console.log("Hello");
             $scope.link = {
                 vdoLink: [{
-                        link: "Coming Soon !!!",
-                        name: "Coming Soon !!!"
-                    }]
+                    link: "",
+                    name: ""
+                }],
+                docLink: [{
+                    link: "./../files/garbage-disposal-diy.pdf",
+                    name: "Chekcout DIY Document"
+                }]
             }
 
         };
@@ -89,8 +93,13 @@
                 <!-- <small class="heading-small">Watch Out DIY Video of Furnace.</small> -->
                 <hr></hr>
             </div>
-            <div class="link-block" ng-repeat="link in link.vdoLink">
-                <a href="{{link.link}}" target="_blank"><span class="fa fa-hand-o-right fa-lg" aria-hidden="true"></span>  {{link.name}}</a>
+            <div class="link-block">
+                <div class="link-block" ng-repeat="link in link.vdoLink">
+                    <a ng-show="link.link!=''" href="{{link.link}}" target="_blank"><span class="fa fa-hand-o-right fa-lg" aria-hidden="true"></span>  {{link.name}}</a>
+                </div><br><br>
+                <div ng-repeat="link in link.docLink">
+                    <a ng-show="link.link!=''" href="{{link.link}}" target="_blank"><span class="fa fa-hand-o-right fa-lg" aria-hidden="true"></span>  {{link.name}}</a>
+                </div>
             </div>
         </div>
     </div>
