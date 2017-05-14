@@ -20,11 +20,23 @@
             console.log("Hello");
             $scope.link = {
                 vdoLink: [{
-                        link: "Coming Soon !!!",
-                        name: "Coming Soon !!!"
-                    }]
+                        link: "https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Daps&field-keywords=air+conditioner&rh=i%3Aaps%2Ck%3Aair+conditioner",
+                        name: "Amazon"
+                    },
+                    {
+                        link: "http://www.ebay.com/sch/i.html?_from=R40&_trksid=p2380057.m570.l1311.R1.TR12.TRC2.A0.H0.Xair+cond.TRS0&_nkw=air+conditioner&_sacat=0",
+                        name: "ebay"
+                    },
+                    {
+                        link: "https://www.walmart.com/search/?query=air%20conditioners&typeahead=air%20con",
+                        name: "Walmart"
+                    },
+                    {
+                        link: "http://www.mobilehomestuffstore.com/search.htm?searchterm=air+conditioner&searchmode=all&s_category=0&oper=lt&searchprice=&DoSearch=Show+Matches&numresults=5&viewfrom=1&step=2#.WRhRyfF95hE",
+                        name: "Mobile Home Stuff Store Inc"
+                    }
+                ]
             }
-
         };
 
         angular.module('myapp', []).controller('diy', ['$scope', diy]);

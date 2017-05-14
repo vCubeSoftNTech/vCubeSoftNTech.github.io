@@ -20,11 +20,19 @@
             console.log("Hello");
             $scope.link = {
                 vdoLink: [{
-                        link: "Coming Soon !!!",
-                        name: "Coming Soon !!!"
-                    }]
+                        link: "https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Dappliances&field-keywords=garbage+disposals&rh=n%3A2619525011%2Ck%3Agarbage+disposals",
+                        name: "Amazon"
+                    },
+                    {
+                        link: "http://www.ebay.com/sch/i.html?_odkw=dishwasher&_osacat=0&_from=R40&_trksid=p2045573.m570.l1313.TR11.TRC1.A0.H1.TRS0&_nkw=garbage+disposals&_sacat=0",
+                        name: "ebay"
+                    },
+                    {
+                        link: "https://www.walmart.com/search/?query=garbage%20disposals&typeahead=garbage%20dis",
+                        name: "Walmart"
+                    }
+                ]
             }
-
         };
 
         angular.module('myapp', []).controller('diy', ['$scope', diy]);
