@@ -17,15 +17,20 @@
 
     <script>
         var troubleshootingTree = function($scope) {
+          $scope.trblshtngImg = {link:"./../img/water-heater/tst.png"};
             $scope.link = {
-              problems: ["Lack of Maintenance", "Dirty Filters", "Wear and Tear", "Electric Ignition", "Malfunctioning Thermostat", "The Furnace Doesn’t Heat at All", "The Furnace Doesn’t Heat Enough", "Frequent Cycling", "The Blower Continuously Runs", "The Furnace is too Noisy"]
-            }
+              problems: ['Hot water is not available','Banging, knocking and other bothersome noises','Water isn’t heating to desired temperatures']
+             }
 
             $scope.vdolink = {
                 vdoLinks: [{
-                        link: "Coming Soon !!!",
-                        name: "Coming Soon !!!"
-                    }]
+                        link: "https://www.youtube.com/watch?v=Tcu3tuWZNl8",
+                        name: "Hot Water Heaters : How to Troubleshoot the Pilot in a Hot Water Heater"
+                    },
+                    {
+                            link: "https://www.youtube.com/watch?v=SlyStHM9Nr0",
+                            name: "Troubleshooting Electric Water Heaters in MINUTES ~ Step By Step"
+                        }]
             }
         };
 
@@ -100,7 +105,7 @@
                 <hr></hr>
             </div>
             <div class="troubleshooting-tree text-center">
-                <img src="./../img/tshting.png"></img>
+                <img ng-src="{{trblshtngImg.link}}"></img>
             </div>
             <div class="link-block" >
               <hr>

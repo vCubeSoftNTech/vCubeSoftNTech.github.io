@@ -17,15 +17,19 @@
 
     <script>
         var troubleshootingTree = function($scope) {
+          $scope.trblshtngImg = {link:"./../img/garbage-disposal/tst.png"};
             $scope.link = {
-              problems: ["Lack of Maintenance", "Dirty Filters", "Wear and Tear", "Electric Ignition", "Malfunctioning Thermostat", "The Furnace Doesn’t Heat at All", "The Furnace Doesn’t Heat Enough", "Frequent Cycling", "The Blower Continuously Runs", "The Furnace is too Noisy"]
+              problems: ["Failing to Remove the Dishwasher Plug", "Not Labeling Items When Installing or Disassembling", "Forgetting to Push the Reset Button"]
             }
 
             $scope.vdolink = {
                 vdoLinks: [{
-                        link: "Coming Soon !!!",
-                        name: "Coming Soon !!!"
-                    }]
+                        link: "https://www.youtube.com/watch?v=5xFUJIUsHVI",
+                        name: "How to fix a garbage disposal - No Power / Humming / Repair"
+                    }, {
+                            link: "https://www.youtube.com/watch?v=kzTPox1kARo",
+                            name: "Fix Your Own Garbage Disposal | Disposal Repair | No Cost | Save $$$"
+                        }]
             }
         };
 
@@ -100,7 +104,7 @@
                 <hr></hr>
             </div>
             <div class="troubleshooting-tree text-center">
-                <img src="./../img/tshting.png"></img>
+                <img ng-src="{{trblshtngImg.link}}"></img>
             </div>
             <div class="link-block" >
               <hr>

@@ -17,15 +17,20 @@
 
     <script>
         var troubleshootingTree = function($scope) {
+          $scope.trblshtngImg = {link:"./../img/microwave/tst.png"};
             $scope.link = {
-              problems: ["Lack of Maintenance", "Dirty Filters", "Wear and Tear", "Electric Ignition", "Malfunctioning Thermostat", "The Furnace Doesn’t Heat at All", "The Furnace Doesn’t Heat Enough", "Frequent Cycling", "The Blower Continuously Runs", "The Furnace is too Noisy"]
+              problems: ["Microwave runs and then stops","Microwave buttons don't work","Microwave  plate does not spin","Microwave light-bulb does not turn on during operation","Sparking inside microwave"]
             }
 
             $scope.vdolink = {
                 vdoLinks: [{
-                        link: "Coming Soon !!!",
-                        name: "Coming Soon !!!"
-                    }]
+                        link: "https://www.youtube.com/watch?v=t1tdj3OnlXU",
+                        name: "Microwave Oven Troubleshooting in MINUTES ~ STEP BY STEP"
+                    },
+                    {
+                            link: "https://www.youtube.com/watch?v=o-r8nDhzCps",
+                            name: "Microwave Not Working"
+                        }]
             }
         };
 
@@ -100,7 +105,7 @@
                 <hr></hr>
             </div>
             <div class="troubleshooting-tree text-center">
-                <img src="./../img/tshting.png"></img>
+                <img ng-src="{{trblshtngImg.link}}"></img>
             </div>
             <div class="link-block" >
               <hr>

@@ -17,15 +17,22 @@
 
     <script>
         var troubleshootingTree = function($scope) {
+
+            $scope.trblshtngImg = {
+                link: "./../img/dryer/tst.png"
+            };
             $scope.link = {
-              problems: ["Lack of Maintenance", "Dirty Filters", "Wear and Tear", "Electric Ignition", "Malfunctioning Thermostat", "The Furnace Doesn’t Heat at All", "The Furnace Doesn’t Heat Enough", "Frequent Cycling", "The Blower Continuously Runs", "The Furnace is too Noisy"]
+                problems: ["Dryer does not start", "Clothes taking too long to dry", "Clothes are still cold and damp"]
             }
 
             $scope.vdolink = {
                 vdoLinks: [{
-                        link: "Coming Soon !!!",
-                        name: "Coming Soon !!!"
-                    }]
+                    link: "https://www.youtube.com/watch?v=bU-bpYSc4Lw",
+                    name: "Top Reasons Electric Dryer Won't Start — Dryer Troubleshooting"
+                }, {
+                    link: "https://www.youtube.com/watch?v=S9KaJeV_bMQ",
+                    name: "Top Reasons Electric Dryer Not Heating — Dryer Troubleshooting RepairClinic.com"
+                }]
             }
         };
 
@@ -55,6 +62,7 @@
             font-weight: bold;
             padding: 0 2.1%;
         }
+
         .link-block h4 {
             text-align: center;
             padding: 1% 0;
@@ -100,22 +108,22 @@
                 <hr></hr>
             </div>
             <div class="troubleshooting-tree text-center">
-                <img src="./../img/tshting.png"></img>
+                <img ng-src="{{trblshtngImg.link}}"></img>
             </div>
-            <div class="link-block" >
-              <hr>
+            <div class="link-block">
+                <hr>
                 <h4>Most Common Furnace Problems</h4>
                 <hr>
                 <p ng-repeat="link in link.problems"><span class="fa fa-dot-circle-o fa-lg" aria-hidden="true"></span> {{link}}</p>
             </div>
 
-            <div class="link-block" >
-              <hr>
+            <div class="link-block">
+                <hr>
                 <h4>Videos for Furnace Troubleshooting</h4>
                 <hr>
-                <div data-ng-repeat = "link in vdolink.vdoLinks">
-                <a href="{{link.link}}" target="_blank"><span class="fa fa-hand-o-right fa-lg" aria-hidden="true"></span>  {{link.name}}</a>
-              </div>
+                <div data-ng-repeat="link in vdolink.vdoLinks">
+                    <a href="{{link.link}}" target="_blank"><span class="fa fa-hand-o-right fa-lg" aria-hidden="true"></span>  {{link.name}}</a>
+                </div>
             </div>
         </div>
     </div>

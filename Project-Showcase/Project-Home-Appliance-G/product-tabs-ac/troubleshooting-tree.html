@@ -18,14 +18,19 @@
     <script>
         var troubleshootingTree = function($scope) {
             $scope.link = {
-              problems: ["Lack of Maintenance", "Dirty Filters", "Wear and Tear", "Electric Ignition", "Malfunctioning Thermostat", "The Furnace Doesn’t Heat at All", "The Furnace Doesn’t Heat Enough", "Frequent Cycling", "The Blower Continuously Runs", "The Furnace is too Noisy"]
+              problems: ["Dirty Filter", "Warm Air Leaking", "TV is too close to the AC", "Registers are dirty or Blocked", "Thermostat wrong setting", "Too Sunny Inside", "Plants are crowding the compressor"]
             }
+            $scope.trblshtngImg = {link:"./../img/ac/tst.png"};
+
 
             $scope.vdolink = {
                 vdoLinks: [{
-                        link: "Coming Soon !!!",
-                        name: "Coming Soon !!!"
-                    }]
+                        link: "https://www.youtube.com/watch?v=8aM5rnTbMI4",
+                        name: "Air Conditioner Troubleshooting: 7 Things Homeowners Do To Cause Air Conditioner Problems"
+                    }, {
+                            link: "https://www.youtube.com/watch?v=yrYgc5_qyVo",
+                            name: "Air Conditioning Troubleshooting - How To Check Air Conditioning When Ac Blows Hot Air"
+                        }]
             }
         };
 
@@ -100,7 +105,7 @@
                 <hr></hr>
             </div>
             <div class="troubleshooting-tree text-center">
-                <img src="./../img/tshting.png"></img>
+                <img ng-src="{{trblshtngImg.link}}"></img>
             </div>
             <div class="link-block" >
               <hr>

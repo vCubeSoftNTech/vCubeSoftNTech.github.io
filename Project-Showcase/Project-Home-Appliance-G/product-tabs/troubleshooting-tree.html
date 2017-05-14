@@ -20,7 +20,7 @@
             $scope.link = {
               problems: ["Lack of Maintenance", "Dirty Filters", "Wear and Tear", "Electric Ignition", "Malfunctioning Thermostat", "The Furnace Doesn’t Heat at All", "The Furnace Doesn’t Heat Enough", "Frequent Cycling", "The Blower Continuously Runs", "The Furnace is too Noisy"]
             }
-
+            $scope.trblshtngImg = {link:"./../img/furnace/tst.png"};
             $scope.vdolink = {
                 vdoLinks: [{
                         link: "https://www.youtube.com/watch?v=LakkvgNoBIw",
@@ -109,7 +109,7 @@
                 <hr></hr>
             </div>
             <div class="troubleshooting-tree text-center">
-                <img src="./../img/tshting.png"></img>
+                <img ng-src="{{trblshtngImg.link}}"></img>
             </div>
             <div class="link-block" >
               <hr>
