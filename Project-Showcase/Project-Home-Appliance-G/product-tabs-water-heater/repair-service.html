@@ -17,43 +17,69 @@
         var repairService = function($scope) {
 
             $scope.demoDatas = [{
-                    name: "Four Seasons",
-                    rating: "★ ★ ★ ✩ ✩",
-                    category: "Furnace, HVAC",
-                    reviewedBy: "82",
-                    link: "http://www.fourseasonsheatingcooling.com/",
-                    logoImgLink: "./../img/fs.png",
-                    contactAddress: "5701 West 73rd Street, Chicago, IL 60638",
-                    contactPerson: "Michael Riley",
-                    contactNo: "773-413-1028",
-                    email: "nicole@fourseasonsheatingcooling.com",
-                    insidemapsRating: "4",
-                    yelpRating: "3.7",
-                    pinRating: "4.2",
-                    text: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."
-                },
-                {
-                        name: "Service Experts",
-                        rating: "★ ★ ★ ★ ✩",
-                        category: "Furnace",
-                        reviewedBy: "47",
-                        link: "",
-                        logoImgLink: "./../img/se.png",
-                        contactAddress: "San Antonio, Austin, Texas",
-                        contactPerson: "Sam",
-                        contactNo: "866-397-3787",
-                        email: "customercare@serviceexperts.com",
-                        insidemapsRating: "3.9",
-                        yelpRating: "4.5",
-                        pinRating: "4",
-                        text: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."
-                    }
-            ]
-
-            $(document).ready(function() {
-                $('ul.tabs').tabs();
-            });
-
+                name: "Cisneros Brothers Plumbers Inc.",
+                rating: "★ ★ ★ ★ ✩",
+                category: "Water Heater",
+                reviewedBy: "50",
+                link: "http://www.855gotclog.com/",
+                logoImgLink: "http://www.855gotclog.com/img/2583/607.png",
+                contactAddress: "12072 I Ave #7, Hesperia, CA 92345",
+                contactPerson: "",
+                contactNo: "+1 855-468-2564",
+                email: "joetheplumber@msn.com",
+                insidemapsRating: "NA",
+                yelpRating: "4.5",
+                pinRating: "NA",
+                text: ""
+            },
+            {
+                name: "Fast Water Heater Company",
+                rating: "★ ★ ★ ★ ✩",
+                category: "Water Heater",
+                reviewedBy: "62",
+                link: "http://www.fastwaterheater.com",
+                logoImgLink: "http://www.fastwaterheater.com/wp-content/themes/fastwaterheater/assets/img/header_logo.png",
+                contactAddress: "Concord, CA",
+                contactPerson: "",
+                contactNo: "+1 925-265-8756",
+                email: "",
+                insidemapsRating: "NA",
+                yelpRating: "3.5",
+                pinRating: "NA",
+                text: ""
+            },
+            {
+                name: "Water Heaters Only, Inc.",
+                rating: "★ ★ ★ ★ ✩",
+                category: "Water Heater",
+                reviewedBy: "45",
+                link: "http://waterheaters-sanjose.com/",
+                logoImgLink: "http://waterheaters-sanjose.com/wp-content/uploads/2016/07/Water-Heaters-Only-Inc-San-Jose.png",
+                contactAddress: "San Jose, CA",
+                contactPerson: "",
+                contactNo: "+1 408-279-8899",
+                email: "",
+                insidemapsRating: "NA",
+                yelpRating: "4.5",
+                pinRating: "NA",
+                text: ""
+            },{
+                name: "Bonney Plumbing, Electrical, Heating & Air",
+                rating: "★ ★ ✩ ✩ ✩",
+                category: "Water Heater",
+                reviewedBy: "144",
+                link: "https://www.bonney.com/",
+                logoImgLink: "https://www.bonney.com/wp-content/uploads/2016/05/logo_bonney.png",
+                contactAddress: "3054 Gold Canal Dr, Rancho Cordova, CA 95670",
+                contactPerson: "",
+                contactNo: "+1 800-444-0551",
+                email: "",
+                insidemapsRating: "NA",
+                yelpRating: "2",
+                pinRating: "NA",
+                text: ""
+            }];
+            $scope.applianceType = $scope.demoDatas[0].category;
         };
 
         angular.module('myapp', []).controller('repairService', ['$scope', repairService]);
@@ -131,7 +157,7 @@
         </div>
         <div class="container">
           <div class="text-center">
-              <h2>Repair Service <small><sub>(Furnace)</sub></small></h2>
+              <h2>Repair Service <small><sub>({{applianceType}})</sub></small></h2>
               <hr></hr>
           </div>
             <div class="row">
@@ -171,8 +197,9 @@
                 </div>
                 <div class="col-md-3 col-sm-3 third-party-rating"> <!-- Text Right for responsive -->
                     <p data-ng-bind="data.insidemapsRating"></p>
-                    <p data-ng-bind="data.yelpRating"></p>
                     <p data-ng-bind="data.pinRating"></p>
+                    <p data-ng-bind="data.yelpRating"></p>
+
                 </div>
             </div>
         </div>

@@ -17,43 +17,69 @@
         var repairService = function($scope) {
 
             $scope.demoDatas = [{
-                    name: "Four Seasons",
-                    rating: "★ ★ ★ ✩ ✩",
-                    category: "Furnace, HVAC",
-                    reviewedBy: "82",
-                    link: "http://www.fourseasonsheatingcooling.com/",
-                    logoImgLink: "./../img/fs.png",
-                    contactAddress: "5701 West 73rd Street, Chicago, IL 60638",
-                    contactPerson: "Michael Riley",
-                    contactNo: "773-413-1028",
-                    email: "nicole@fourseasonsheatingcooling.com",
-                    insidemapsRating: "4",
-                    yelpRating: "3.7",
-                    pinRating: "4.2",
-                    text: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."
+                    name: "Appliance Company Inc.",
+                    rating: "★ ★ ★ ★ ✩",
+                    category: "Microwave",
+                    reviewedBy: "37",
+                    link: "http://www.appliance-company.com",
+                    logoImgLink: "http://www.appliance-company.com/wp-content/uploads/2014/10/web-header.png",
+                    contactAddress: "11476 Sunrise Gold Cir #3, Rancho Cordova, CA 95742",
+                    contactPerson: "",
+                    contactNo: "+1 916-397-0139",
+                    email: "",
+                    insidemapsRating: "NA",
+                    yelpRating: "4.5",
+                    pinRating: "NA",
+                    text: ""
                 },
                 {
-                        name: "Service Experts",
-                        rating: "★ ★ ★ ★ ✩",
-                        category: "Furnace",
-                        reviewedBy: "47",
-                        link: "",
-                        logoImgLink: "./../img/se.png",
-                        contactAddress: "San Antonio, Austin, Texas",
-                        contactPerson: "Sam",
-                        contactNo: "866-397-3787",
-                        email: "customercare@serviceexperts.com",
-                        insidemapsRating: "3.9",
-                        yelpRating: "4.5",
-                        pinRating: "4",
-                        text: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."
-                    }
+                    name: "At Ur Service Appliance Repair",
+                    rating: "★ ★ ★ ★ ✩",
+                    category: "Microwave",
+                    reviewedBy: "58",
+                    link: "http://www.applianceservicesriverside.com",
+                    logoImgLink: "./../img/nalogo.png",
+                    contactAddress: "Riverside, CA",
+                    contactPerson: "",
+                    contactNo: "+1 909-264-1292",
+                    email: "",
+                    insidemapsRating: "NA",
+                    yelpRating: "4.5",
+                    pinRating: "NA",
+                    text: ""
+                }, {
+                    name: "Liberty Appliance Repair & Service",
+                    rating: "★ ★ ★ ✩ ✩",
+                    category: "Microwave",
+                    reviewedBy: "38",
+                    link: "http://libertyrepairs.com/",
+                    logoImgLink: "http://libertyrepairs.com/wp/wp-content/uploads/2012/03/Liberty-Appliance-Service-Repair-logo-300x129.jpg",
+                    contactAddress: "Fullerton, CA",
+                    contactPerson: "",
+                    contactNo: "+1 888-605-6068",
+                    email: "",
+                    insidemapsRating: "NA",
+                    yelpRating: "3.5",
+                    pinRating: "NA",
+                    text: ""
+                }, {
+                    name: "All Valley Appliance",
+                    rating: "★ ★ ✩ ✩ ✩",
+                    category: "Microwave",
+                    reviewedBy: "121",
+                    link: "http://www.allvalleyappliances.com/",
+                    logoImgLink: "./../img/nalogo.png",
+                    contactAddress: "72295 Ramon Rd, Thousand Palms, CA 92276",
+                    contactPerson: "",
+                    contactNo: "+1 760-340-9587",
+                    email: "",
+                    insidemapsRating: "NA",
+                    yelpRating: "2",
+                    pinRating: "NA",
+                    text: ""
+                }
             ]
-
-            $(document).ready(function() {
-                $('ul.tabs').tabs();
-            });
-
+            $scope.applianceType = $scope.demoDatas[0].category;
         };
 
         angular.module('myapp', []).controller('repairService', ['$scope', repairService]);
@@ -75,8 +101,8 @@
             padding: 3%;
         }
 
-        .third-party-rating{
-          text-align: center;
+        .third-party-rating {
+            text-align: center;
         }
 
         .third-party-rating p {
@@ -109,10 +135,10 @@
         }
 
         @media only screen and (max-width: 750px) {
-          .third-party-rating{
-            text-align: right;
-            padding-bottom: 5%;
-          }
+            .third-party-rating {
+                text-align: right;
+                padding-bottom: 5%;
+            }
         }
     </style>
 </head>
@@ -130,10 +156,10 @@
             <a href="replacement-options.html" target="_blank">| Replacement Option |</a>
         </div>
         <div class="container">
-          <div class="text-center">
-              <h2>Repair Service <small><sub>(Furnace)</sub></small></h2>
-              <hr></hr>
-          </div>
+            <div class="text-center">
+                <h2>Repair Service <small><sub>({{applianceType}})</sub></small></h2>
+                <hr></hr>
+            </div>
             <div class="row">
                 <div class="col-md-8 col-sm-8"></div>
 
@@ -143,7 +169,8 @@
                     <i style="color: #bf2519" class="fa fa-yelp fa-2x"></i>
                 </div>
             </div>
-            <div class="row" data-ng-repeat="data in demoDatas"><!-- Text Left for responsive -->
+            <div class="row" data-ng-repeat="data in demoDatas">
+                <!-- Text Left for responsive -->
                 <div class="col-md-9 col-sm-9">
                     <div class="row">
                         <div class="col-md-3 col-sm-9">
@@ -162,21 +189,20 @@
                         </div>
                     </div>
                     <div class="row">
-                      <div class="col-md-3 col-sm-3"></div>
+                        <div class="col-md-3 col-sm-3"></div>
                         <div class="col-md-8 col-sm-8" style="color: #999">
                             <p style="margin: 1% 0 5% 0">{{data.text | limitTo: 90}} ... <span class="fa fa-chevron-right" aria-hidden="true"></p>
-                            <!-- <p class="text-right">(more)</p> -->
-                        </div>
+                      <!-- <p class="text-right">(more)</p> -->
                     </div>
+                  </div>
                 </div>
                 <div class="col-md-3 col-sm-3 third-party-rating"> <!-- Text Right for responsive -->
-                    <p data-ng-bind="data.insidemapsRating"></p>
-                    <p data-ng-bind="data.yelpRating"></p>
-                    <p data-ng-bind="data.pinRating"></p>
+                  <p data-ng-bind="data.insidemapsRating"></p>
+                  <p data-ng-bind="data.pinRating"></p>
+                  <p data-ng-bind="data.yelpRating"></p>
                 </div>
-            </div>
+              </div>
         </div>
-    </div>
-</body>
-
-</html>
+      </div>
+    </body>
+    </html>

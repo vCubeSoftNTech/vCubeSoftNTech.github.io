@@ -17,43 +17,67 @@
         var repairService = function($scope) {
 
             $scope.demoDatas = [{
-                    name: "Four Seasons",
-                    rating: "★ ★ ★ ✩ ✩",
-                    category: "Furnace, HVAC",
-                    reviewedBy: "82",
-                    link: "http://www.fourseasonsheatingcooling.com/",
-                    logoImgLink: "./../img/fs.png",
-                    contactAddress: "5701 West 73rd Street, Chicago, IL 60638",
-                    contactPerson: "Michael Riley",
-                    contactNo: "773-413-1028",
-                    email: "nicole@fourseasonsheatingcooling.com",
-                    insidemapsRating: "4",
-                    yelpRating: "3.7",
-                    pinRating: "4.2",
-                    text: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."
-                },
-                {
-                        name: "Service Experts",
-                        rating: "★ ★ ★ ★ ✩",
-                        category: "Furnace",
-                        reviewedBy: "47",
-                        link: "",
-                        logoImgLink: "./../img/se.png",
-                        contactAddress: "San Antonio, Austin, Texas",
-                        contactPerson: "Sam",
-                        contactNo: "866-397-3787",
-                        email: "customercare@serviceexperts.com",
-                        insidemapsRating: "3.9",
-                        yelpRating: "4.5",
-                        pinRating: "4",
-                        text: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."
-                    }
-            ]
-
-            $(document).ready(function() {
-                $('ul.tabs').tabs();
-            });
-
+                name: "Top Rank Heating and Air Conditioning Inc.",
+                rating: "★ ★ ★ ★ ✩",
+                category: "Air Conditioner",
+                reviewedBy: "23",
+                link: "",
+                logoImgLink: "./../img/nalogo.png",
+                contactAddress: "9100 Elkmont Way, Elk Grove, CA 95624",
+                contactPerson: "ELK Grove",
+                contactNo: "+1 916-667-3399",
+                email: "jeremy@toprankhvac.com",
+                insidemapsRating: "NA",
+                yelpRating: "4.5",
+                pinRating: "NA",
+                text: ""
+            },{
+                name: "Service Champions Heating & Air Conditioning",
+                rating: "★ ★ ★ ★ ★",
+                category: "Air Conditioner",
+                reviewedBy: "199",
+                link: "https://www.servicechampions.net",
+                logoImgLink: "https://www.servicechampions.net/wp-content/themes/servicechamp/images/logo.png",
+                contactAddress: "7020 Commerce Dr, Pleasanton, CA 94588",
+                contactPerson: "",
+                contactNo: "+1 925-444-4444",
+                email: "info@servicechampions.net",
+                insidemapsRating: "NA",
+                yelpRating: "5",
+                pinRating: "NA",
+                text: ""
+            },{
+                name: "The Appliance Repair Doctor",
+                rating: "★ ★ ★ ✩ ✩",
+                category: "Air Conditioner",
+                reviewedBy: "421",
+                link: "https://www.theappliancerepairdoctor.com/",
+                logoImgLink: "https://www.theappliancerepairdoctor.com/wp-content/uploads/2017/03/logo-color-left-1.png",
+                contactAddress: "2363 Mariner Square Dr #141, Alameda, CA 94501",
+                contactPerson: "",
+                contactNo: "+1 510-573-7288",
+                email: "",
+                insidemapsRating: "NA",
+                yelpRating: "3.5",
+                pinRating: "NA",
+                text: ""
+            },{
+                name: "General Air Conditioning & Plumbing",
+                rating: "★ ★ ★ ★ ✩",
+                category: "Air Conditioner",
+                reviewedBy: "76",
+                link: "http://callthegeneral.com",
+                logoImgLink: "http://callthegeneral.com/wp-content/uploads/2016/05/logo-new.png",
+                contactAddress: "Thousand Palms, CA",
+                contactPerson: "",
+                contactNo: "+1 760-895-2500",
+                email: "",
+                insidemapsRating: "NA",
+                yelpRating: "4",
+                pinRating: "NA",
+                text: ""
+            }];
+            $scope.applianceType = $scope.demoDatas[0].category;
         };
 
         angular.module('myapp', []).controller('repairService', ['$scope', repairService]);
@@ -131,7 +155,7 @@
         </div>
         <div class="container">
           <div class="text-center">
-              <h2>Repair Service <small><sub>(Furnace)</sub></small></h2>
+              <h2>Repair Service <small><sub>({{applianceType}})</sub></small></h2>
               <hr></hr>
           </div>
             <div class="row">
@@ -171,8 +195,8 @@
                 </div>
                 <div class="col-md-3 col-sm-3 third-party-rating"> <!-- Text Right for responsive -->
                     <p data-ng-bind="data.insidemapsRating"></p>
-                    <p data-ng-bind="data.yelpRating"></p>
                     <p data-ng-bind="data.pinRating"></p>
+                    <p data-ng-bind="data.yelpRating"></p>
                 </div>
             </div>
         </div>

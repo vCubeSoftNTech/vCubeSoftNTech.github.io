@@ -17,42 +17,52 @@
         var repairService = function($scope) {
 
             $scope.demoDatas = [{
-                    name: "Four Seasons",
-                    rating: "★ ★ ★ ✩ ✩",
-                    category: "Furnace, HVAC",
-                    reviewedBy: "82",
-                    link: "http://www.fourseasonsheatingcooling.com/",
-                    logoImgLink: "./../img/fs.png",
-                    contactAddress: "5701 West 73rd Street, Chicago, IL 60638",
-                    contactPerson: "Michael Riley",
-                    contactNo: "773-413-1028",
-                    email: "nicole@fourseasonsheatingcooling.com",
-                    insidemapsRating: "4",
-                    yelpRating: "3.7",
-                    pinRating: "4.2",
-                    text: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."
-                },
-                {
-                        name: "Service Experts",
-                        rating: "★ ★ ★ ★ ✩",
-                        category: "Furnace",
-                        reviewedBy: "47",
-                        link: "",
-                        logoImgLink: "./../img/se.png",
-                        contactAddress: "San Antonio, Austin, Texas",
-                        contactPerson: "Sam",
-                        contactNo: "866-397-3787",
-                        email: "customercare@serviceexperts.com",
-                        insidemapsRating: "3.9",
-                        yelpRating: "4.5",
-                        pinRating: "4",
-                        text: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."
-                    }
-            ]
-
-            $(document).ready(function() {
-                $('ul.tabs').tabs();
-            });
+                name: "Appliance Company Inc.",
+                rating: "★ ★ ★ ★ ✩",
+                category: "Garbage Disposal",
+                reviewedBy: "37",
+                link: "http://www.appliance-company.com",
+                logoImgLink: "http://www.appliance-company.com/wp-content/uploads/2014/10/web-header.png",
+                contactAddress: "11476 Sunrise Gold Cir #3, Rancho Cordova, CA 95742",
+                contactPerson: "",
+                contactNo: "+1 916-397-0139",
+                email: "",
+                insidemapsRating: "NA",
+                yelpRating: "4.5",
+                pinRating: "NA",
+                text: ""
+            }, {
+                name: "San Diego Appliance Contractor Company",
+                rating: "★ ★ ★ ★ ★",
+                category: "Garbage Disposal",
+                reviewedBy: "175",
+                link: "https://sdapplianceco.com/",
+                logoImgLink: "https://sdapplianceco.com/wp-content/uploads/2013/10/sdapplianceco-logo-100px.png",
+                contactAddress: "San Diego, CA",
+                contactPerson: "",
+                contactNo: "+1 619-327-9501",
+                email: "",
+                insidemapsRating: "NA",
+                yelpRating: "5",
+                pinRating: "NA",
+                text: ""
+            },{
+                name: "My Plumber CA",
+                rating: "★ ★ ★ ✩ ✩",
+                category: "Garbage Disposal",
+                reviewedBy: "68",
+                link: "https://myplumberca.com",
+                logoImgLink: "https://myplumberca.com/wp-content/uploads/2015/06/cropped-myplogo.png",
+                contactAddress: "San Diego, CA",
+                contactPerson: "",
+                contactNo: "+1 619-447-5556",
+                email: "",
+                insidemapsRating: "NA",
+                yelpRating: "3",
+                pinRating: "NA",
+                text: ""
+            }]
+            $scope.applianceType = $scope.demoDatas[0].category;
 
         };
 
@@ -131,7 +141,7 @@
         </div>
         <div class="container">
           <div class="text-center">
-              <h2>Repair Service <small><sub>(Furnace)</sub></small></h2>
+              <h2>Repair Service <small><sub>({{applianceType}})</sub></small></h2>
               <hr></hr>
           </div>
             <div class="row">
@@ -171,8 +181,9 @@
                 </div>
                 <div class="col-md-3 col-sm-3 third-party-rating"> <!-- Text Right for responsive -->
                     <p data-ng-bind="data.insidemapsRating"></p>
-                    <p data-ng-bind="data.yelpRating"></p>
                     <p data-ng-bind="data.pinRating"></p>
+                    <p data-ng-bind="data.yelpRating"></p>
+
                 </div>
             </div>
         </div>

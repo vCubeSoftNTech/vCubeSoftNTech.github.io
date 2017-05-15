@@ -17,43 +17,67 @@
         var repairService = function($scope) {
 
             $scope.demoDatas = [{
-                    name: "Four Seasons",
-                    rating: "★ ★ ★ ✩ ✩",
-                    category: "Furnace, HVAC",
-                    reviewedBy: "82",
-                    link: "http://www.fourseasonsheatingcooling.com/",
-                    logoImgLink: "./../img/fs.png",
-                    contactAddress: "5701 West 73rd Street, Chicago, IL 60638",
-                    contactPerson: "Michael Riley",
-                    contactNo: "773-413-1028",
-                    email: "nicole@fourseasonsheatingcooling.com",
-                    insidemapsRating: "4",
-                    yelpRating: "3.7",
-                    pinRating: "4.2",
-                    text: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."
-                },
-                {
-                        name: "Service Experts",
-                        rating: "★ ★ ★ ★ ✩",
-                        category: "Furnace",
-                        reviewedBy: "47",
-                        link: "",
-                        logoImgLink: "./../img/se.png",
-                        contactAddress: "San Antonio, Austin, Texas",
-                        contactPerson: "Sam",
-                        contactNo: "866-397-3787",
-                        email: "customercare@serviceexperts.com",
-                        insidemapsRating: "3.9",
-                        yelpRating: "4.5",
-                        pinRating: "4",
-                        text: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."
-                    }
-            ]
-
-            $(document).ready(function() {
-                $('ul.tabs').tabs();
-            });
-
+                name: "Frank & Sons Appliance Repair",
+                rating: "★ ★ ★ ★ ✩",
+                category: "Dryer",
+                reviewedBy: "511",
+                link: "http://www.venturaapplianceservice.com",
+                logoImgLink: "http://www.venturaapplianceservice.com/templates/theme498/images/logo.jpg",
+                contactAddress: "603 Calle Seguro, Oak Park, CA 91377",
+                contactPerson: "",
+                contactNo: "+1 805-626-0107",
+                email: "",
+                insidemapsRating: "NA",
+                yelpRating: "4.5",
+                pinRating: "NA",
+                text: ""
+            },{
+                name: "California Appliance Tech, Inc.",
+                rating: "★ ✩ ✩ ✩ ✩",
+                category: "Dryer",
+                reviewedBy: "165",
+                link: "http://www.californiaappliancetech.com/",
+                logoImgLink: "http://www.californiaappliancetech.com/wp-content/uploads/2015/05/CAT-Logo-050615.png",
+                contactAddress: "4425 Atlantic Ave, Long Beach, CA 90807",
+                contactPerson: "",
+                contactNo: "+1 877-897-7816",
+                email: "info@californiaappliancetech.com",
+                insidemapsRating: "NA",
+                yelpRating: "1.5",
+                pinRating: "NA",
+                text: ""
+            },{
+                name: "San Diego Appliance Contractor Company",
+                rating: "★ ★ ★ ★ ★",
+                category: "Dryer",
+                reviewedBy: "175",
+                link: "https://sdapplianceco.com/",
+                logoImgLink: "https://sdapplianceco.com/wp-content/uploads/2013/10/sdapplianceco-logo-100px.png",
+                contactAddress: "San Diego, CA",
+                contactPerson: "",
+                contactNo: "+1 619-327-9501",
+                email: "",
+                insidemapsRating: "NA",
+                yelpRating: "5",
+                pinRating: "NA",
+                text: ""
+            },{
+                name: "John's Lake Appliance Services Co",
+                rating: "★ ★ ★ ★ ✩",
+                category: "Dryer",
+                reviewedBy: "10",
+                link: "",
+                logoImgLink: "./../img/nalogo.png",
+                contactAddress: "San Bernardino National Forest, 2264 Oak Ln, Big Bear, CA 92314",
+                contactPerson: "",
+                contactNo: "+1 619-327-9501",
+                email: "",
+                insidemapsRating: "NA",
+                yelpRating: "4",
+                pinRating: "NA",
+                text: ""
+            }];
+            $scope.applianceType = $scope.demoDatas[0].category;
         };
 
         angular.module('myapp', []).controller('repairService', ['$scope', repairService]);
@@ -131,7 +155,7 @@
         </div>
         <div class="container">
           <div class="text-center">
-              <h2>Repair Service <small><sub>(Furnace)</sub></small></h2>
+              <h2>Repair Service <small><sub>({{applianceType}})</sub></small></h2>
               <hr></hr>
           </div>
             <div class="row">
@@ -171,8 +195,8 @@
                 </div>
                 <div class="col-md-3 col-sm-3 third-party-rating"> <!-- Text Right for responsive -->
                     <p data-ng-bind="data.insidemapsRating"></p>
-                    <p data-ng-bind="data.yelpRating"></p>
                     <p data-ng-bind="data.pinRating"></p>
+                    <p data-ng-bind="data.yelpRating"></p>
                 </div>
             </div>
         </div>
