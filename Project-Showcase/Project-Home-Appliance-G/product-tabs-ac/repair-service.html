@@ -27,13 +27,13 @@
                 contactPerson: "ELK Grove",
                 contactNo: "+1 916-667-3399",
                 email: "jeremy@toprankhvac.com",
-                insidemapsRating: "NA",
+                insidemapsRating: "4",
                 yelpRating: "4.5",
-                pinRating: "NA",
-                text: ""
+                pinRating: "4",
+                text: "There are many ways to save with Top Rank help. From our great value promotions, to the efficiency savings on running costs, to utility rebates, Top Rank can show you how to save."
             },{
                 name: "Service Champions Heating & Air Conditioning",
-                rating: "★ ★ ★ ★ ★",
+                rating: "★ ★ ★ ★ ✩",
                 category: "Air Conditioner",
                 reviewedBy: "199",
                 link: "https://www.servicechampions.net",
@@ -42,10 +42,10 @@
                 contactPerson: "",
                 contactNo: "+1 925-444-4444",
                 email: "info@servicechampions.net",
-                insidemapsRating: "NA",
+                insidemapsRating: "4.5",
                 yelpRating: "5",
-                pinRating: "NA",
-                text: ""
+                pinRating: "4.5",
+                text: "Our technicians are polite, courteous, clean-shaven, drug tested, background-checked, with clean uniforms, shirts tucked in correctly even fresh breath. This is what sets us apart from our competition. We sell the same furnace as the guy across town. The difference is your experience with our service – and we're here to serve you."
             },{
                 name: "The Appliance Repair Doctor",
                 rating: "★ ★ ★ ✩ ✩",
@@ -57,10 +57,10 @@
                 contactPerson: "",
                 contactNo: "+1 510-573-7288",
                 email: "",
-                insidemapsRating: "NA",
+                insidemapsRating: "4",
                 yelpRating: "3.5",
-                pinRating: "NA",
-                text: ""
+                pinRating: "4",
+                text: "For more than 10 years, Chicago’s Appliance Repair Doctor have provided excellent professional care to customers in the repair of domestic home appliances. We offer unbeatable prices and 100% satisfaction"
             },{
                 name: "General Air Conditioning & Plumbing",
                 rating: "★ ★ ★ ★ ✩",
@@ -72,10 +72,10 @@
                 contactPerson: "",
                 contactNo: "+1 760-895-2500",
                 email: "",
-                insidemapsRating: "NA",
+                insidemapsRating: "4.5",
                 yelpRating: "4",
-                pinRating: "NA",
-                text: ""
+                pinRating: "3.5",
+                text: "Our core values are passion, integrity, teamwork and accountability, and we strive to always exceed our customers’ expectations. Our customers are our number one priority every day at General Air Conditioning & Plumbing. We focus solely on residential air conditioning, heating and plumbing services and installations. In order to maintain our high level of standards and processes, we pass on new construction projects and only do a limited amount of light commercial work. We operate as a highly rated licensed contractor whose technicians are background checked and drug tested, we always obtain all permits as required and we are also fully insured, which means you don’t have to worry when inviting us into your home for service or installation of your home’s plumbing and comfort system."
             }];
             $scope.applianceType = $scope.demoDatas[0].category;
         };
@@ -188,7 +188,7 @@
                     <div class="row">
                       <div class="col-md-3 col-sm-3"></div>
                         <div class="col-md-8 col-sm-8" style="color: #999">
-                            <p style="margin: 1% 0 5% 0">{{data.text | limitTo: 90}} ... <span class="fa fa-chevron-right" aria-hidden="true"></p>
+                            <p ng-show="data.text!=''" style="margin: 1% 0 5% 0">{{data.text | limitTo: 80}} ... <span class="fa fa-chevron-right" aria-hidden="true"></p>
                             <!-- <p class="text-right">(more)</p> -->
                         </div>
                     </div>

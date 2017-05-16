@@ -27,13 +27,13 @@
                 contactPerson: "",
                 contactNo: "+1 805-626-0107",
                 email: "",
-                insidemapsRating: "NA",
+                insidemapsRating: "4.5",
                 yelpRating: "4.5",
-                pinRating: "NA",
-                text: ""
+                pinRating: "4",
+                text: "Rather than spending on a new dryer,consider repairing the one you have, to save some money. Whether you have a gas or an electric dryer, diagnosing the root of the problem can be tricky. So, it is best to call repair professionals to get the job done right the first time. We are factory trained to deal with your dryer problems."
             },{
                 name: "California Appliance Tech, Inc.",
-                rating: "★ ✩ ✩ ✩ ✩",
+                rating: "★ ★ ✩ ✩ ✩",
                 category: "Dryer",
                 reviewedBy: "165",
                 link: "http://www.californiaappliancetech.com/",
@@ -42,13 +42,13 @@
                 contactPerson: "",
                 contactNo: "+1 877-897-7816",
                 email: "info@californiaappliancetech.com",
-                insidemapsRating: "NA",
+                insidemapsRating: "2",
                 yelpRating: "1.5",
-                pinRating: "NA",
-                text: ""
+                pinRating: "2.5",
+                text: "California Appliance Tech, Inc. washer/dryer repair experience is extensive. We fully understand the importance of getting your washer & dryer working properly. We fully test your unit to insure that it’s functioning properly before leaving your home."
             },{
                 name: "San Diego Appliance Contractor Company",
-                rating: "★ ★ ★ ★ ★",
+                rating: "★ ★ ★ ★ ✩",
                 category: "Dryer",
                 reviewedBy: "175",
                 link: "https://sdapplianceco.com/",
@@ -57,10 +57,10 @@
                 contactPerson: "",
                 contactNo: "+1 619-327-9501",
                 email: "",
-                insidemapsRating: "NA",
+                insidemapsRating: "4",
                 yelpRating: "5",
-                pinRating: "NA",
-                text: ""
+                pinRating: "4.5",
+                text: "We provide honest and affordable appliance repair services throughout San Diego. We repair refrigerators, washers, dryers, dishwashers, ovens, and much more. Our service call fee is only $30 and is FREE when you have your appliance repaired by us."
             },{
                 name: "John's Lake Appliance Services Co",
                 rating: "★ ★ ★ ★ ✩",
@@ -72,9 +72,9 @@
                 contactPerson: "",
                 contactNo: "+1 619-327-9501",
                 email: "",
-                insidemapsRating: "NA",
+                insidemapsRating: "4.5",
                 yelpRating: "4",
-                pinRating: "NA",
+                pinRating: "4.5",
                 text: ""
             }];
             $scope.applianceType = $scope.demoDatas[0].category;
@@ -188,7 +188,7 @@
                     <div class="row">
                       <div class="col-md-3 col-sm-3"></div>
                         <div class="col-md-8 col-sm-8" style="color: #999">
-                            <p style="margin: 1% 0 5% 0">{{data.text | limitTo: 90}} ... <span class="fa fa-chevron-right" aria-hidden="true"></p>
+                            <p ng-show="data.text!=''" style="margin: 1% 0 5% 0">{{data.text | limitTo: 80}} ... <span class="fa fa-chevron-right" aria-hidden="true"></p>
                             <!-- <p class="text-right">(more)</p> -->
                         </div>
                     </div>

@@ -27,12 +27,11 @@
                 contactPerson: "",
                 contactNo: "+1 855-468-2564",
                 email: "joetheplumber@msn.com",
-                insidemapsRating: "NA",
+                insidemapsRating: "4",
                 yelpRating: "4.5",
-                pinRating: "NA",
-                text: ""
-            },
-            {
+                pinRating: "4.5",
+                text: "Cisneros Brothers Plumbing, Inc. has been serving the plumbing needs of the Southern California area for nearly 20 years. The CEO of Cisneros Brothers Plumbing has basically been a plumber his whole life. He grew up going out to jobs with his father, who was the local plumber. He basically learned his skills at his father's knee, and saw how much his father loved his work and the people he was able to help. He watched as his dad treated his customers with honesty and respect and always worked hard to accomplish the task at hand. The business has stayed in the family and we are proud to continue to serve our customers with the same consideration and care that he provided his customers."
+            }, {
                 name: "Fast Water Heater Company",
                 rating: "★ ★ ★ ★ ✩",
                 category: "Water Heater",
@@ -43,10 +42,10 @@
                 contactPerson: "",
                 contactNo: "+1 925-265-8756",
                 email: "",
-                insidemapsRating: "NA",
+                insidemapsRating: "4",
                 yelpRating: "3.5",
-                pinRating: "NA",
-                text: ""
+                pinRating: "4.5",
+                text: "Fast Water Heater Company provides installation and repair of hot water heaters in Washington, Oregon and California. We have been in business since 1986. All of our technicians are company employees, not subcontractors, and all our locations are company owned. We are licensed and bonded in every state where we operate."
             },
             {
                 name: "Water Heaters Only, Inc.",
@@ -59,13 +58,13 @@
                 contactPerson: "",
                 contactNo: "+1 408-279-8899",
                 email: "",
-                insidemapsRating: "NA",
+                insidemapsRating: "4",
                 yelpRating: "4.5",
-                pinRating: "NA",
-                text: ""
+                pinRating: "4",
+                text: "Water Heaters Only Inc was founded in Burlingame, CA in 1968, for the sole purpose of providing low cost, high quality water heater replacement. From that dream Water Heaters Only, Inc was born and has thrived by providing the best quality service for water heater repair and replacement. Keeping pricing as low as possible while providing quality products for our customers is the main mission for Water Heaters Only, Inc."
             },{
                 name: "Bonney Plumbing, Electrical, Heating & Air",
-                rating: "★ ★ ✩ ✩ ✩",
+                rating: "★ ★ ★ ✩ ✩",
                 category: "Water Heater",
                 reviewedBy: "144",
                 link: "https://www.bonney.com/",
@@ -74,10 +73,10 @@
                 contactPerson: "",
                 contactNo: "+1 800-444-0551",
                 email: "",
-                insidemapsRating: "NA",
+                insidemapsRating: "3",
                 yelpRating: "2",
-                pinRating: "NA",
-                text: ""
+                pinRating: "2.5",
+                text: "Bonney Plumbing, Heating and Air, has been your local, reliable service company since 1978.  As an A+ rated member of the Better Business Bureau, we have worked hard to build our reputation by providing you with top notch technicians, superior products and exceptional customer service.  We have serviced thousands upon thousands of satisfied, loyal customers and are so pleased to earn your referrals. You can count on Bonney for quick, reliable service and repair for your plumbing, heating and air conditioning needs."
             }];
             $scope.applianceType = $scope.demoDatas[0].category;
         };
@@ -190,7 +189,7 @@
                     <div class="row">
                       <div class="col-md-3 col-sm-3"></div>
                         <div class="col-md-8 col-sm-8" style="color: #999">
-                            <p style="margin: 1% 0 5% 0">{{data.text | limitTo: 90}} ... <span class="fa fa-chevron-right" aria-hidden="true"></p>
+                            <p ng-show="data.text!=''" style="margin: 1% 0 5% 0">{{data.text | limitTo: 80}} ... <span class="fa fa-chevron-right" aria-hidden="true"></p>
                             <!-- <p class="text-right">(more)</p> -->
                         </div>
                     </div>

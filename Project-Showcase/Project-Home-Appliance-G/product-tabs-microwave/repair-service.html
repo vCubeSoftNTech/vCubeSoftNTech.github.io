@@ -27,12 +27,11 @@
                     contactPerson: "",
                     contactNo: "+1 916-397-0139",
                     email: "",
-                    insidemapsRating: "NA",
+                    insidemapsRating: "4",
                     yelpRating: "4.5",
-                    pinRating: "NA",
-                    text: ""
-                },
-                {
+                    pinRating: "4",
+                    text: "Appliance Company is the place to call when you are having trouble with one of your appliances. We are your “ONE STOP SHOP” for any of your appliance related needs. We’ll come fast and don’t lowball our service call prices and then overcharge for parts and other add-ons."
+                }, {
                     name: "At Ur Service Appliance Repair",
                     rating: "★ ★ ★ ★ ✩",
                     category: "Microwave",
@@ -43,10 +42,10 @@
                     contactPerson: "",
                     contactNo: "+1 909-264-1292",
                     email: "",
-                    insidemapsRating: "NA",
+                    insidemapsRating: "4",
                     yelpRating: "4.5",
-                    pinRating: "NA",
-                    text: ""
+                    pinRating: "3.5",
+                    text: "For an appliance repair company that serves Redlands, San Bernardino County & Riverside County, CA and provides thorough and honest service, choose At Ur Service Appliance Repair. Our punctual, professional staff is dedicated to your satisfaction, and we'll work hard to make sure your appliances are running smoothly. No matter the size of the job, we'll approach the task in an efficient and cost-effective fashion."
                 }, {
                     name: "Liberty Appliance Repair & Service",
                     rating: "★ ★ ★ ✩ ✩",
@@ -58,10 +57,10 @@
                     contactPerson: "",
                     contactNo: "+1 888-605-6068",
                     email: "",
-                    insidemapsRating: "NA",
+                    insidemapsRating: "3.5",
                     yelpRating: "3.5",
-                    pinRating: "NA",
-                    text: ""
+                    pinRating: "3",
+                    text:"Liberty Appliance Repair & Service is a proud Independent Service Provider for Old Republic Home Protection. We regularly work on Amana, Crosley, Electrolux, Frigidaire, General Electric, GE, HotPoint, JennAir, Kenmore, KitchenAid, LG, MagicChef, Maytag, Samsung, Tappan, Westinghouse, Whirlpool and Sears appliances."
                 }, {
                     name: "All Valley Appliance",
                     rating: "★ ★ ✩ ✩ ✩",
@@ -73,10 +72,10 @@
                     contactPerson: "",
                     contactNo: "+1 760-340-9587",
                     email: "",
-                    insidemapsRating: "NA",
+                    insidemapsRating: "3",
                     yelpRating: "2",
-                    pinRating: "NA",
-                    text: ""
+                    pinRating: "2",
+                    text: "Since 1963, All Valley Appliance has been a family-owned-and-operated appliance repair company. We service most major name-brand appliances, as well as sell parts and new and used appliances."
                 }
             ]
             $scope.applianceType = $scope.demoDatas[0].category;
@@ -191,7 +190,7 @@
                     <div class="row">
                         <div class="col-md-3 col-sm-3"></div>
                         <div class="col-md-8 col-sm-8" style="color: #999">
-                            <p style="margin: 1% 0 5% 0">{{data.text | limitTo: 90}} ... <span class="fa fa-chevron-right" aria-hidden="true"></p>
+                            <p ng-show="data.text!=''" style="margin: 1% 0 5% 0">{{data.text | limitTo: 80}} ... <span class="fa fa-chevron-right" aria-hidden="true"></p>
                       <!-- <p class="text-right">(more)</p> -->
                     </div>
                   </div>

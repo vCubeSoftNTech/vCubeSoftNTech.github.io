@@ -27,13 +27,13 @@
                 contactPerson: "",
                 contactNo: "+1 916-397-0139",
                 email: "",
-                insidemapsRating: "NA",
+                insidemapsRating: "4",
                 yelpRating: "4.5",
-                pinRating: "NA",
-                text: ""
+                pinRating: "4",
+                text: "Appliance Company is the place to call when you are having trouble with one of your appliances. We are your “ONE STOP SHOP” for any of your appliance related needs. We’ll come fast and don’t lowball our service call prices and then overcharge for parts and other add-ons."
             }, {
                 name: "San Diego Appliance Contractor Company",
-                rating: "★ ★ ★ ★ ★",
+                rating: "★ ★ ★ ★ ✩",
                 category: "Garbage Disposal",
                 reviewedBy: "175",
                 link: "https://sdapplianceco.com/",
@@ -42,10 +42,10 @@
                 contactPerson: "",
                 contactNo: "+1 619-327-9501",
                 email: "",
-                insidemapsRating: "NA",
+                insidemapsRating: "4",
                 yelpRating: "5",
-                pinRating: "NA",
-                text: ""
+                pinRating: "4.5",
+                text: "We provide honest and affordable appliance repair services throughout San Diego. We repair refrigerators, washers, dryers, dishwashers, ovens, and much more. Our service call fee is only $30 and is FREE when you have your appliance repaired by us."
             },{
                 name: "My Plumber CA",
                 rating: "★ ★ ★ ✩ ✩",
@@ -57,10 +57,25 @@
                 contactPerson: "",
                 contactNo: "+1 619-447-5556",
                 email: "",
-                insidemapsRating: "NA",
+                insidemapsRating: "3.5",
                 yelpRating: "3",
-                pinRating: "NA",
-                text: ""
+                pinRating: "3.5",
+                text: "My Plumber is the plumbing industry leader because Every mechanic, every member of management and every employee is totally dedicated to this principle."
+            },{
+                name: "Service Masters Appliance Repair",
+                rating: "★ ★ ★ ✩ ✩",
+                category: "Garbage Disposal",
+                reviewedBy: "5",
+                link: "http://www.servicemastersappliance.com/",
+                logoImgLink: "http://www.servicemastersappliance.com/wp-content/themes/servicemastersappliance/images/logo1.jpg",
+                contactAddress: "14011 Ventura Blvd., 212 W, Sherman Oaks, CA 91423",
+                contactPerson: "",
+                contactNo: "+1 818-853-9954",
+                email: "",
+                insidemapsRating: "4",
+                yelpRating: "4",
+                pinRating: "3.5",
+                text: "Service Masters Company is number one leader in appliance repair industry which has been proudly serving our community since 1996."
             }]
             $scope.applianceType = $scope.demoDatas[0].category;
 
@@ -174,7 +189,7 @@
                     <div class="row">
                       <div class="col-md-3 col-sm-3"></div>
                         <div class="col-md-8 col-sm-8" style="color: #999">
-                            <p style="margin: 1% 0 5% 0">{{data.text | limitTo: 90}} ... <span class="fa fa-chevron-right" aria-hidden="true"></p>
+                            <p ng-show="data.text!=''" style="margin: 1% 0 5% 0">{{data.text | limitTo: 80}} ... <span class="fa fa-chevron-right" aria-hidden="true"></p>
                             <!-- <p class="text-right">(more)</p> -->
                         </div>
                     </div>

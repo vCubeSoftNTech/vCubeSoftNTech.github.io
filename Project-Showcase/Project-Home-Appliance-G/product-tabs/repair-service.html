@@ -17,43 +17,67 @@
         var repairService = function($scope) {
 
             $scope.demoDatas = [{
-                    name: "Four Seasons",
-                    rating: "★ ★ ★ ✩ ✩",
-                    category: "Furnace, HVAC",
-                    reviewedBy: "82",
-                    link: "http://www.fourseasonsheatingcooling.com/",
-                    logoImgLink: "./../img/fs.png",
-                    contactAddress: "5701 West 73rd Street, Chicago, IL 60638",
-                    contactPerson: "Michael Riley",
-                    contactNo: "773-413-1028",
-                    email: "nicole@fourseasonsheatingcooling.com",
-                    insidemapsRating: "4",
-                    yelpRating: "3.7",
-                    pinRating: "4.2",
-                    text: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."
-                },
-                {
-                        name: "Service Experts",
-                        rating: "★ ★ ★ ★ ✩",
-                        category: "Furnace",
-                        reviewedBy: "47",
-                        link: "",
-                        logoImgLink: "./../img/se.png",
-                        contactAddress: "San Antonio, Austin, Texas",
-                        contactPerson: "Sam",
-                        contactNo: "866-397-3787",
-                        email: "customercare@serviceexperts.com",
-                        insidemapsRating: "3.9",
-                        yelpRating: "4.5",
-                        pinRating: "4",
-                        text: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."
-                    }
-            ]
-
-            $(document).ready(function() {
-                $('ul.tabs').tabs();
-            });
-
+                name: "smart72",
+                rating: "★ ★ ★ ★ ✩",
+                category: "Furnace",
+                reviewedBy: "43",
+                link: "http://www.smart72.com/",
+                logoImgLink: "http://www.smart72.com/wp-content/uploads/2016/09/SMART72_Logo_HeatCoolSolar_CMYK.svg",
+                contactAddress: "2580 El Camino Real, Atascadero, CA 93422",
+                contactPerson: "",
+                contactNo: "+1 805-628-4197",
+                email: "",
+                insidemapsRating: "4.5",
+                yelpRating: "5",
+                pinRating: "4.5",
+                text: "We are energetic entrepreneurs, dedicated to providing customized smart home services that protect you and your family. While the smart72 model is new, the history of our company goes back more than 35 years. Using this focused experience as a cornerstone, we have framed a menu of progressive services that we haven’t seen offered under one roof anywhere. Our intent is to help you take good care of your home, ultimately bringing you and your family peace of mind. We are local, our family lives, works, dreams, shops, plays, and goes to school here, just like yours. We treat our Central Coast community as a precious commodity – never taking it for granted – always doing what we can to sustainably support this precious place and the lifestyle that it affords us all."
+            }, {
+                name: "Albert Nahman Plumbing and Heating",
+                rating: "★ ★ ★ ★ ✩",
+                category: "Furnace",
+                reviewedBy: "303",
+                link: "http://www.albertnahmanplumbing.com",
+                logoImgLink: "./../img/nalogo.png",
+                contactAddress: "7020 Commerce Dr, Pleasanton, CA 94588",
+                contactPerson: "",
+                contactNo: "+1 925-444-4444",
+                email: "",
+                insidemapsRating: "4.5",
+                yelpRating: "5",
+                pinRating: "4.5",
+                text: "With Albert Nahman Plumbing and Heating, you'll have upfront pricing, friendly and knowledgeable plumbing contractors who arrive at your door on time, in uniform, and work carefully and efficiently on your home’s plumbing so you can get back to your routine with the least amount of disruption possible. Your 100% satisfaction is our dedication and commitment to getting the job done right the first time."
+            }, {
+                name: "Service Champions Heating & Air Conditioning",
+                rating: "★ ★ ★ ★ ✩",
+                category: "Furnace",
+                reviewedBy: "199",
+                link: "https://www.servicechampions.net",
+                logoImgLink: "https://www.servicechampions.net/wp-content/themes/servicechamp/images/logo.png",
+                contactAddress: "7020 Commerce Dr, Pleasanton, CA 94588",
+                contactPerson: "",
+                contactNo: "+1 925-444-4444",
+                email: "info@servicechampions.net",
+                insidemapsRating: "4.5",
+                yelpRating: "5",
+                pinRating: "4.5",
+                text: "Our technicians are polite, courteous, clean-shaven, drug tested, background-checked, with clean uniforms, shirts tucked in correctly even fresh breath. This is what sets us apart from our competition. We sell the same furnace as the guy across town. The difference is your experience with our service – and we're here to serve you."
+            }, {
+                name: "Gilmore Heating Air Solar",
+                rating: "★ ★ ★ ★ ✩",
+                category: "Furnace",
+                reviewedBy: "69",
+                link: "http://gilmoreair.com",
+                logoImgLink: "./../img/nalogo.png",
+                contactAddress: "4429 Missouri Flat Rd, Placerville, CA 95667",
+                contactPerson: "",
+                contactNo: "+1 530-344-4330",
+                email: "",
+                insidemapsRating: "4.5",
+                yelpRating: "4",
+                pinRating: "4",
+                text: "Whether your existing HVAC system needs repair or maintenance service, or it’s time to install a new energy-efficient heating and cooling system, the experts at Gilmore are here to help. Our technicians take pride in providing quality service, and have the expertise necessary to ensure that your heating and air conditioning system operates as efficiently and effectively as possible. When Gilmore’s HVAC technicians come to your door, you can expect quick, courteous service, and rest easy in the knowledge that the job will be done right the first time, every time."
+            }];
+            $scope.applianceType = $scope.demoDatas[0].category;
         };
 
         angular.module('myapp', []).controller('repairService', ['$scope', repairService]);
@@ -75,8 +99,8 @@
             padding: 3%;
         }
 
-        .third-party-rating{
-          text-align: center;
+        .third-party-rating {
+            text-align: center;
         }
 
         .third-party-rating p {
@@ -109,10 +133,10 @@
         }
 
         @media only screen and (max-width: 750px) {
-          .third-party-rating{
-            text-align: right;
-            padding-bottom: 5%;
-          }
+            .third-party-rating {
+                text-align: right;
+                padding-bottom: 5%;
+            }
         }
     </style>
 </head>
@@ -130,10 +154,10 @@
             <a href="replacement-options.html" target="_blank">| Replacement Option |</a>
         </div>
         <div class="container">
-          <div class="text-center">
-              <h2>Repair Service <small><sub>({{applianceType}})</sub></small></h2>
-              <hr></hr>
-          </div>
+            <div class="text-center">
+                <h2>Repair Service <small><sub>({{applianceType}})</sub></small></h2>
+                <hr></hr>
+            </div>
             <div class="row">
                 <div class="col-md-8 col-sm-8"></div>
 
@@ -143,7 +167,8 @@
                     <i style="color: #bf2519" class="fa fa-yelp fa-2x"></i>
                 </div>
             </div>
-            <div class="row" data-ng-repeat="data in demoDatas"><!-- Text Left for responsive -->
+            <div class="row" data-ng-repeat="data in demoDatas">
+                <!-- Text Left for responsive -->
                 <div class="col-md-9 col-sm-9">
                     <div class="row">
                         <div class="col-md-3 col-sm-9">
@@ -162,17 +187,17 @@
                         </div>
                     </div>
                     <div class="row">
-                      <div class="col-md-3 col-sm-3"></div>
+                        <div class="col-md-3 col-sm-3"></div>
                         <div class="col-md-8 col-sm-8" style="color: #999">
-                            <p style="margin: 1% 0 5% 0">{{data.text | limitTo: 90}} ... <span class="fa fa-chevron-right" aria-hidden="true"></p>
+                            <p ng-show="data.text!=''" style="margin: 1% 0 5% 0">{{data.text | limitTo: 80}} ... <span class="fa fa-chevron-right" aria-hidden="true"></p>
                             <!-- <p class="text-right">(more)</p> -->
                         </div>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-3 third-party-rating"> <!-- Text Right for responsive -->
                     <p data-ng-bind="data.insidemapsRating"></p>
-                    <p data-ng-bind="data.yelpRating"></p>
                     <p data-ng-bind="data.pinRating"></p>
+                    <p data-ng-bind="data.yelpRating"></p>
                 </div>
             </div>
         </div>

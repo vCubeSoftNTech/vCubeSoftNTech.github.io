@@ -18,7 +18,7 @@
 
             $scope.demoDatas = [{
                 name: "Lake Appliance Repair",
-                rating: "★ ★ ★ ★ ★",
+                rating: "★ ★ ★ ★ ✩",
                 category: "Refrigerator",
                 reviewedBy: "47",
                 link: "https://lakeappliancerepair.com",
@@ -27,10 +27,10 @@
                 contactPerson: "",
                 contactNo: "+1 916-395-3426",
                 email: "Service@LakeApplianceRepair.com",
-                insidemapsRating: "NA",
+                insidemapsRating: "5",
                 yelpRating: "5",
-                pinRating: "NA",
-                text: ""
+                pinRating: "4.5",
+                text: "Lake Appliance Repair provides affordable quality service on home appliance repair in Davis, Elk Grove, Folsom, Roseville, Sacramento, and Reno, Nevada and everywhere in between! The owner and employees have been in the appliance repair industry for over 25 years, and after only starting this company in 2004, we are now one of Northern California’s premier appliance repair service companies."
             }, {
                 name: "Appliance Company Inc.",
                 rating: "★ ★ ★ ★ ✩",
@@ -42,13 +42,13 @@
                 contactPerson: "",
                 contactNo: "+1 916-397-0139",
                 email: "",
-                insidemapsRating: "NA",
+                insidemapsRating: "4",
                 yelpRating: "4.5",
-                pinRating: "NA",
-                text: ""
+                pinRating: "4",
+                text: "Appliance Company is the place to call when you are having trouble with one of your appliances. We are your “ONE STOP SHOP” for any of your appliance related needs. We’ll come fast and don’t lowball our service call prices and then overcharge for parts and other add-ons."
             },{
                 name: "California Appliance Tech, Inc.",
-                rating: "★ ✩ ✩ ✩ ✩",
+                rating: "★ ★ ✩ ✩ ✩",
                 category: "Refrigerator",
                 reviewedBy: "165",
                 link: "http://www.californiaappliancetech.com/",
@@ -57,10 +57,10 @@
                 contactPerson: "",
                 contactNo: "+1 877-897-7816",
                 email: "info@californiaappliancetech.com",
-                insidemapsRating: "NA",
+                insidemapsRating: "2",
                 yelpRating: "1.5",
-                pinRating: "NA",
-                text: ""
+                pinRating: "2.5",
+                text: "Our technicians are experts to handle all your refrigerator and cooling related problems. We handle system leaks, not maintaining desired temperatures, and all other malfunctioning issues."
             }, {
                 name: "The Appliance Repair Doctor",
                 rating: "★ ★ ★ ✩ ✩",
@@ -72,10 +72,10 @@
                 contactPerson: "",
                 contactNo: "+1 510-573-7288",
                 email: "",
-                insidemapsRating: "NA",
+                insidemapsRating: "4",
                 yelpRating: "3.5",
-                pinRating: "NA",
-                text: ""
+                pinRating: "4",
+                text: "For more than 10 years, Chicago’s Appliance Repair Doctor have provided excellent professional care to customers in the repair of domestic home appliances. We offer unbeatable prices and 100% satisfaction."
             }];
             $scope.applianceType = $scope.demoDatas[0].category;
 
@@ -190,7 +190,7 @@
                     <div class="row">
                         <div class="col-md-3 col-sm-3"></div>
                         <div class="col-md-8 col-sm-8" style="color: #999">
-                            <p style="margin: 1% 0 5% 0">{{data.text | limitTo: 90}} ... <span class="fa fa-chevron-right" aria-hidden="true"></p>
+                            <p ng-show="data.text!=''" style="margin: 1% 0 5% 0">{{data.text | limitTo: 80}} ... <span class="fa fa-chevron-right" aria-hidden="true"></p>
                             <!-- <p class="text-right">(more)</p> -->
                         </div>
                     </div>
