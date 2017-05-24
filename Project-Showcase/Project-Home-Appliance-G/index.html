@@ -9,78 +9,92 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Dancing+Script">
+    <!-- <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Dancing+Script"> -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/device.js/0.2.7/device.min.js"></script>
 
     <script>
         var HomeAppliance = function($scope) {
-            console.log("Hello");
-            $scope.demoDatas = [{
-                name: "Furnace",
-                img: "./img/furnace/f1.png",
-                brand: "Lennox",
-                sn: "#SLP98V",
-                link: "./product-details.html"
-            }, {
-                name: "AC",
-                img: "./img/aco.png",
-                brand: "Ahri Certified",
-                sn: "#213BNA036-A",
-                link: "./product-details-ac.html"
-            }, {
-                name: "Garbage Disposal",
-                img: "./img/disposal.png",
-                brand: "Badger",
-                sn: "#BADGER 100-1",
-                link: "./product-details-garbage-disposal.html"
-            }, {
-                name: "Dishwasher",
-                img: "./img/dishwasher.png",
-                brand: "Whirpool",
-                sn: "#DU930PWPS2",
-                link: "./product-details-dishwasher.html"
-            }, {
-                name: "Water Heater",
-                img: "./img/lgwh.png",
-                brand: "General Electric",
-                sn: "#GE40T6A",
-                link: "./product-details-water-heater.html"
-            }, {
-                name: "Stove",
-                img: "./img/stove.png",
-                brand: "Whirlpool",
-                sn: "#WFE320M0ASO",
-                link: "./product-details-stove.html"
-            }, {
-                name: "Refrigerator",
-                img: "./img/refrigerator.png",
-                brand: "Admiral",
-                sn: "#50056665GX",
-                link: "./product-details-refrigerator.html"
-            }, {
-                name: "Washing Machine",
-                img: "./img/wmmy.jpg",
-                brand: "Maytag",
-                sn: "#C31831395",
-                link: "./product-details-washing-machine.html"
+          $scope.mobileDevice = false;
 
-            }, {
-                name: "Dryer",
-                img: "./img/dryer.png",
-                brand: "Maytag",
-                sn: "#MED5740TQ0",
-                link: "./product-details-dryer.html"
-            },
-            {
-                name: "Microwave",
-                img: "./img/microwave.jpg",
-                brand: "Whirlpool",
-                sn: "#MH1150XMQ-1",
-                link: "./product-details-microwave.html"
-            }]
+            $scope.demoDatas = [{
+                    name: "Furnace",
+                    img: "./img/furnace/f1.png",
+                    brand: "Lennox",
+                    sn: "#SLP98V",
+                    link: "./product-details.html"
+                }, {
+                    name: "AC",
+                    img: "./img/aco.png",
+                    brand: "Ahri Certified",
+                    sn: "#213BNA036-A",
+                    link: "./product-details-ac.html"
+                }, {
+                    name: "Garbage Disposal",
+                    img: "./img/disposal.png",
+                    brand: "Badger",
+                    sn: "#BADGER 100-1",
+                    link: "./product-details-garbage-disposal.html"
+                }, {
+                    name: "Dishwasher",
+                    img: "./img/dishwasher.png",
+                    brand: "Whirpool",
+                    sn: "#DU930PWPS2",
+                    link: "./product-details-dishwasher.html"
+                }, {
+                    name: "Water Heater",
+                    img: "./img/lgwh.png",
+                    brand: "General Electric",
+                    sn: "#GE40T6A",
+                    link: "./product-details-water-heater.html"
+                }, {
+                    name: "Stove",
+                    img: "./img/stove.png",
+                    brand: "Whirlpool",
+                    sn: "#WFE320M0ASO",
+                    link: "./product-details-stove.html"
+                }, {
+                    name: "Refrigerator",
+                    img: "./img/refrigerator.png",
+                    brand: "Admiral",
+                    sn: "#50056665GX",
+                    link: "./product-details-refrigerator.html"
+                }, {
+                    name: "Washing Machine",
+                    img: "./img/wmmy.jpg",
+                    brand: "Maytag",
+                    sn: "#C31831395",
+                    link: "./product-details-washing-machine.html"
+
+                }, {
+                    name: "Dryer",
+                    img: "./img/dryer.png",
+                    brand: "Maytag",
+                    sn: "#MED5740TQ0",
+                    link: "./product-details-dryer.html"
+                },
+                {
+                    name: "Microwave",
+                    img: "./img/microwave.jpg",
+                    brand: "Whirlpool",
+                    sn: "#MH1150XMQ-1",
+                    link: "./product-details-microwave.html"
+                }
+            ]
+
+            $scope.deviceChk = function() {
+                if (device.mobile() || device.tablet()) {
+
+                    $scope.mobileDevice = true;
+                    alert('Mobile')
+                } else {
+                    $scope.mobileDevice = false;
+                    alert('Web Browser')
+                }
+            }
         };
 
         angular.module('myapp', []).controller('HomeAppliance', ['$scope', HomeAppliance]);
@@ -92,34 +106,42 @@
             height: 100%;
             width: 100%;
         }
-        .heading-project{
-          padding-bottom: 3%;
+
+        .heading-project {
+            padding-bottom: 3%;
         }
-        .heading-project h4, .heading-project h5 {
+        /*.heading-project h4, .heading-project h5 {
           font-family: "Dancing Script";
-        }
+        }*/
+
         .img-thumbnail {
             border: 1px solid #111;
         }
 
         .center-image {
-            /*margin-left: -5%;*/
+            margin-left: -7%;
             max-width: 100%;
         }
 
-        .heading-img-block {
+        .heading-img-block p:nth-child(1) {
             font-weight: 900;
-            font-weight: larger;
+            font-size: initial;
         }
+
+        .heading-img-block p {
+            margin: -1% 0 0 -12%;
+        }
+
         .img-block {
-          cursor: pointer;
+            cursor: pointer;
         }
-        .img-block img{
+
+        .img-block img {
             height: 100px;
             width: 100px;
         }
 
-        .img-block a{
+        .img-block a {
             text-decoration: none;
             color: #333;
         }
@@ -138,7 +160,6 @@
             font-weight: bolder;
             font-size: large;
         }
-
         /*@media only screen and (max-width: 550px) {
             .center-image {
                 width: 200px;
@@ -159,8 +180,8 @@
 </head>
 
 <body>
-    <div ng-app='myapp' ng-controller="HomeAppliance">
-        <div class="container-fluid">
+    <div ng-app='myapp' ng-controller="HomeAppliance" ng-init ="deviceChk()">
+        <div ng-show = "mobileDevice == false" class="container-fluid">
             <div class="heading-project text-center">
                 <h4>650 Paradise Way</h4>
                 <h5>Lakeview, Calif 93222</h5>
@@ -169,16 +190,16 @@
                 <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
                     <div data-ng-repeat="data in demoDatas.slice(0, 5)">
                         <div class="row img-block">
-                          <a href="{{data.link}}">
-                            <div class="col-sm-4">
-                                <img ng-src="{{data.img}}" alt="" class="img-thumbnail">
-                            </div>
-                            <div class="col-sm-8">
-                                <p class="heading-img-block" data-ng-bind="data.name"></p>
-                                <p data-ng-bind="data.brand"></p>
-                                <p data-ng-bind="data.sn"></p>
-                            </div>
-                            <a>
+                            <a href="{{data.link}}">
+                                <div class="col-sm-4">
+                                    <img ng-src="{{data.img}}" alt="" class="img-thumbnail">
+                                </div>
+                                <div class="col-sm-8 heading-img-block">
+                                    <p data-ng-bind="data.name"></p>
+                                    <p data-ng-bind="data.brand"></p>
+                                    <p>sn: {{data.sn}}</p>
+                                </div>
+                                <a>
                         </div>
                     </div>
                 </div>
@@ -188,17 +209,17 @@
                 <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
                     <div data-ng-repeat="data in demoDatas.slice(5, demoDatas.length)">
                         <div class="row img-block">
-                          <a href="{{data.link}}">
+                            <a href="{{data.link}}">
 
-                            <div class="col-sm-4">
-                                <img ng-src="{{data.img}}" alt="" class="img-thumbnail">
-                            </div>
-                            <div class="col-sm-8">
-                                <p class="heading-img-block" data-ng-bind="data.name"></p>
-                                <p data-ng-bind="data.brand"></p>
-                                <p data-ng-bind="data.sn"></p>
-                            </div>
-                          </a>
+                                <div class="col-sm-4">
+                                    <img ng-src="{{data.img}}" alt="" class="img-thumbnail">
+                                </div>
+                                <div class="col-sm-8 heading-img-block">
+                                    <p data-ng-bind="data.name"></p>
+                                    <p data-ng-bind="data.brand"></p>
+                                    <p>sn: {{data.sn}}</p>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -214,6 +235,11 @@
                 </div>
             </footer>
         </div>
+        <div ng-show = "mobileDevice == true" class="container">
+          <h1>HHHH</h1>
+
+        </div>
+
     </div>
 </body>
 
