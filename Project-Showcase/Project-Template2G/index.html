@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Theme Made By www.w3schools.com - No Copyright -->
+    <title>Tourfactory Template</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="img/favicon-terminal.ico" type="image/gif" sizes="16x16">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="./js/slick-master/slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="./js/slick-master/slick/slick-theme.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.4/ui-bootstrap-tpls.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./controller.js"></script>
+    <script src="./js/slick-master/slick/slick.js" type="text/javascript"></script>
+    <script src="js/jssor.slider-24.1.5.min.js" type="text/javascript"></script>
+
+    <style>
+        body,
+        html {
+            height: 100%;
+        }
+
+        .fa-2x {
+            font-size: 2em;
+        }
+
+        .fa {
+            position: relative;
+            display: table-cell;
+            width: 60px;
+            height: 36px;
+            text-align: center;
+            vertical-align: middle;
+            font-size: 24px;
+        }
+
+        .main-menu:hover,
+        nav.main-menu.expanded {
+            width: 200px;
+            border-bottom: 3px solid red;
+            /*overflow: hidden;*/
+        }
+
+        .main-menu {
+            background: linear-gradient(to bottom, rgba(45, 38, 28, 1) 0%, #6b6151 20%, #8b7960 43%, rgba(76, 64, 44, .90) 75%, rgba(121, 114, 100, .5) 100%);
+            border-right: 1px solid #e5e5e5;
+            color: #fff;
+            position: fixed;
+            top: 13.1%;
+            bottom: 13%;
+            height: 100%;
+            left: 0;
+            width: 60px;
+            overflow: hidden;
+            -webkit-transition: width .05s linear;
+            transition: width .05s linear;
+            -webkit-transform: translateZ(0) scale(1, 1);
+            z-$index: 1000;
+        }
+
+        .main-menu>ul {
+            margin: 7px 0;
+        }
+
+        .main-menu li {
+            position: relative;
+            display: block;
+            width: 250px;
+        }
+
+        .main-menu li>a {
+            position: relative;
+            display: table;
+            border-collapse: collapse;
+            border-spacing: 0;
+            color: #999;
+            font-family: arial;
+            font-size: 14px;
+            text-decoration: none;
+            -webkit-transform: translateZ(0) scale(1, 1);
+            -webkit-transition: all .1s linear;
+            transition: all .1s linear;
+        }
+
+        .main-menu li>a>i {
+            border: 3-x solid red;
+        }
+
+        .main-menu .nav-icon {
+            position: relative;
+            display: table-cell;
+            width: 60px;
+            height: 36px;
+            text-align: center;
+            vertical-align: middle;
+            font-size: 18px;
+        }
+
+        .main-menu .nav-text {
+            position: relative;
+            display: table-cell;
+            vertical-align: middle;
+            width: 190px;
+            font-family: 'Titillium Web', sans-serif;
+        }
+
+        .no-touch .scrollable.hover {
+            overflow-y: hidden;
+        }
+
+        .no-touch .scrollable.hover:hover {
+            overflow-y: auto;
+            overflow: visible;
+        }
+
+        a:hover,
+        a:focus {
+            text-decoration: none;
+        }
+
+        nav {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            -o-user-select: none;
+            user-select: none;
+        }
+
+        nav ul,
+        nav li {
+            outline: 0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .main-menu li:hover>a,
+        nav.main-menu li.active>a,
+        .dropdown-menu>li>a:hover,
+        .dropdown-menu>li>a:focus,
+        .dropdown-menu>.active>a,
+        .dropdown-menu>.active>a:hover,
+        .dropdown-menu>.active>a:focus,
+        .no-touch .dashboard-page nav.dashboard-menu ul li:hover a,
+        .dashboard-page nav.dashboard-menu ul li.active a {
+            color: #ffffff;
+            background-color: transparent;
+            font-weight: bold;
+        }
+
+        .area {
+            float: left;
+            background: #766854;
+            width: 100%;
+            height: 100%;
+        }
+
+        @font-face {
+            font-family: 'Titillium Web';
+            font-style: normal;
+            font-weight: 300;
+            src: local('Titillium WebLight'), local('TitilliumWeb-Light'), url(http://themes.googleusercontent.com/static/fonts/titilliumweb/v2/anMUvcNT0H1YN4FII8wpr24bNCNEoFTpS2BTjF6FB5E.woff) format('woff');
+        }
+        /*Custom CSS*/
+
+        .header {
+            color: #e2dcd5;
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #9b8b76), color-stop(63%, #554936), color-stop(93%, #554d3b), color-stop(93.01%, rgba(0, 0, 0, .4)), color-stop(100%, rgba(0, 0, 0, 0)));
+            background-size: 100% 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 14.1%;
+            /*z-$index: 60;*/
+        }
+
+        .header-left {
+            position: absolute;
+            left: 1.5%;
+            right: 50%;
+            bottom: 18%;
+        }
+
+        .heading {
+            color: #c3bbb1;
+            font-family: 'Trajan W01 Regular';
+            font-size: 21px;
+            font-variant: small-caps;
+        }
+
+        .subtitle {
+            color: #ceba9d;
+        }
+
+        .heading-right {
+            color: #e2dcd5;
+            font-family: 'Trajan W01 Regular';
+            font-variant: small-caps;
+            font-size: 21px;
+            text-align: right;
+        }
+
+        .floor-plan-selected {
+            /*width: 65px;
+        height: 65px;*/
+            -webkit-transform: scale(1.65, 1.65);
+            -ms-transform: scale(1.65, 1.65);
+            transform: scale(1.65, 1.65);
+            transition-duration: 0.9s;
+            -webkit-transition-duration: 0.9s;
+            /* Safari */
+            /*-webkit-transition: width height 2s;
+        transition: width height 2s;
+        -webkit-transition-timing-function: linear;
+        transition-timing-function: linear;*/
+            /* Safari */
+            z-$index: 2;
+            border: 2px solid #fff;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+        }
+
+        .jssora05l, .jssora05r {
+            display: block;
+            position: absolute;
+            /* size of arrow element */
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            background: url('img/a17.png') no-repeat;
+            overflow: hidden;
+        }
+        .jssora05l { background-position: -10px -40px; }
+        .jssora05r { background-position: -70px -40px; }
+        .jssora05l:hover { background-position: -130px -40px; }
+        .jssora05r:hover { background-position: -190px -40px; }
+        .jssora05l.jssora05ldn { background-position: -250px -40px; }
+        .jssora05r.jssora05rdn { background-position: -310px -40px; }
+        .jssora05l.jssora05lds { background-position: -10px -40px; opacity: .3; pointer-events: none; }
+        .jssora05r.jssora05rds { background-position: -70px -40px; opacity: .3; pointer-events: none; }
+        /* jssor slider thumbnail navigator skin 01 css *//*.jssort01 .p            (normal).jssort01 .p:hover      (normal mouseover).jssort01 .p.pav        (active).jssort01 .p.pdn        (mousedown)*/.jssort01 .p {    position: absolute;    top: 0;    left: 0;    width: 72px;    height: 72px;}.jssort01 .t {    position: absolute;    top: 0;    left: 0;    width: 100%;    height: 100%;    border: none;}.jssort01 .w {    position: absolute;    top: 0px;    left: 0px;    width: 100%;    height: 100%;}.jssort01 .c {    position: absolute;    top: 0px;    left: 0px;    width: 68px;    height: 68px;    border: #000 2px solid;    box-sizing: content-box;    background: url('img/t01.png') -800px -800px no-repeat;    _background: none;}.jssort01 .pav .c {    top: 2px;    _top: 0px;    left: 2px;    _left: 0px;    width: 68px;    height: 68px;    border: #000 0px solid;    _border: #fff 2px solid;    background-position: 50% 50%;}.jssort01 .p:hover .c {    top: 0px;    left: 0px;    width: 70px;    height: 70px;    border: #fff 1px solid;    background-position: 50% 50%;}.jssort01 .p.pdn .c {    background-position: 50% 50%;    width: 68px;    height: 68px;    border: #000 2px solid;}* html .jssort01 .c, * html .jssort01 .pdn .c, * html .jssort01 .pav .c {    /* ie quirks mode adjust */    width /**/: 72px;    height /**/: 72px;}
+    </style>
+</head>
+
+<body>
+    <div ng-app="InsideMapsData">
+        <div ng-controller="MainCtrl">
+            <div class="header background-header">
+                <div class="header-left">
+                    <div class="heading">Magnificent Spanish Mediterranean Home ~ $2,548,000</div>
+                    <span class="subtitle" style="text-transform: uppercase;">2112 Adeline Drive, Burlingame, CA 94010 &nbsp;|&nbsp;MLS #81433218 &nbsp;|&nbsp; VIRTUAL TOUR #1722089</span>
+                </div>
+                <div style="opacity: 1;">
+                    <img src="https://tours.tourfactory.com/tours/media/user/00/00/07/35/51/User73551_132_198.jpg" style="margin: 10px 15px; width: 44.8103px; height: 67.252px; top: 7px; right: 15px; cursor: pointer; float: right">
+
+                    <div class="" style="right: 76px; float: right">
+                        <div class="heading-right"><span style="cursor: pointer;">InsideMaps Inc</span></div>
+                        <div class="heading-right"><span style="cursor: pointer;">+1 415-819-9879</span></div>
+                        <div><span class="subtitle" style="cursor: pointer;">InsideMaps Corporate Headquarters</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="main-menu">
+                <ul>
+                    <li><a href="#"><i class="fa fa-home fa-2x"></i><span class="nav-text">PROPERTY INFO</span></a></li>
+                    <li><a href="#"><i class="fa fa-envelope fa-2x"></i><span class="nav-text">SEND TO A FRIEND</span></a></li>
+                    <li><a href="#"><i class="fa fa-print fa-2x"></i><span class="nav-text">PRINT MATERILAS</span></a></li>
+                    <li><a href="#"><i class="fa fa-paperclip fa-2x"></i><span class="nav-text">ATTACHMENTS</span></a></li>
+                    <li><a href="#"><i class="fa fa-compass fa-2x"></i><span class="nav-text">PROPERTY MAP</span></a></li>
+                    <li><a href="#"><i class="fa fa-calculator fa-2x"></i><span class="nav-text">CALCULATOR</span></a></li>
+                    <li><a href="#"><i class="fa fa-apple fa-2x"></i><span class="nav-text">SCHOOL INFO</span></a></li>
+                    <li><a href="#"><i class="fa fa-info fa-2x"></i><span class="nav-text">CONTACT</span></a></li>
+                </ul>
+            </nav>
+            <table class="" style="position: relative; top: 100px; left: 0px; float: right">
+                <tbody>
+                    <tr>
+                        <td style="position: relative;">
+                            <img src="http://theme.tourfactory.com/file/ffffffff/00000033/728.png" style="display: inline; width: 475px; height: auto;">
+                            <span ng-repeat="slide in slides">
+                                <img ng-hide = "slide.top == ''" ng-class="{ 'floor-plan-selected': $index == selectedIndex }" ng-src="{{slide.image}}" ng-click="floorPlanImageSelected($index)" width="55" height="55" ng-style="{'top': slide.top, 'left': slide.left}" style="position: absolute; cursor: pointer; border-radius: 48px; margin-left: -24px; margin-top: -24px; overflow: hidden;"></img>
+                            </span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div id="jssor_1" style="position:relative;margin:0;top:140px;left:210px;width:800px;height:456px;overflow:hidden;visibility:hidden;background-color:#24262e;">
+                <!-- Loading Screen -->
+                <div data-u="loading" style="position:absolute;top:0px;left:0px;background:url('img/loading.gif') no-repeat 50% 50%;background-color:rgba(0, 0, 0, 0.7);"></div>
+                <div data-u="slides" id="dynamicThumbs" style="cursor:default;position:relative;top:0px;left:0px;width:800px;height:356px;overflow:hidden;">
+                </div>
+                <!-- Thumbnail Navigator dynamicThumbs-->
+                <div data-u="thumbnavigator" class="jssort01" style="position:absolute;left:0px;bottom:0px;width:800px;height:100px;" data-autocenter="1">
+                    <!-- Thumbnail Item Skin Begin -->
+                    <div data-u="slides" style="cursor: default;">
+                        <div data-u="prototype" class="p">
+                            <div class="w">
+                                <div data-u="thumbnailtemplate" class="t"></div>
+                            </div>
+                            <div class="c"></div>
+                        </div>
+                    </div>
+                    <!-- Thumbnail Item Skin End -->
+                </div>
+                <!-- Arrow Navigator -->
+                <span data-u="arrowleft" class="jssora05l" style="top:158px;left:8px;width:40px;height:40px;"></span>
+                <span data-u="arrowright" class="jssora05r" style="top:158px;right:8px;width:40px;height:40px;"></span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
