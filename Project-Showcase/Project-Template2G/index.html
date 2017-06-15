@@ -52,8 +52,8 @@
             border-right: 1px solid #e5e5e5;
             color: #fff;
             position: fixed;
-            top: 13.1%;
-            bottom: 13%;
+            top: 9%;
+            /*bottom: 13%;*/
             height: 100%;
             left: 0;
             width: 60px;
@@ -61,7 +61,7 @@
             -webkit-transition: width .05s linear;
             transition: width .05s linear;
             -webkit-transform: translateZ(0) scale(1, 1);
-            z-$index: 1000;
+            z-index: 1;
         }
 
         .main-menu>ul {
@@ -171,60 +171,76 @@
         .header {
             color: #e2dcd5;
             background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #9b8b76), color-stop(63%, #554936), color-stop(93%, #554d3b), color-stop(93.01%, rgba(0, 0, 0, .4)), color-stop(100%, rgba(0, 0, 0, 0)));
-            background-size: 100% 100%;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 14.1%;
-            /*z-$index: 60;*/
-        }
-
-        .header-left {
-            position: absolute;
-            left: 1.5%;
-            right: 50%;
-            bottom: 18%;
         }
 
         .heading {
             color: #c3bbb1;
             font-family: 'Trajan W01 Regular';
-            font-size: 21px;
+            font-size: 36px;
             font-variant: small-caps;
-        }
-
-        .subtitle {
-            color: #ceba9d;
+            line-height: 35px;
         }
 
         .heading-right {
             color: #e2dcd5;
             font-family: 'Trajan W01 Regular';
             font-variant: small-caps;
-            font-size: 21px;
-            text-align: right;
+            font-size: 20px;
+            margin-top: 1%;
         }
 
         .floor-plan-selected {
-            /*width: 65px;
-        height: 65px;*/
             -webkit-transform: scale(1.65, 1.65);
             -ms-transform: scale(1.65, 1.65);
             transform: scale(1.65, 1.65);
             transition-duration: 0.9s;
             -webkit-transition-duration: 0.9s;
-            /* Safari */
-            /*-webkit-transition: width height 2s;
-        transition: width height 2s;
-        -webkit-transition-timing-function: linear;
-        transition-timing-function: linear;*/
-            /* Safari */
-            z-$index: 2;
+            z-index: 2;
             border: 2px solid #fff;
             box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
         }
 
+        .card {
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+          max-width: 300px;
+          margin-left: auto;
+          text-align: center;
+          font-family: arial;
+          background: #f3f3f3;
+        }
+
+        /*.suggested-project-detail{
+          background: #f3f3f3;
+        }*/
+
+        .title {
+          color: grey;
+          font-size: 18px;
+        }
+
+        .card button {
+          border: none;
+          outline: 0;
+          display: inline-block;
+          padding: 8px;
+          color: white;
+          background-color: #000;
+          text-align: center;
+          cursor: pointer;
+          width: 100%;
+          font-size: 18px;
+        }
+
+        .card a {
+          text-decoration: none;
+          font-size: 22px;
+          color: black;
+        }
+
+        .card button:hover, a:hover {
+          opacity: 0.7;
+        }
+        /*jssor CSS*/
         .jssora05l, .jssora05r {
             display: block;
             position: absolute;
@@ -248,69 +264,86 @@
 </head>
 
 <body>
-    <div ng-app="InsideMapsData">
-        <div ng-controller="MainCtrl">
-            <div class="header background-header">
-                <div class="header-left">
-                    <div class="heading">Magnificent Spanish Mediterranean Home ~ $2,548,000</div>
-                    <span class="subtitle" style="text-transform: uppercase;">2112 Adeline Drive, Burlingame, CA 94010 &nbsp;|&nbsp;MLS #81433218 &nbsp;|&nbsp; VIRTUAL TOUR #1722089</span>
+    <div ng-app="InsideMapsData" ng-controller="MainCtrl" style="background: linear-gradient(to bottom, #111 10%, #333 60%, #111 90%)">
+        <div class="container-fluid header">
+            <div class="col-sm-6" style="margin-top:1%">
+                <span class="heading">Magnificent Spanish Mediterranean Home ~ $2,548,000</span><br>
+                <span class="" style="color: #ceba9d; text-transform: uppercase;">2112 Adeline Drive, Burlingame, CA 94010 &nbsp;|&nbsp;MLS #81433218 &nbsp;|&nbsp; VIRTUAL TOUR #1722089</span>
+            </div>
+            <div class="col-sm-4" style="cursor: pointer; float: right; opacity: 1;">
+                <img src="https://tours.tourfactory.com/tours/media/user/00/00/07/35/51/User73551_132_198.jpg" width="50" height="75" style="float: right; margin: 10px;">
+                <div class="text-right">
+                    <div class="heading-right"><span>InsideMaps Inc</span></div>
+                    <div class="heading-right"><span>+1 415-819-9879</span></div>
+                    <div style="color: #ceba9d;"><span>InsideMaps Corporate Headquarters</span></div>
                 </div>
-                <div style="opacity: 1;">
-                    <img src="https://tours.tourfactory.com/tours/media/user/00/00/07/35/51/User73551_132_198.jpg" style="margin: 10px 15px; width: 44.8103px; height: 67.252px; top: 7px; right: 15px; cursor: pointer; float: right">
+            </div>
+        </div>
 
-                    <div class="" style="right: 76px; float: right">
-                        <div class="heading-right"><span style="cursor: pointer;">InsideMaps Inc</span></div>
-                        <div class="heading-right"><span style="cursor: pointer;">+1 415-819-9879</span></div>
-                        <div><span class="subtitle" style="cursor: pointer;">InsideMaps Corporate Headquarters</span></div>
+        <nav class="main-menu">
+            <ul>
+                <li><a href="#"><i class="fa fa-home fa-2x"></i><span class="nav-text">PROPERTY INFO</span></a></li>
+                <li><a href="#"><i class="fa fa-envelope fa-2x"></i><span class="nav-text">SEND TO A FRIEND</span></a></li>
+                <li><a href="#"><i class="fa fa-print fa-2x"></i><span class="nav-text">PRINT MATERILAS</span></a></li>
+                <li><a href="#"><i class="fa fa-paperclip fa-2x"></i><span class="nav-text">ATTACHMENTS</span></a></li>
+                <li><a href="#"><i class="fa fa-compass fa-2x"></i><span class="nav-text">PROPERTY MAP</span></a></li>
+                <li><a href="#"><i class="fa fa-calculator fa-2x"></i><span class="nav-text">CALCULATOR</span></a></li>
+                <li><a href="#"><i class="fa fa-apple fa-2x"></i><span class="nav-text">SCHOOL INFO</span></a></li>
+                <li><a href="#"><i class="fa fa-info fa-2x"></i><span class="nav-text">CONTACT</span></a></li>
+            </ul>
+        </nav>
+        <div class="container-fluid">
+
+            <div class="col-sm-6">
+                <div id="jssor_1" style="position:relative;margin:0;top:25px;left:65px;width:800px;height:456px;overflow:hidden;visibility:hidden;background-color:#24262e;">
+                    <!-- Loading Screen -->
+                    <div data-u="loading" style="position:absolute;top:0px;left:0px;background:url('img/loading.gif') no-repeat 50% 50%;background-color:rgba(0, 0, 0, 0.7);"></div>
+                    <div data-u="slides" id="dynamicThumbs" style="cursor:default;position:relative;top:0px;left:0px;width:800px;height:356px;overflow:hidden;">
+                    </div>
+                    <!-- Thumbnail Navigator dynamicThumbs-->
+                    <div data-u="thumbnavigator" class="jssort01" style="position:absolute;left:0px;bottom:0px;width:800px;height:100px;" data-autocenter="1">
+                        <!-- Thumbnail Item Skin Begin -->
+                        <div data-u="slides" style="cursor: default;">
+                            <div data-u="prototype" class="p">
+                                <div class="w">
+                                    <div data-u="thumbnailtemplate" class="t"></div>
+                                </div>
+                                <div class="c"></div>
+                            </div>
+                        </div>
+                        <!-- Thumbnail Item Skin End -->
+                    </div>
+                    <!-- Arrow Navigator -->
+                    <span data-u="arrowleft" class="jssora05l" style="top:158px;left:8px;width:40px;height:40px;"></span>
+                    <span data-u="arrowright" class="jssora05r" style="top:158px;right:8px;width:40px;height:40px;"></span>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <h2 style="color: #9b8b76">You Might Also Like</h2>
+                <div class="card">
+                    <img src="https://www.w3schools.com/w3images/team2.jpg" alt="John" style="width:100%">
+                    <div class="">
+                        <h1>John Doe</h1>
+                        <p class="title">CEO & Founder, Example</p>
+                        <p>Harvard University</p>
+                        <p><button>Contact</button></p>
                     </div>
                 </div>
             </div>
-
-            <nav class="main-menu">
-                <ul>
-                    <li><a href="#"><i class="fa fa-home fa-2x"></i><span class="nav-text">PROPERTY INFO</span></a></li>
-                    <li><a href="#"><i class="fa fa-envelope fa-2x"></i><span class="nav-text">SEND TO A FRIEND</span></a></li>
-                    <li><a href="#"><i class="fa fa-print fa-2x"></i><span class="nav-text">PRINT MATERILAS</span></a></li>
-                    <li><a href="#"><i class="fa fa-paperclip fa-2x"></i><span class="nav-text">ATTACHMENTS</span></a></li>
-                    <li><a href="#"><i class="fa fa-compass fa-2x"></i><span class="nav-text">PROPERTY MAP</span></a></li>
-                    <li><a href="#"><i class="fa fa-calculator fa-2x"></i><span class="nav-text">CALCULATOR</span></a></li>
-                    <li><a href="#"><i class="fa fa-apple fa-2x"></i><span class="nav-text">SCHOOL INFO</span></a></li>
-                    <li><a href="#"><i class="fa fa-info fa-2x"></i><span class="nav-text">CONTACT</span></a></li>
-                </ul>
-            </nav>
-            <table class="" style="position: relative; top: 100px; left: 0px; float: right">
-                <tbody>
-                    <tr>
-                        <td style="position: relative;">
-                            <img src="http://theme.tourfactory.com/file/ffffffff/00000033/728.png" style="display: inline; width: 475px; height: auto;">
-                            <span ng-repeat="slide in slides">
-                                <img ng-hide = "slide.top == ''" ng-class="{ 'floor-plan-selected': $index == selectedIndex }" ng-src="{{slide.image}}" ng-click="floorPlanImageSelected($index)" width="55" height="55" ng-style="{'top': slide.top, 'left': slide.left}" style="position: absolute; cursor: pointer; border-radius: 48px; margin-left: -24px; margin-top: -24px; overflow: hidden;"></img>
-                            </span>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <div id="jssor_1" style="position:relative;margin:0;top:140px;left:210px;width:800px;height:456px;overflow:hidden;visibility:hidden;background-color:#24262e;">
-                <!-- Loading Screen -->
-                <div data-u="loading" style="position:absolute;top:0px;left:0px;background:url('img/loading.gif') no-repeat 50% 50%;background-color:rgba(0, 0, 0, 0.7);"></div>
-                <div data-u="slides" id="dynamicThumbs" style="cursor:default;position:relative;top:0px;left:0px;width:800px;height:356px;overflow:hidden;">
-                </div>
-                <!-- Thumbnail Navigator dynamicThumbs-->
-                <div data-u="thumbnavigator" class="jssort01" style="position:absolute;left:0px;bottom:0px;width:800px;height:100px;" data-autocenter="1">
-                    <!-- Thumbnail Item Skin Begin -->
-                    <div data-u="slides" style="cursor: default;">
-                        <div data-u="prototype" class="p">
-                            <div class="w">
-                                <div data-u="thumbnailtemplate" class="t"></div>
-                            </div>
-                            <div class="c"></div>
-                        </div>
-                    </div>
-                    <!-- Thumbnail Item Skin End -->
-                </div>
-                <!-- Arrow Navigator -->
-                <span data-u="arrowleft" class="jssora05l" style="top:158px;left:8px;width:40px;height:40px;"></span>
-                <span data-u="arrowright" class="jssora05r" style="top:158px;right:8px;width:40px;height:40px;"></span>
+            <!-- <div class="col-sm-2" style="left: 6.7%"> -->
+            <div class="col-sm-2">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td style="position: relative;">
+                                <img src="http://theme.tourfactory.com/file/ffffffff/00000033/728.png" style="display: inline; width: 475px; height: auto;">
+                                <span ng-repeat="slide in slides">
+                                  <img ng-hide = "slide.top == ''" ng-class="{ 'floor-plan-selected': $index == selectedIndex }" ng-src="{{slide.image}}" ng-click="floorPlanImageSelected($index)" width="55" height="55" ng-style="{'top': slide.top, 'left': slide.left}" style="position: absolute; cursor: pointer; border-radius: 48px; margin-left: -24px; margin-top: -24px; overflow: hidden;"></img>
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
