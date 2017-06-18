@@ -1,6 +1,8 @@
 var app = angular.module('InsideMapsData', ['ui.bootstrap']);
 app.controller('MainCtrl', function($scope) {
 
+    $scope.floorToggle = true;
+
     $scope.floorPlanImageSelected = function(index) {
         console.log(index);
         $scope.selectedIndex = index;
