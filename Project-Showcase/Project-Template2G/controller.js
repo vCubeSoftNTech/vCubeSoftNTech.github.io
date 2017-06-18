@@ -10,50 +10,50 @@ app.controller('MainCtrl', function($scope) {
     var slides = [{
             image: './img/1.jpg',
             text: "Bedroom1",
-            top: "320px",
-            left: "185px"
+            top: "",
+            left: ""
         },
         {
             image: './img/2.jpg',
             text: "Bedroom2",
-            top: "215px",
-            left: "180px"
+            top: "195px",
+            left: "165px"
         },
         {
             image: './img/3.jpg',
             text: "Master Bedroom",
-            top: "135px",
-            left: "195px"
+            top: "120px",
+            left: "175px"
         },
         {
             image: './img/4.jpg',
             text: "Kitchen",
-            top: "75px",
-            left: "250px"
+            top: "72px",
+            left: "228px"
         },
         {
             image: './img/5.jpg',
             text: "Dining Room",
-            top: "130px",
-            left: "295px"
+            top: "140px",
+            left: "255px"
         },
         {
             image: './img/6.jpg',
             text: "Living Room",
-            top: "325px",
-            left: "300px"
+            top: "285px",
+            left: "165px"
         },
         {
             image: './img/7.jpg',
             text: "Office Room",
-            top: "470px",
-            left: "270px"
+            top: "420px",
+            left: "240px"
         },
         {
             image: './img/8.jpg',
             text: "Entry",
-            top: "225px",
-            left: "295px"
+            top: "290px",
+            left: "265px"
         },
         {
             image: './img/9.jpg',

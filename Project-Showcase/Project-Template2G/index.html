@@ -223,7 +223,7 @@
         .card {
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
             max-width: 300px;
-            margin-left: auto;
+            margin: auto;
             text-align: center;
             font-family: arial;
             background: #f3f3f3;
@@ -379,25 +379,26 @@
                     <span data-u="arrowright" class="jssora05r" style="top:158px;right:8px;width:40px;height:40px;"></span>
                 </div>
             </div>
-            <div class="col-sm-2">
+            <div class="col-sm-3">
+              <div class="text-center">
                 <h2 style="color: #9b8b76">You May Also Like</h2>
                 <div class="card">
                     <img src="./img/10.jpg" alt="John" style="width:100%">
-                    <div class="">
+                    <div>
                         <h1>Meadow Walk</h1>
                         <p class="title">San Mateo, CA 94403</p>
                         <p>4 beds - 4 baths - 2,409 sqft</p>
                         <p><button>Contact</button></p>
                     </div>
                 </div>
+              </div>
             </div>
-            <!-- <div class="col-sm-2" style="left: 6.7%"> -->
-            <div ng-show = "floorToggle == true" class="col-sm-4 floor-plan-block" style="height: 814px">
+            <div ng-show = "floorToggle == true" class="col-sm-3 floor-plan-block" style="height: 814px">
                 <table>
                     <tbody>
                         <tr>
                             <td style="position: relative;">
-                                <img src="http://theme.tourfactory.com/file/ffffffff/00000033/728.png" style="display: inline; width: 475px; height: auto;">
+                                <img src="http://theme.tourfactory.com/file/ffffffff/00000033/728.png" style="display: inline; max-width: 100%; height: auto;">
                                 <span ng-repeat="slide in slides">
                                   <img ng-hide = "slide.top == ''" ng-class="{ 'floor-plan-selected': $index == selectedIndex }" ng-src="{{slide.image}}" ng-click="floorPlanImageSelected($index)" width="55" height="55" ng-style="{'top': slide.top, 'left': slide.left}" style="position: absolute; cursor: pointer; border-radius: 48px; margin-left: -24px; margin-top: -24px; overflow: hidden;"></img>
                                 </span>
@@ -409,7 +410,7 @@
                 <p ng-click="floorToggle = !floorToggle" class="text-right" style="color: #6f6e6e; cursor: pointer"><span><i class="fa fa-exchange"></i></span></p>
             </div>
 
-            <div ng-show = "floorToggle == false" class="text-center col-sm-4 floor-plan-block floor-plan-contact" style="height: 814px">
+            <div ng-show = "floorToggle == false" class="text-center col-sm-3 floor-plan-block floor-plan-contact" style="height: 814px">
               <img src="https://tours.tourfactory.com/tours/media/user/00/00/07/35/51/User73551_132_198.jpg" width="150" height="auto">
               <div>
                   <h2>InsideMaps Inc</h2>
