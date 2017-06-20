@@ -18,50 +18,50 @@ app.controller('MainCtrl', function($scope) {
         {
             image: './img/2.jpg',
             text: "Bedroom2",
-            top: "195px",
-            left: "165px",
+            top: "36%",
+            left: "38%",
             index_number: 1
         },
         {
             image: './img/3.jpg',
             text: "Master Bedroom",
-            top: "120px",
-            left: "175px",
+            top: "22%",
+            left: "40%",
             index_number: 2
         },
         {
             image: './img/4.jpg',
             text: "Kitchen",
-            top: "72px",
-            left: "228px",
+            top: "13%",
+            left: "53%",
             index_number: 3
         },
         {
             image: './img/5.jpg',
             text: "Dining Room",
-            top: "140px",
-            left: "255px",
+            top: "25%",
+            left: "60%",
             index_number: 4
         },
         {
             image: './img/6.jpg',
             text: "Living Room",
-            top: "285px",
-            left: "165px",
+            top: "53%",
+            left: "38%",
             index_number: 5
         },
         {
             image: './img/7.jpg',
             text: "Office Room",
-            top: "420px",
-            left: "240px",
+            top: "80%",
+            left: "56%",
             index_number: 6
         },
         {
             image: './img/8.jpg',
             text: "Entry",
-            top: "290px",
-            left: "265px",
+            top: "54%",
+            left: "62%",
             index_number: 7
         },
         {
@@ -118,6 +118,8 @@ app.controller('MainCtrl', function($scope) {
             slidesToScroll: 1,
             arrows: false,
             fade: true,
+            autoplay: true,
+            autoplaySpeed: 2000,
             asNavFor: '.slider-nav'
         });
         $('.slider-nav').slick({
