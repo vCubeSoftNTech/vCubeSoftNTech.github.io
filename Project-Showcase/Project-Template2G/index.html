@@ -12,19 +12,19 @@
     <link rel="stylesheet" type="text/css" href="./js/slick-master/slick/slick.css">
     <link rel="stylesheet" type="text/css" href="./js/slick-master/slick/slick-theme.css">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.4/ui-bootstrap-tpls.min.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
-    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="./controller.js"></script>
     <script src="./js/slick-master/slick/slick.js" type="text/javascript"></script>
-    <script src="js/jssor.slider-24.1.5.min.js" type="text/javascript"></script>
 
     <style>
         body,
         html {
             height: 100%;
         }
+        /*Side Nav CSS*/
 
         .fa-2x {
             font-size: 2em;
@@ -197,16 +197,16 @@
             background: radial-gradient(ellipse at center, rgba(110, 80, 51, 1) 0%, rgba(0, 0, 0, 1) 100%);
         }
 
-        .floor-plan-contact img{
-          padding: 15% 0 0 0;
+        .floor-plan-contact img {
+            padding: 15% 0 0 0;
         }
 
-        .floor-plan-contact div{
-          color: #fff;
+        .floor-plan-contact div {
+            color: #fff;
         }
 
-        .floor-plan-contact p{
-          padding: 10% 0 0 0;
+        .floor-plan-contact p {
+            padding: 10% 0 0 0;
         }
 
         .floor-plan-selected {
@@ -228,9 +228,6 @@
             font-family: arial;
             background: #f3f3f3;
         }
-        /*.suggested-project-detail{
-          background: #f3f3f3;
-        }*/
 
         .title {
             color: grey;
@@ -301,27 +298,123 @@
             font-weight: bold;
             margin: 0 20px;
         }
-        /*jssor CSS*/
-        .jssora05l, .jssora05r {
-            display: block;
-            position: absolute;
-            /* size of arrow element */
-            width: 40px;
-            height: 40px;
-            cursor: pointer;
-            background: url('img/a17.png') no-repeat;
-            overflow: hidden;
+        /*slick-slide CSS*/
+
+        * {
+            box-sizing: border-box;
         }
-        .jssora05l { background-position: -10px -40px; }
-        .jssora05r { background-position: -70px -40px; }
-        .jssora05l:hover { background-position: -130px -40px; }
-        .jssora05r:hover { background-position: -190px -40px; }
-        .jssora05l.jssora05ldn { background-position: -250px -40px; }
-        .jssora05r.jssora05rdn { background-position: -310px -40px; }
-        .jssora05l.jssora05lds { background-position: -10px -40px; opacity: .3; pointer-events: none; }
-        .jssora05r.jssora05rds { background-position: -70px -40px; opacity: .3; pointer-events: none; }
-        /* jssor slider thumbnail navigator skin 01 css *//*.jssort01 .p            (normal).jssort01 .p:hover      (normal mouseover).jssort01 .p.pav        (active).jssort01 .p.pdn        (mousedown)*/.jssort01 .p {    position: absolute;    top: 0;    left: 0;    width: 72px;    height: 72px;}.jssort01 .t {    position: absolute;    top: 0;    left: 0;    width: 100%;    height: 100%;    border: none;}.jssort01 .w {    position: absolute;    top: 0px;    left: 0px;    width: 100%;    height: 100%;}.jssort01 .c {    position: absolute;    top: 0px;    left: 0px;    width: 68px;    height: 68px;    border: #000 2px solid;    box-sizing: content-box;    background: url('img/t01.png') -800px -800px no-repeat;    _background: none;}.jssort01 .pav .c {    top: 2px;    _top: 0px;    left: 2px;    _left: 0px;    width: 68px;    height: 68px;    border: #000 0px solid;    _border: #fff 2px solid;    background-position: 50% 50%;}.jssort01 .p:hover .c {    top: 0px;    left: 0px;    width: 70px;    height: 70px;    border: #fff 1px solid;    background-position: 50% 50%;}.jssort01 .p.pdn .c {    background-position: 50% 50%;    width: 68px;    height: 68px;    border: #000 2px solid;}* html .jssort01 .c, * html .jssort01 .pdn .c, * html .jssort01 .pav .c {    /* ie quirks mode adjust */    width /**/: 72px;    height /**/: 72px;}
-</style>
+
+        .slider {
+            /*max-width: 61%;*/
+            margin: 10px 0 0 60px;
+        }
+
+        .slick-slide {
+            margin: 0 3px;
+        }
+
+        .slick-slide img {
+            max-width: 100%;
+            /*max-height: auto;*/
+        }
+
+        .slick-prev:before,
+        .slick-next:before {
+            color: #fff;
+        }
+
+        /*.slick-prev,
+        .slick-next {
+            top: 95%;
+        }*/
+
+        @keyframes slideShow {
+            0% {
+                opacity: 0;
+                transform: scale(1);
+                -ms-transform: scale(1);
+            }
+            5% {
+                opacity: 1
+            }
+            25% {
+                opacity: 1;
+            }
+            30% {
+                opacity: 0;
+                transform: scale(1.1);
+                -ms-transform: scale(1.1);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(1);
+                -ms-transformm: scale(1);
+            }
+        }
+
+        @-o-keyframes slideShow {
+            0% {
+                opacity: 0;
+                -o-transform: scale(1);
+            }
+            5% {
+                opacity: 1
+            }
+            25% {
+                opacity: 1;
+            }
+            30% {
+                opacity: 0;
+                -o-transform: scale(1.1);
+            }
+            100% {
+                opacity: 0;
+                -o-transformm: scale(1);
+            }
+        }
+
+        @-moz-keyframes slideShow {
+            0% {
+                opacity: 0;
+                -moz-transform: scale(1);
+            }
+            5% {
+                opacity: 1
+            }
+            25% {
+                opacity: 1;
+            }
+            30% {
+                opacity: 0;
+                -moz-transform: scale(1.1);
+            }
+            100% {
+                opacity: 0;
+                -moz-transformm: scale(1);
+            }
+        }
+
+        @-webkit-keyframes slideShow {
+            0% {
+                opacity: 0;
+                -webkit-transform: scale(1);
+            }
+            5% {
+                opacity: 1
+            }
+            25% {
+                opacity: 1;
+            }
+            30% {
+                opacity: 0;
+                -webkit-transform: scale(1.1);
+            }
+            100% {
+                opacity: 0;
+                -webkit-transformm: scale(1);
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -356,44 +449,24 @@
         <div class="container-fluid">
 
             <div class="col-sm-6">
-                <div id="jssor_1" style="position:relative;margin:0;top:25px;left:65px;width:800px;height:456px;overflow:hidden;visibility:hidden;background-color:#24262e;">
-                    <!-- Loading Screen -->
-                    <div data-u="loading" style="position:absolute;top:0px;left:0px;background:url('img/loading.gif') no-repeat 50% 50%;background-color:rgba(0, 0, 0, 0.7);"></div>
-                    <div data-u="slides" id="dynamicThumbs" style="cursor:default;position:relative;top:0px;left:0px;width:800px;height:356px;overflow:hidden;">
-                    </div>
-                    <!-- Thumbnail Navigator dynamicThumbs-->
-                    <div data-u="thumbnavigator" class="jssort01" style="position:absolute;left:0px;bottom:0px;width:800px;height:100px;" data-autocenter="1">
-                        <!-- Thumbnail Item Skin Begin -->
-                        <div data-u="slides" style="cursor: default;">
-                            <div data-u="prototype" class="p">
-                                <div class="w">
-                                    <div data-u="thumbnailtemplate" class="t"></div>
-                                </div>
-                                <div class="c"></div>
-                            </div>
-                        </div>
-                        <!-- Thumbnail Item Skin End -->
-                    </div>
-                    <!-- Arrow Navigator -->
-                    <span data-u="arrowleft" class="jssora05l" style="top:158px;left:8px;width:40px;height:40px;"></span>
-                    <span data-u="arrowright" class="jssora05r" style="top:158px;right:8px;width:40px;height:40px;"></span>
-                </div>
+              <div id="dynamicBG" class="slider slider-for"></div>
+              <div id="dynamicThumbs" class="slider slider-nav"></div>
             </div>
             <div class="col-sm-3">
-              <div class="text-center">
-                <h2 style="color: #9b8b76">You May Also Like</h2>
-                <div class="card">
-                    <img src="./img/10.jpg" alt="John" style="width:100%">
-                    <div>
-                        <h1>Meadow Walk</h1>
-                        <p class="title">San Mateo, CA 94403</p>
-                        <p>4 beds - 4 baths - 2,409 sqft</p>
-                        <p><button>Contact</button></p>
+                <div class="text-center">
+                    <h2 style="color: #9b8b76">You May Also Like</h2>
+                    <div class="card">
+                        <img src="./img/10.jpg" alt="John" style="width:100%">
+                        <div>
+                            <h1>Meadow Walk</h1>
+                            <p class="title">San Mateo, CA 94403</p>
+                            <p>4 beds - 4 baths - 2,409 sqft</p>
+                            <p><button>Contact</button></p>
+                        </div>
                     </div>
                 </div>
-              </div>
             </div>
-            <div ng-show = "floorToggle == true" class="col-sm-3 floor-plan-block" style="height: 814px">
+            <div ng-show="floorToggle == true" class="col-sm-3 floor-plan-block" style="height: 814px">
                 <table>
                     <tbody>
                         <tr>
@@ -410,13 +483,13 @@
                 <p class="text-right"><span style="color: #6f6e6e; cursor: pointer" ng-click="floorToggle = !floorToggle"><i class="fa fa-exchange"></i></span></p>
             </div>
 
-            <div ng-show = "floorToggle == false" class="text-center col-sm-3 floor-plan-block floor-plan-contact" style="height: 814px">
-              <img src="https://tours.tourfactory.com/tours/media/user/00/00/07/35/51/User73551_132_198.jpg" width="150" height="auto">
-              <div>
-                  <h2>InsideMaps Inc</h2>
-                  <h3>+1 415-819-9879</h3>
-                  <h4>InsideMaps Inc. Corporate Headquarters</h4>
-              </div>
+            <div ng-show="floorToggle == false" class="text-center col-sm-3 floor-plan-block floor-plan-contact" style="height: 814px">
+                <img src="https://tours.tourfactory.com/tours/media/user/00/00/07/35/51/User73551_132_198.jpg" width="150" height="auto">
+                <div>
+                    <h2>InsideMaps Inc</h2>
+                    <h3>+1 415-819-9879</h3>
+                    <h4>InsideMaps Inc. Corporate Headquarters</h4>
+                </div>
                 <p class="text-center"><button class="btn btn-basic">CONTACT ME</button></p>
                 <p class="text-right"><span style="color: #6f6e6e; cursor: pointer" ng-click="floorToggle = !floorToggle"><i class="fa fa-exchange"></i></span></p>
             </div>
@@ -441,4 +514,5 @@
         </footer>
     </div>
 </body>
+
 </html>
