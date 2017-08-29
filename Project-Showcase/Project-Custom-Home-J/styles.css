@@ -86,7 +86,7 @@ html, body {
     width: 79%;
     opacity: 0.7;
     transition: .5s ease;
-    background-color:rgba(0,0,0,0.5)
+    background-color: rgba(0, 0, 0, 0.5)
 }
 
 .img-gal-container:hover .overlay {
@@ -97,18 +97,10 @@ html, body {
     vertical-align: super;
 }
 
-.grow {
-    transition: all .5s ease-in-out;
-}
-
-.grow:hover {
-    transform: scale(1.02);
-}
-
 .text {
     color: #ffffff;
     font-size: 2em;
-    font-family: "Roboto Slab",serif;
+    font-family: "Roboto Slab", serif;
     font-weight: bold;
     position: absolute;
     top: 50%;
@@ -120,6 +112,7 @@ html, body {
 .inner-addon {
     position: relative;
 }
+
 
 /* style icon */
 
@@ -178,6 +171,22 @@ html, body {
     margin: 42px 0;
     padding-bottom: 24px;
     text-align: center;
+}
+
+.req-brochure {
+    margin-left: 40%;
+    width: 35%;
+    border: 7px solid #e9e9e9;
+    color: #3b4d64;
+    font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.req-brochure a {
+    text-decoration: none;
+    color: #3b4d64;
 }
 
 
