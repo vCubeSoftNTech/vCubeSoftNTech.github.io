@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Theme Made By www.w3schools.com - No Copyright -->
+    <title>WOODTEX</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="img/favicon.ico" type="image/gif" sizes="16x16">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://weloveiconfonts.com/api/?family=entypo">
+    <link rel="stylesheet" href="./styles.css">
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.4/ui-bootstrap-tpls.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./controller.js"></script>
+</head>
+
+<body>
+    <div ng-app="InsideMapsWoodtex">
+        <div ng-controller="MainCtrl">
+            <div class="container" style="overflow-x:auto;">
+                <table class="table-responsive header-social-search">
+                    <tr>
+                        <td rowspan="2"><img src="./img/logo-black.png" width="250" height="auto"></img>
+                        </td>
+                        <td>
+                            <span>CALL US at 886-InsideMaps</span>
+                            <p>|</p>
+                            <p>
+                                <a target="_blank" href="https://twitter.com" class="icon fa fa-twitter"></a>
+                            </p>
+                            <p>
+                                <a target="_blank" href="https://facebook.com" class="icon fa fa-facebook"></a>
+                            </p>
+                            <p>
+                                <a target="_blank" href="https://youtube.com" class="icon fa fa-youtube"></a>
+                            </p>
+                            <p>
+                                <a target="_blank" href="https://pinterest.com" class="icon fa fa-pinterest"></a>
+                            </p>
+                        </td>
+                        <td class="inner-addon left-addon"><i class="glyphicon glyphicon-search"></i><input type="text" class="form-control" placeholder="Search"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <a>&nbsp;</a>
+                            <a>STRUCTURES</a>
+                            <a>WHY INSIDEMAPS</a>
+                            <a>WHERE TO BUY</a>
+                            <a>HOW IT WORKS</a>
+                            <a>CONTACT</a>
+                            <a>BLOG</a>
+                            <a>&nbsp;</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="3">
+                            <a href="#"><i class="fa fa-university fa-4x"></i></a>
+                            <a href="#"><i class="fa fa-map fa-4x"></i></a>
+                            <a href="#"><i class="fa fa-industry fa-4x"></i></a>
+                            <a href="#"><i class="fa fa-ticket fa-4x"></i></a>
+                        </td>
+                    </tr>
+                </table>
+            </div><br><br><br>
+            <!-- <aside id="sticky-social">
+                <ul>
+                    <li><a href="#" class="entypo-facebook" target="_blank" data-toggle="tooltip" data-placement="right" title="Facebook"><span></span></a></li>
+                    <li><a href="#" class="entypo-thumbs-up" target="_blank" data-toggle="tooltip" data-placement="right" title="Facebook Like"><span></span></a></li>
+                    <li><a href="#" class="entypo-pinterest" target="_blank" data-toggle="tooltip" data-placement="right" title="Pinterest"><span></span></a></li>
+                    <li><a href="#" class="entypo-twitter" target="_blank" data-toggle="tooltip" data-placement="right" title="Twitter"><span></span></a></li>
+                    <li><a href="#" class="entypo-mail" target="_blank" data-toggle="tooltip" data-placement="right" title="Email"><span></span></a></li>
+                </ul>
+            </aside> -->
+
+            <div class="banner">
+                <p>STORAGE SHEDS</p>
+            </div><br><br><br>
+
+            <div class="container">
+                <p class="sheds-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. It has survived not only five centuries, but also the leap into electronic typesetting,
+                    remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem
+                    Ipsum.</p>
+                <div>
+
+                    <div class="sheds-style container">
+                        <p>EXPLORE OUR SHED STYLES</p>
+                    </div>
+
+                    <div class="container photo-gallery">
+                        <div class="col-sm-6 img-gal-container grow" ng-repeat="shed in sheds">
+                            <img ng-src="{{shed.image}}" width="450" height="270"></img>
+                            <div class="overlay">
+                                <div class="text">{{shed.name}}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <script>
+                        //JQ Code
+
+                        // http://jsfiddle.net/hungerpain/eK8X5/7/
+                        // https://codepen.io/yoeri/pen/eZMqbO
+                        // http://jsfiddle.net/1crd75rs/
+                        // https://jsfiddle.net/glebkema/1wx4ubvc/
+                        // https://codepen.io/chrisgosling/pen/nmaIb
+
+                        // https://codepen.io/BuiltBySam/pen/merjWp -topnav
+
+                        $(document).ready(function() {
+                            $('[data-toggle="tooltip"]').tooltip();
+                        });
+                    </script>
+                </div>
+            </div>
+</body>
+
+</html>
