@@ -73,7 +73,8 @@ html, body {
     color: #869cae;
 }
 
-.photo-gallery div {
+
+/*.photo-gallery div {
     padding: 0 0 0 0;
 }
 
@@ -107,7 +108,7 @@ html, body {
     left: 50%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
-}
+}*/
 
 .inner-addon {
     position: relative;
@@ -152,10 +153,11 @@ html, body {
     background-image: url("./img/banner.jpg");
     text-align: center;
     color: #3b4d64;
-    padding: 40px 0;
+    padding: 35px 0;
 }
 
-.sheds-text {
+
+/*.sheds-text {
     text-align: center;
     color: #23272c;
     font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
@@ -187,11 +189,64 @@ html, body {
 .req-brochure a {
     text-decoration: none;
     color: #3b4d64;
+}*/
+
+.price-calculator input[type=text] {
+    width: 20%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+}
+
+.price-calculator input[type=text]:focus {
+    border: 1px solid #555;
+}
+
+.price-calculator select {
+    width: 20%;
+    padding: 12px 20px;
+    background: #fff;
+    /*border: none;
+    border-radius: 4px;*/
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+}
+
+.shed-btn {
+    background-color: #ebc047;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.footer-table table {
+    width: 100%;
+    background: #444444;
+}
+
+.footer-table table, .footer-table th, .footer-table td {
+    border: 1px solid #e9e9e9;
+    border-collapse: collapse;
 }
 
 
 /* entypo */
 
+@import url(http://weloveiconfonts.com/api/?family=entypo);
 [class*="entypo-"]:before {
     font-family: "entypo", sans-serif;
 }
