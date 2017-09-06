@@ -149,7 +149,8 @@ html, body {
 
 .banner {
     font-size: 48px;
-    font-weight: bold;
+    font-weight: 700;
+    font-family: 'Roboto Condensed', sans-serif;
     background-image: url("./img/banner.jpg");
     text-align: center;
     color: #3b4d64;
@@ -191,6 +192,58 @@ html, body {
     color: #3b4d64;
 }*/
 
+ .heading-design h1{
+   color: #3b4d64;
+   font-family: 'Roboto Condensed', sans-serif;
+ }
+
+ .page-design-p{
+   font-size: large;
+   color: #23272c;
+   font-family: 'Open Sans', sans-serif;
+ }
+
+  .panel-body {
+    border-right: 7px solid #e9e9e9;
+    border-left: 7px solid #e9e9e9;
+    border-bottom: 7px solid #e9e9e9;
+  }
+
+  .panel-title > a {
+    border: 7px solid #e9e9e9;
+    padding: 6% 0 6% 3%;
+     font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    font-size: 22px;
+    display: block;
+    position: relative;
+    text-decoration: none;
+    color: #757575;
+  }
+  .panel-title > a:after {
+    margin: -3% 4% 0 0;
+    color: #658aa1;
+    font-weight: lighter;
+    font-size: 36px;
+    content: "\2295"; /* fa-chevron-down */
+    /*font-family: 'FontAwesome';*/
+    position: absolute;
+    right: 0;
+  }
+  .panel-title > a[aria-expanded="true"]:after {
+    margin: -3% 4% 0 0;
+    color: #658aa1;
+    font-weight:  lighter;
+    font-size: 36px;
+    content: "\2297"; /* fa-chevron-up */
+  }
+
+  .ques-ans h1{
+    color: #3b4d64;
+    font-family: serif;
+    text-transform: uppercase;
+  }
+
 .price-calculator input[type=text] {
     width: 20%;
     padding: 12px 20px;
@@ -223,14 +276,23 @@ html, body {
 .shed-btn {
     background-color: #ebc047;
     border: none;
-    color: white;
-    padding: 15px 32px;
+    color: #ffffff;
+    padding: 4% 6%;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 24px;
+    font-weight: bold;
     margin: 4px 2px;
     cursor: pointer;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.shed-btn:hover{
+  background-color: #d5a929;
+  text-decoration: none;
+  color: #ffffff;
+
 }
 
 .footer-table table {

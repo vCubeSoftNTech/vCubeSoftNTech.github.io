@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="http://weloveiconfonts.com/api/?family=entypo">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link rel="stylesheet" href="./styles.css">
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js"></script>
@@ -83,33 +85,88 @@
             </div><br><br><br>
 
             <div class="container">
-                <div class="col-sm-8 col-md-8">
+                <div class="col-sm-8 col-md-8 heading-design">
                     <h1>DESIGN YOUR OWN</h1>
-                    <p class="text-muted">Select your siding, trim and roof colors. See it before we build it!</p>
+                    <p class="page-design-p">Select your siding, trim and roof colors. See it before we build it!</p>
                 </div>
                 <div class="col-sm-4 col-md-4 text-right">
-                    <a href="#" class="shed-btn ">ORDER NOW</a>
-                </div>
-            </div><br><br><br>
-            <div class="container">
-                <div class="col-sm-4 col-md-4">
-                    <h1>SIDING COLOR / TRIM COLOR / ROOF COLOR</h1>
-                    <p>THIS PLACE IS FOR COLOR BANK. The Woodtex brand has been synonymous with Storage Sheds since 1983. Over time, we've improved our designs, added new styles, and delivered thousands of sheds to help customers build the space they need
-                        for the important things in life. At Woodtex, you will find a style that fits your back yard, your personality, and your budget. Check out our different shed styles below.</p>
-                </div>
-                <div class="col-sm-8 col-md-8">
-                    <img src="./img/h2.jpg" width="725" height="auto"></img>
-                    <p class="text-muted">Pictured 10*12</p>
+                    <a href="#" class="shed-btn">ORDER NOW</a>
                 </div>
             </div><br><br><br>
 
             <div class="container">
+                <div class="col-sm-5 col-md-5">
+                    <div class="col-sm-12 col-md-12" style="margin-bottom: 5%">
+                        <div class="" role="tab" id="heading-2">
+                            <h1 class="panel-title">
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-1" aria-expanded="false" aria-controls="collapse-1">
+                          Siding Color
+                        </a>
+                      </h1>
+                        </div>
+                        <div id="collapse-1" class="panel-collapse collapse panel-body" role="tabpanel" aria-labelledby="heading-2">
+                            <div ng-repeat="slidingInfo in slidingColors" class="col-sm-3 col-md-3">
+                              <div class="text-center">
+                                <svg height="50" width="50">
+                                <circle cx="25" cy="25" r="25" stroke="" stroke-width="0" fill="{{slidingInfo.color}}"/>
+                              </svg>
+                                <p>{{slidingInfo.name}}</p>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-12" style="margin-bottom: 5%">
+                        <div class="" role="tab" id="heading-2">
+                            <h1 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-2" aria-expanded="false" aria-controls="collapse-2">
+                                    Trim Color
+                                </a>
+                            </h1>
+                        </div>
+                        <div id="collapse-2" class="panel-collapse collapse panel-body" role="tabpanel" aria-labelledby="heading-2">
+                            <div ng-repeat="slidingInfo in slidingColors" class="col-sm-3 col-md-3">
+                              <div class="text-center">
+                                <svg height="50" width="50">
+                                  <circle cx="25" cy="25" r="25" stroke="" stroke-width="0" fill="{{slidingInfo.color}}"/>
+                                </svg>
+                                <p>{{slidingInfo.name}}</p>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-12">
+                        <div class="" role="tab" id="">
+                            <h1 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-3" aria-expanded="false" aria-controls="collapse-3">
+                                    Roof Color
+                                </a>
+                            </h1>
+                        </div>
+                        <div id="collapse-3" class="panel-collapse collapse panel-body" role="tabpanel" aria-labelledby="">
+                            <div ng-repeat="slidingInfo in slidingColors" class="col-sm-3 col-md-3">
+                              <div class="text-center">
+                                <svg height="50" width="50">
+                                  <circle cx="25" cy="25" r="25" stroke="" stroke-width="0" fill="{{slidingInfo.color}}"/>
+                                </svg>
+                                <p>{{slidingInfo.name}}</p>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-7 col-md-7">
+                    <img src="./img/h2.jpg" width="725" height="auto"></img>
+                    <p class="page-design-p" style="margin-top:3%">Pictured 10*12</p>
+                </div>
+            </div><br><br><br>
+
+            <div class="container ques-ans">
                 <h1>ADDITIONAL ROOF OPTIONS</h1>
                 <hr>
                 <h1>FLOORPLANS</h1>
             </div><br><br><br>
 
-            <div class="container text-center">
+            <div class="container text-center heading-design">
                 <h1>PRICE CALCULATOR</h1><br>
 
                 <form class="price-calculator">
@@ -125,7 +182,7 @@
                     <input type="text" value="ZIP CODE">
                 </form><br>
                 <p class="text-muted">Which size is right for me?</p>
-                <a href="#" class="shed-btn">VIEW PRICING</a><br><br>
+                <a href="#" class="shed-btn" style="padding: 1% 2%;">VIEW PRICING</a><br><br>
                 <p>Overall building dimensions are approximate and may vary slightly. Building heights are measured ground to peak and widths are measured eave to eave.</p>
             </div><br><br><br>
             <div class="container">
@@ -177,6 +234,8 @@
 
             <script>
                 //JQ Code
+
+                // Cross -- \03a7, \00d7
 
                 // http://jsfiddle.net/hungerpain/eK8X5/7/
                 // https://codepen.io/yoeri/pen/eZMqbO

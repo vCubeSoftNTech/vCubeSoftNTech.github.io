@@ -31,4 +31,46 @@ app.controller('MainCtrl', function($scope) {
         }
     ];
 
+    $scope.slidingColors = [{
+            name: "Maroon",
+            color: "#a94442"
+        },
+        {
+            name: "Red",
+            color: "#FF0000"
+        },
+        {
+            name: "Yellow",
+            color: "#FFFF00"
+        },
+        {
+            name: "Gray",
+            color: "#ccc"
+        },
+        {
+            name: "Teal",
+            color: "#008080"
+        },
+        {
+            name: "orange red",
+            color: "#FF4500"
+        },
+        {
+            name: "dark orange",
+            color: "#FF8C00"
+        },
+        {
+            name: "dark slate gray",
+            color: "#2F4F4F"
+        },
+        {
+            name: "navy",
+            color: "#000080"
+        },
+        {
+            name: "deep pink",
+            color: "#FF1493"
+        }
+    ];
+
 });
