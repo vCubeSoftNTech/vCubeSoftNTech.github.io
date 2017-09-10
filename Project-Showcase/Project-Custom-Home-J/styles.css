@@ -248,6 +248,7 @@ html, body {
 }
 
 .footer-table table {
+    color: #fff;
     width: 100%;
     background: #444444;
 }
