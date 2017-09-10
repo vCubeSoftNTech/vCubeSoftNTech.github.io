@@ -2,14 +2,12 @@
 <html lang="en">
 
 <head>
-    <!-- Theme Made By www.w3schools.com - No Copyright -->
     <title>WOODTEX</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="img/favicon.ico" type="image/gif" sizes="16x16">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="http://weloveiconfonts.com/api/?family=entypo">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link rel="stylesheet" href="./styles.css">
@@ -60,28 +58,20 @@
                             <a>&nbsp;</a>
                         </td>
                     </tr>
-                    <!-- <tr>
-                        <td colspan="3">
-                            <a href="#"><i class="fa fa-university fa-4x"></i></a>
-                            <a href="#"><i class="fa fa-map fa-4x"></i></a>
-                            <a href="#"><i class="fa fa-industry fa-4x"></i></a>
-                            <a href="#"><i class="fa fa-ticket fa-4x"></i></a>
-                        </td>
-                    </tr> -->
                 </table>
             </div><br><br><br>
-            <aside id="sticky-social">
-                <ul>
-                    <li><a href="#" class="entypo-facebook" target="_blank" data-toggle="tooltip" data-placement="right" title="Facebook"><span></span></a></li>
-                    <li><a href="#" class="entypo-thumbs-up" target="_blank" data-toggle="tooltip" data-placement="right" title="Facebook Like"><span></span></a></li>
-                    <li><a href="#" class="entypo-pinterest" target="_blank" data-toggle="tooltip" data-placement="right" title="Pinterest"><span></span></a></li>
-                    <li><a href="#" class="entypo-twitter" target="_blank" data-toggle="tooltip" data-placement="right" title="Twitter"><span></span></a></li>
-                    <li><a href="#" class="entypo-mail" target="_blank" data-toggle="tooltip" data-placement="right" title="Email"><span></span></a></li>
+            <aside>
+                <ul id="social_side_links">
+                  <li><a style="background-color: #3c5a96;" href="#" class="fa fa-facebook fa-2x" target="_blank" data-toggle="tooltip" data-placement="right" title="Facebook"></a></li>
+                  <li><a style="background-color: #5a739d" href="#" class="fa fa-thumbs-o-up fa-2x" target="_blank" data-toggle="tooltip" data-placement="right" title="Facebook Like"></a></li>
+                  <li><a style="background-color: #cc2127" href="#" class="fa fa-pinterest-p fa-2x" target="_blank" data-toggle="tooltip" data-placement="right" title="Pinterest"></a></li>
+                  <li><a style="background-color: #00aced" href="#" class="fa fa-twitter fa-2x" target="_blank" data-toggle="tooltip" data-placement="right" title="Twitter"></a></li>
+                  <li><a style="background-color: #aaaaaa" href="#" class="fa fa-envelope-o fa-2x" target="_blank" data-toggle="tooltip" data-placement="right" title="Email"></a></li>
                 </ul>
             </aside>
 
-            <div class="banner">
-                <p>THE STANDARD</p>
+            <div class="banner heading-design">
+                <h1 class="text-center">THE STANDARD</h1>
             </div><br><br><br>
 
             <div class="container">
@@ -106,12 +96,12 @@
                         </div>
                         <div id="collapse-1" class="panel-collapse collapse panel-body" role="tabpanel" aria-labelledby="heading-2">
                             <div ng-repeat="slidingInfo in slidingColors" class="col-sm-3 col-md-3">
-                              <div class="text-center">
-                                <svg height="50" width="50">
+                                <div class="text-center">
+                                    <svg height="50" width="50">
                                 <circle cx="25" cy="25" r="25" stroke="" stroke-width="0" fill="{{slidingInfo.color}}"/>
                               </svg>
-                                <p>{{slidingInfo.name}}</p>
-                              </div>
+                                    <p>{{slidingInfo.name}}</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -125,12 +115,12 @@
                         </div>
                         <div id="collapse-2" class="panel-collapse collapse panel-body" role="tabpanel" aria-labelledby="heading-2">
                             <div ng-repeat="slidingInfo in slidingColors" class="col-sm-3 col-md-3">
-                              <div class="text-center">
-                                <svg height="50" width="50">
+                                <div class="text-center">
+                                    <svg height="50" width="50">
                                   <circle cx="25" cy="25" r="25" stroke="" stroke-width="0" fill="{{slidingInfo.color}}"/>
                                 </svg>
-                                <p>{{slidingInfo.name}}</p>
-                              </div>
+                                    <p>{{slidingInfo.name}}</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -144,12 +134,12 @@
                         </div>
                         <div id="collapse-3" class="panel-collapse collapse panel-body" role="tabpanel" aria-labelledby="">
                             <div ng-repeat="slidingInfo in slidingColors" class="col-sm-3 col-md-3">
-                              <div class="text-center">
-                                <svg height="50" width="50">
+                                <div class="text-center">
+                                    <svg height="50" width="50">
                                   <circle cx="25" cy="25" r="25" stroke="" stroke-width="0" fill="{{slidingInfo.color}}"/>
                                 </svg>
-                                <p>{{slidingInfo.name}}</p>
-                              </div>
+                                    <p>{{slidingInfo.name}}</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -160,10 +150,53 @@
                 </div>
             </div><br><br><br>
 
-            <div class="container ques-ans">
-                <h1>ADDITIONAL ROOF OPTIONS</h1>
-                <hr>
-                <h1>FLOORPLANS</h1>
+            <div class="container">
+                <div class="" role="tab" id="heading-2">
+                    <h1 class="body-panel-title">
+                          <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-4" aria-expanded="false" aria-controls="collapse-4">
+                              ADDITIONAL ROOF OPTIONS
+                          </a>
+                      </h1>
+                    <hr>
+                </div>
+
+                <div id="collapse-4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-2">
+                    <div class="">
+                        <div class="col-sm-2 col-md-2 body-panel-left">Metal Roof Colors</div>
+                        <div class="col-sm-2 col-md-2" ng-repeat="metalRoofInfo in metalRoofColors">
+                            <div class="text-center">
+                                <svg height="100" width="100">
+                            <circle cx="50" cy="50" r="40" stroke="" stroke-width="0" fill="{{metalRoofInfo.color}}"/>
+                          </svg>
+                                <p>{{metalRoofInfo.name}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <span data-toggle="collapse" href="#collapse-4"></span>
+                </div>
+
+                <div class="" role="tab" id="heading-2">
+                    <h1 class="body-panel-title">
+                          <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-5" aria-expanded="false" aria-controls="collapse-5">
+                              FLOORPLANS
+                          </a>
+                      </h1>
+                    <hr>
+                </div>
+
+                <div id="collapse-5" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-2">
+                    <div class="">
+                        <div class="col-sm-2 col-md-2 body-panel-left">What Fits in my Shed?</div>
+                        <div class="col-sm-2 col-md-2" ng-repeat="floorPlanInfo in floorPlans">
+                            <div class="text-center">
+                                <img style="border: 1px solid #9d9d9d" height="120" width="100" src="{{floorPlanInfo.img}}"></img>
+                                <p>{{floorPlanInfo.name}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <span data-toggle="collapse" href="#collapse-4"></span>
+                </div>
+
             </div><br><br><br>
 
             <div class="container text-center heading-design">
@@ -183,16 +216,20 @@
                 </form><br>
                 <p class="text-muted">Which size is right for me?</p>
                 <a href="#" class="shed-btn" style="padding: 1% 2%;">VIEW PRICING</a><br><br>
-                <p>Overall building dimensions are approximate and may vary slightly. Building heights are measured ground to peak and widths are measured eave to eave.</p>
+                <p>
+                    Overall building dimensions are approximate and may vary slightly. Building <br> heights are measured ground to peak and widths are measured eave to eave.
+                </p>
             </div><br><br><br>
             <div class="container">
-                <div class="col-sm-5 col-md-5">
+                <div class="col-sm-5 col-md-5 heading-design">
                     <h1>SPECIAL FEATURES</h1>
-                    <ul style="list-style-type:disc">
+                    <ul style="list-style-type:disc" class="page-design-p">
                         <li>The Standard is perfect if you need a storage shed to protect your valuables, but you want to stay on a budget. The 4' side walls mean this shed fits into smaller spaces. The dual pitch of the roof allows for plenty of headroom
-                            despite the smaller profile of the building.</li>
+                            despite the smaller profile of the building.
+                        </li><br>
                         <li>The Standard is the traditional 'mini-barn' storage shed. Sanford Lapp started building these in 1983, and we've never stopped. Our customers tell us they love the combination of classic good looks, affordable price and versatility
-                            of the Standard storage shed.</li>
+                            of the Standard storage shed.
+                        </li><br>
                         <li>Sizes Available: 8x8 to 12x40</li>
                     </ul>
                 </div>
@@ -201,7 +238,7 @@
                 <div class="col-sm-6 col-md-6"><img src="./img/h3.jpg" width="550" height="auto"></img>
                 </div>
             </div><br><br><br>
-            <div class="container">
+            <div class="container heading-design">
                 <h1 class="text-center">QUESTIONS AND ANSWERS</h1>
                 <hr>
             </div>
@@ -229,13 +266,10 @@
                         <td class="col-md-12">Copyright &copy; 2017 InsideMaps Inc.</td>
                     </tr>
                 </table>
-                <!-- <div>Copyright &copy; 2017 InsideMaps Inc.</div> -->
             </footer>
 
             <script>
                 //JQ Code
-
-                // Cross -- \03a7, \00d7
 
                 // http://jsfiddle.net/hungerpain/eK8X5/7/
                 // https://codepen.io/yoeri/pen/eZMqbO
@@ -252,5 +286,4 @@
         </div>
     </div>
 </body>
-
 </html>
