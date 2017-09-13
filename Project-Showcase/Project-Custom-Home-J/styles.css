@@ -141,6 +141,7 @@ html, body {
     position: relative;
     text-decoration: none;
     color: #757575;
+
 }
 
 .panel-title>a:after {
@@ -201,6 +202,13 @@ html, body {
     content: "\2295"; /* fa-chevron-down */
     position: absolute;
     left: 0;
+    /*transition: 1s;
+    display: inline-block;
+    -webkit-transform: rotate(-180deg);
+    -moz-transform: rotate(-180deg);
+    -o-transform: rotate(-180deg);
+    -ms-transform: rotate(-180deg);
+    transform: rotate(-180deg);*/
 }
 
 .qa-panel-title>a[aria-expanded="true"]:after {
@@ -208,7 +216,34 @@ html, body {
     color: #658aa1;
     font-size: -webkit-xxx-large;
     content: "\2297"; /* fa-chevron-up */
-}
+    /*transition: 1s;
+    display: inline-block;
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);*/
+  }
+
+  .panel-title>a:after, .body-panel-title>a:after, .qa-panel-title>a:after {
+    transition: 1s;
+    display: inline-block;
+    -webkit-transform: rotate(-180deg);
+    -moz-transform: rotate(-180deg);
+    -o-transform: rotate(-180deg);
+    -ms-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+  }
+
+  .panel-title>a[aria-expanded="true"]:after, .body-panel-title>a[aria-expanded="true"]:after, .qa-panel-title>a[aria-expanded="true"]:after{
+    transition: 1s;
+    display: inline-block;
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
 
 .body-panel-left {
     font-family: serif;
