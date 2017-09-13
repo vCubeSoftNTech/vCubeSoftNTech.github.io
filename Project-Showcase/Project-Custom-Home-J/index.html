@@ -62,11 +62,21 @@
             </div><br><br><br>
             <aside>
                 <ul id="social_side_links">
-                  <li><a style="background-color: #3c5a96;" href="#" class="fa fa-facebook fa-2x" target="_blank" data-toggle="tooltip" data-placement="right" title="Facebook"></a></li>
-                  <li><a style="background-color: #5a739d" href="#" class="fa fa-thumbs-o-up fa-2x" target="_blank" data-toggle="tooltip" data-placement="right" title="Facebook Like"></a></li>
-                  <li><a style="background-color: #cc2127" href="#" class="fa fa-pinterest-p fa-2x" target="_blank" data-toggle="tooltip" data-placement="right" title="Pinterest"></a></li>
-                  <li><a style="background-color: #00aced" href="#" class="fa fa-twitter fa-2x" target="_blank" data-toggle="tooltip" data-placement="right" title="Twitter"></a></li>
-                  <li><a style="background-color: #aaaaaa" href="#" class="fa fa-envelope fa-2x" target="_blank" data-toggle="tooltip" data-placement="right" title="Email"></a></li>
+                    <li>
+                        <a style="background-color: #3c5a96;" href="#" class="fa fa-facebook fa-2x" target="_blank" data-toggle="tooltip" data-placement="right" title="Facebook"></a>
+                    </li>
+                    <li>
+                        <a style="background-color: #5a739d" href="#" class="fa fa-thumbs-o-up fa-2x" target="_blank" data-toggle="tooltip" data-placement="right" title="Facebook Like"></a>
+                    </li>
+                    <li>
+                        <a style="background-color: #cc2127" href="#" class="fa fa-pinterest-p fa-2x" target="_blank" data-toggle="tooltip" data-placement="right" title="Pinterest"></a>
+                    </li>
+                    <li>
+                        <a style="background-color: #00aced" href="#" class="fa fa-twitter fa-2x" target="_blank" data-toggle="tooltip" data-placement="right" title="Twitter"></a>
+                    </li>
+                    <li>
+                        <a style="background-color: #aaaaaa" href="#" class="fa fa-envelope fa-2x" target="_blank" data-toggle="tooltip" data-placement="right" title="Email"></a>
+                    </li>
                 </ul>
             </aside>
 
@@ -189,12 +199,23 @@
                         <div class="col-sm-2 col-md-2 body-panel-left">What Fits in my Shed?</div>
                         <div class="col-sm-2 col-md-2" ng-repeat="floorPlanInfo in floorPlans">
                             <div class="text-center">
-                                <img style="border: 1px solid #9d9d9d" height="120" width="100" src="{{floorPlanInfo.img}}"></img>
+                                <img style="border: 1px solid #9d9d9d" height="120" width="100" src="{{floorPlanInfo.img}}" data-toggle="modal" data-target="#{{floorPlanInfo.dt}}"></img>
                                 <p>{{floorPlanInfo.name}}</p>
+                            </div>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="{{floorPlanInfo.dt}}" role="dialog">
+                                <div class="modal-dialog">
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <img class="" height="auto" width="100%" src="{{floorPlanInfo.img}}"></img>
+                                    </div>
+
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <span data-toggle="collapse" href="#collapse-4"></span>
                 </div>
 
             </div><br><br><br>
@@ -241,6 +262,21 @@
             <div class="container heading-design">
                 <h1 class="text-center">QUESTIONS AND ANSWERS</h1>
                 <hr>
+                <div ng-repeat = "qa in quesAnss">
+                <div class="" role="tab" id="">
+                    <h3 class="qa-panel-title">
+                          <a class="" role="button" data-toggle="collapse" data-parent="#accordion" href="#{{qa.collapseVal}}" aria-expanded="false" aria-controls="collapse-6">
+                              <span style="margin-left: 5%">{{qa.q}}</span>
+                          </a>
+                      </h3>
+                </div>
+
+                <div id="{{qa.collapseVal}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="">
+                    <div class="">
+                        <p style="margin-left: 5%">{{qa.a}}</p>
+                    </div>
+                </div>
+              </div>
             </div>
             <footer class="footer-table">
                 <table class="table-responsive">
@@ -253,40 +289,40 @@
                 <table class="table-responsive">
                     <tr class="row t2row">
                         <td class="row col-md-8">
-                          <div class="col-md-2 col-sm-2"></div>
-                          <div class="col-md-4 col-sm-4" style="padding:5% 0 5% 10%">
-                            <h4>JOIN US</h4>
-                            <p>Get up to date pricing, new designs, and advice about purchasing an outdoor structure that only Woodtex can provide.</p>
-                          </div>
-                          <div class="col-md-6 col-sm-6 text-right" style="padding-top: 3%">
-                            <form class="join-us">
-                              <input type="text" placeholder="First Name"><br>
-                              <input type="text" placeholder="Last Name"><br>
-                              <input type="text" placeholder="Email">
-                              <a href="#" class="join-us-btn" style="">SUBSCRIBE</a>
-                            </form>
-                          </div>
+                            <div class="col-md-2 col-sm-2"></div>
+                            <div class="col-md-4 col-sm-4" style="padding:5% 0 5% 10%">
+                                <h4>JOIN US</h4>
+                                <p>Get up to date pricing, new designs, and advice about purchasing an outdoor structure that only Woodtex can provide.</p>
+                            </div>
+                            <div class="col-md-6 col-sm-6 text-right" style="padding-top: 3%">
+                                <form class="join-us">
+                                    <input type="text" placeholder="First Name"><br>
+                                    <input type="text" placeholder="Last Name"><br>
+                                    <input type="text" placeholder="Email">
+                                    <a href="#" class="join-us-btn" style="">SUBSCRIBE</a>
+                                </form>
+                            </div>
                         </td>
                         <td class="col-md-4">
-                          <h4 style="margin-top: -12%;">CONNECT</h4>
-                          <span><i href="#" class="fa fa-twitter fa-3x" target="_blank"></i> <i href="#" class="fa fa-facebook fa-3x" target="_blank"></i> <i href="#" class="fa fa-youtube fa-3x" target="_blank"></i> <i href="#" class="fa fa-pinterest fa-3x" target="_blank"></i></span>
+                            <h4 style="margin-top: -12%;">CONNECT</h4>
+                            <span><i href="#" class="fa fa-twitter fa-3x" target="_blank"></i> <i href="#" class="fa fa-facebook fa-3x" target="_blank"></i> <i href="#" class="fa fa-youtube fa-3x" target="_blank"></i> <i href="#" class="fa fa-pinterest fa-3x" target="_blank"></i></span>
                         </td>
                     </tr>
                 </table>
                 <table class="table-responsive">
                     <tr class="row t2row">
                         <td class="col-md-12">
-                          <div class="col-md-2 col-sm-2"></div>
-                          <div class="col-md-4 col-sm-7" style="padding:5% 0 5% 1%">
-                            <h4>LOCATIONS</h4>
-                            <p>InsideMaps is the nationwide manufacturer and retailer of Storage Sheds, Garages, and Cabins. Find a Woodtex Sales Center or Retail Partner near you.</p>
-                          </div>
-                          <div class="col-md-3 col-sm-3">
-                            <form class="join-us" style="padding: 25% 0">
-                            <input type="text" style="width: 45%" placeholder="Zip Code">
-                            <a href="#" class="join-us-btn" style="width: 45%">FIND A SALES CENTER</a>
-                          </form>
-                          </div>
+                            <div class="col-md-2 col-sm-2"></div>
+                            <div class="col-md-4 col-sm-7" style="padding:5% 0 5% 1%">
+                                <h4>LOCATIONS</h4>
+                                <p>InsideMaps is the nationwide manufacturer and retailer of Storage Sheds, Garages, and Cabins. Find a Woodtex Sales Center or Retail Partner near you.</p>
+                            </div>
+                            <div class="col-md-3 col-sm-3">
+                                <form class="join-us" style="padding: 25% 0">
+                                    <input type="text" style="width: 45%" placeholder="Zip Code">
+                                    <a href="#" class="join-us-btn" style="width: 45%">FIND A SALES CENTER</a>
+                                </form>
+                            </div>
                         </td>
                     </tr>
                 </table>
@@ -297,11 +333,11 @@
                 </table>
             </footer>
 
-              <ul id="floating-email">
+            <ul id="floating-email">
                 <li>
-                  <a style="background-color: #ebc047;" href="#" class="fa fa-envelope fa-3x"></a>
+                    <a style="background-color: #ebc047;" href="#" class="fa fa-envelope fa-3x"></a>
                 </li>
-              </ul>
+            </ul>
             <script>
                 //JQ Code
 
@@ -320,4 +356,5 @@
         </div>
     </div>
 </body>
+
 </html>

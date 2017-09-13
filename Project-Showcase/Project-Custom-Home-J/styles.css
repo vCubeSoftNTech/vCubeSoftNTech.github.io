@@ -185,6 +185,31 @@ html, body {
     content: "\2297"; /* fa-chevron-up */
 }
 
+.qa-panel-title>a {
+    font-family: serif;
+    display: block;
+    position: relative;
+    text-decoration: none;
+    color: #142d45;
+    margin: 5% 0 9% 0;
+}
+
+.qa-panel-title>a:after {
+    margin-top: -1%;
+    color: #658aa1;
+    font-size: -webkit-xxx-large;
+    content: "\2295"; /* fa-chevron-down */
+    position: absolute;
+    left: 0;
+}
+
+.qa-panel-title>a[aria-expanded="true"]:after {
+    margin-top: -1%;
+    color: #658aa1;
+    font-size: -webkit-xxx-large;
+    content: "\2297"; /* fa-chevron-up */
+}
+
 .body-panel-left {
     font-family: serif;
     color: #142d45;
