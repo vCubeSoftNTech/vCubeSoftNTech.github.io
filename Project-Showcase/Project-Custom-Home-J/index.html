@@ -2,14 +2,12 @@
 <html lang="en">
 
 <head>
-    <title>WIP</title>
+    <title>Report Page</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="img/favicon.ico" type="image/gif" sizes="16x16">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link rel="stylesheet" href="./styles.css">
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js"></script>
@@ -22,9 +20,125 @@
 <body>
     <div ng-app="InsideMapsWoodtex">
         <div ng-controller="MainCtrl">
-          <h1 class="text-center">WIP<h1><hr>
+            <div class="container">
+                <h3 ng-bind="clientDetail.agencyName" class="left col-sm-5 col-md-5"></h3>
+                <div>
+                    <h3 ng-bind="clientDetail.houseNo"></h3>
+                    <h4 class="text-center" ng-bind="clientDetail.area"></h4></div>
+            </div>
 
+            <div class="container">
+                <div class="col-sm-4 col-md-4">
+                    <img width="auto" height="200" src="./img/od1.jpg"></img>
+                </div>
+                <div class="col-sm-4 col-md-4 table-responsive home-detail-table">
+                    <table class="table">
+                        <tbody ng-repeat="homeDetail in homeDetails">
+                            <tr class="text-center">
+                                <td ng-bind="homeDetail.key"></td>
+                                <td ng-bind="homeDetail.val"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-sm-4 col-md-4 table-responsive report-detail-table">
+                    <table class="table">
+                        <tbody ng-repeat="reportDetail in reportDetails">
+                            <tr class="text-center">
+                                <td>{{reportDetail.key}} {{reportDetail.val}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="container-fluid">
+              <div  role="tab" id="heading-1">
+                <h2 class="body-panel-title">
+                  <a class="" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-5" aria-expanded="false" aria-controls="collapse-5">
+                      Room Measurements
+                  </a>
+                </h2>
+              </div>
+
+              <div id="collapse-5" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-2">
+                <div class="container col-sm-12 col-md-12 table-responsive home-detail-table">
+
+                    <table class="table">
+                        <tr class="text-center">
+                            <td></td>
+                            <td>Floor area (ft<sup>2</sup>)</td>
+                            <td>Floor Material</td>
+                            <td>Volume (ft<sup>3</sup>)</td>
+                            <td>Wall area (ft<sup>2</sup>)</td>
+                            <td>Celling Type</td>
+                            <td>Avg Height</td>
+                        </tr>
+                        <tbody ng-repeat="roomMeasurement in roomMeasurements">
+                            <tr class="text-center">
+                                <td ng-bind="roomMeasurement.roomType"></td>
+                                <td ng-bind="roomMeasurement.floorArea"></td>
+                                <td ng-bind="roomMeasurement.floorMaterial"></td>
+                                <td ng-bind="roomMeasurement.volume"></td>
+                                <td ng-bind="roomMeasurement.wallArea"></td>
+                                <td ng-bind="roomMeasurement.cellingType"></td>
+                                <td ng-bind="roomMeasurement.avgHeight"></td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr class="text-center" style="font-weight: bold">
+                                <td>Interior Total</td>
+                                <td>{{totalFloorArea}}</td>
+                                <td></td>
+                                <td>{{totalVolume}}</td>
+                                <td>{{totalWallArea}}</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                  </div>
+
+                <div class="container col-sm-12 col-md-12 table-responsive home-detail-table">
+                    <table class="table">
+
+                        <tr class="text-center" style="color: transparent">
+                            <td></td>
+                            <td>Floor area (ft<sup>2</sup>)</td>
+                            <td>Floor Material</td>
+                            <td>Volume (ft<sup>3</sup>)</td>
+                            <td>Wall area (ft<sup>2</sup>)</td>
+                            <td>Celling Type</td>
+                            <td>Avg Height</td>
+                        </tr>
+
+                        <tbody ng-repeat="exteriorMeasurement in exteriorMeasurements">
+                            <tr class="text-center">
+                                <td ng-bind="exteriorMeasurement.exteriorType"></td>
+                                <td ng-bind="exteriorMeasurement.exteriorFloorArea"></td>
+                                <td ng-bind="exteriorMeasurement.exteriorFloorMaterial"></td>
+                                <td ng-bind="exteriorMeasurement.exteriorFloorVolume"></td>
+                                <td ng-bind="exteriorMeasurement.exteriorWallArea"></td>
+                                <td ng-bind="exteriorMeasurement.exteriorCellingType"></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr class="text-center" style="font-weight: bold">
+                                <td>Exterior Total</td>
+                                <td>{{exteriorTotalFloorArea}}</td>
+                                <td></td>
+                                <td>{{exteriorTotalVolume}}</td>
+                                <td>{{exteriorTotalWallArea}}</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+              </div>
+            </div>
+        </div>
     </div>
 </body>
-
 </html>

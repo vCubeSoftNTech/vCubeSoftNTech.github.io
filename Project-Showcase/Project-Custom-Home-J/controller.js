@@ -1,155 +1,208 @@
 var app = angular.module('InsideMapsWoodtex', ['ui.bootstrap']);
 app.controller('MainCtrl', function($scope) {
-    console.log("Hey");
 
-    $scope.sheds = [{
-            name: "The Heritage",
-            image: "./img/h1.jpg"
-        },
-        {
-            name: "The Original",
-            image: "./img/h2.jpg"
-        },
-        {
-            name: "The Sanford",
-            image: "./img/h3.jpg"
-        },
-        {
-            name: "The Lincoln",
-            image: "./img/h4.jpg"
-        },
-        {
-            name: "The Standard",
-            image: "./img/h5.jpg"
-        },
-        {
-            name: "The Haven",
-            image: "./img/h6.jpg"
-        },
-        {
-            name: "The Classic",
-            image: "./img/h7.jpg"
-        }
-    ];
+    $scope.clientDetail = {
+        agencyName: "Opendoor",
+        houseNo: "1731 Hidden Brook",
+        area: "Grand Prairie, 75050"
+    };
 
-    $scope.slidingColors = [{
-            name: "Maroon",
-            color: "#a94442"
-        },
-        {
-            name: "Red",
-            color: "#FF0000"
-        },
-        {
-            name: "Yellow",
-            color: "#FFFF00"
-        },
-        {
-            name: "Gray",
-            color: "#ccc"
-        },
-        {
-            name: "Teal",
-            color: "#008080"
-        },
-        {
-            name: "orange red",
-            color: "#FF4500"
-        },
-        {
-            name: "dark orange",
-            color: "#FF8C00"
-        },
-        {
-            name: "dark slate gray",
-            color: "#2F4F4F"
-        },
-        {
-            name: "navy",
-            color: "#000080"
-        },
-        {
-            name: "deep pink",
-            color: "#FF1493"
-        }
-    ];
-
-    $scope.metalRoofColors = [{
-            name: "Dark Slate Gray",
-            color: "#2F4F4F"
-        },
-        {
-            name: "Gray",
-            color: "#ccc"
-        },
-        {
-            name: "Red",
-            color: "#FF0000"
-        },
-        {
-            name: "Orange Red",
-            color: "#FF4500"
-        },
-        {
-            name: "Navy",
-            color: "#000080"
-        }
-    ];
-
-    $scope.floorPlans = [{
-            name: "8x8 Shed",
-            img: "./img/fp/sheds-8x8.jpg",
-            dt: "fp1"
-        },
-        {
-            name: "8x12 Shed",
-            img: "./img/fp/sheds-8x12.jpg",
-            dt: "fp2"
-        },
-        {
-            name: "10x12 Shed",
-            img: "./img/fp/sheds-10x12.jpg",
-            dt: "fp3"
-        },
-        {
-            name: "10x16 Shed",
-            img: "./img/fp/sheds-10x16.jpg",
-            dt: "fp4"
-        },
-        {
-            name: "12x16 Shed",
-            img: "./img/fp/sheds-12x16.jpg",
-            dt: "fp5"
-        },
-        {
-            name: "12x24 Shed",
-            img: "./img/fp/sheds-12x24.jpg",
-            dt: "fp6"
-        },
-        {
-            name: "12x20 Shed",
-            img: "./img/fp/sheds-12x20.jpg",
-            dt: "fp7"
-        },
-        {
-            name: "14x28 Shed",
-            img: "./img/fp/sheds-14x28.jpg",
-            dt: "fp8"
-        }
-    ];
-
-    $scope.quesAnss = [{
-        q: "DO I NEED A PERMIT FOR MY SHED OR GARAGE?",
-        collapseVal: "collapse-6",
-        a: "That varies by town and municipality. Check with your local code office to see what the requirements are for your location. They will provide you with an application for a permit if needed and let you know the process you need to take. If you have questions about the size and details of your structure, contact your Woodtex Sales Advisor."
-    }, {
-        q: "HOW LONG WILL IT TAKE FOR ME TO GET MY SHED?",
-        collapseVal: "collapse-7",
-        a: "Timeframe varies on location, time of year, our work load and the type of building you are purchasing. At the time of your order and deposit, we will provide an approximate time frame for delivery. Give us a call any time to ask what our current lead times are for your location and structure!"
-    }, {
-        q: "WHAT IS THE DIFFERENCE BETWEEN BUYING A SHED IN STOCK AND ORDERING A SHED",
-        collapseVal: "collapse-8",
-        a: "There is no difference in the price of your structure! Depending on the lead time at your Sales Center, there may be a difference in delivery time, but not always. We're happy to deliver your dream shed direct from our sales center or fresh from our shop!"
+    $scope.homeDetails = [{
+      key:"Carpet Total",
+      val:"27"
+    },{
+      key:"Tile Total",
+      val:"547"
+    },{
+      key:"Bedrooms",
+      val:"5"
+    },{
+      key:"Bathrooms",
+      val:"3"
+    },{
+      key:"Pool",
+      val:"0"
+    },{
+      key:"Garage",
+      val:"1"
+    },{
+      key:"Plumbing Fixtures",
+      val:"7"
+    },{
+      key:"Bathtubs",
+      val:"2"
+    },{
+      key:"Firepalce",
+      val:"0"
+    },{
+      key:"Entrance Door",
+      val:"3"
+    },{
+      key:"Inner Door",
+      val:"21"
+    },{
+      key:"Windows",
+      val:"20"
     }];
+    $scope.reportDetails = [{
+      key:"Report Generated:",
+      val:"JUL 27 2017"
+    },{
+      key:"Property Scanned:",
+      val:"JUL 27 2017"
+    },{
+      key:"Property Scanner:",
+      val:"32°45'56"+'"'+"N "+"97°2'34"+'"'+"W"
+    },{
+      key:"Geo Location",
+      val:"3"
+    },{
+      key:"[link]",
+      val:"Link"
+    },{
+      key:"Internal ID",
+      val:"g9BtNgSOVn"
+    },{
+      key:"Start of scan",
+      val:"Jul 12 2017 16:48:55"
+    },{
+      key:"Number of Spins",
+      val:"29"
+    }];
+    $scope.roomMeasurements = [{
+      roomType: "Bathroom",
+      floorArea: 50,
+      floorMaterial: "Tile",
+      volume: 50,
+      wallArea: 50,
+      cellingType: "Flat",
+      avgHeight: "9"
+    },{
+      roomType: "Bedroom",
+      floorArea: 200,
+      floorMaterial: "Carpet",
+      volume: 50,
+      wallArea: 50,
+      cellingType: "Flat",
+      avgHeight: "9"
+    },{
+      roomType: "Bedroom",
+      floorArea: 100,
+      floorMaterial: "Carpet",
+      volume: 50,
+      wallArea: 50,
+      cellingType: "Flat",
+      avgHeight: "9"
+    },{
+      roomType: "Bedroom",
+      floorArea: 50,
+      floorMaterial: "Carpet",
+      volume: 50,
+      wallArea: 50,
+      cellingType: "Vaulted",
+      avgHeight: "9.2"
+    },{
+      roomType: "Closet",
+      floorArea: 200,
+      floorMaterial: "Carpet",
+      volume: 50,
+      wallArea: 50,
+      cellingType: "Flat",
+      avgHeight: "9"
+    },{
+      roomType: "Closet",
+      floorArea: 200,
+      floorMaterial: "Carpet",
+      volume: 50,
+      wallArea: 50,
+      cellingType: "Flat",
+      avgHeight: "9"
+    },{
+      roomType: "Hallway",
+      floorArea: 200,
+      floorMaterial: "Carpet",
+      volume: 50,
+      wallArea: 50,
+      cellingType: "Flat",
+      avgHeight: "9"
+    },{
+      roomType: "Laundry",
+      floorArea: 200,
+      floorMaterial: "Carpet",
+      volume: 50,
+      wallArea: 50,
+      cellingType: "Flat",
+      avgHeight: "9"
+    },{
+      roomType: "Living Room",
+      floorArea: 50,
+      floorMaterial: "Tile",
+      volume: 50,
+      wallArea: 50,
+      cellingType: "Vaulted",
+      avgHeight: "8.6"
+    },{
+      roomType: "Living Room",
+      floorArea: 50,
+      floorMaterial: "Tile",
+      volume: 50,
+      wallArea: 50,
+      cellingType: "Flat",
+      avgHeight: "9"
+    },{
+      roomType: "Foyer",
+      floorArea: 50,
+      floorMaterial: "Carpet",
+      volume: 50,
+      wallArea: 50,
+      cellingType: "Flat",
+      avgHeight: "8"
+    }];
+
+    $scope.exteriorMeasurements = [{
+      exteriorType: "Garage",
+      exteriorFloorArea: 353,
+      exteriorFloorMaterial:"Concrete",
+      exteriorFloorVolume: 2778,
+      exteriorWallArea: 451,
+      exteriorCellingType:  "Flat"
+    },{
+      exteriorType: "Yard",
+      exteriorFloorArea: 86,
+      exteriorFloorMaterial:"",
+      exteriorFloorVolume: 722,
+      exteriorWallArea: 72,
+      exteriorCellingType:  "Vaulted"
+    },{
+      exteriorType: "Yard",
+      exteriorFloorArea: 163,
+      exteriorFloorMaterial:"",
+      exteriorFloorVolume: 1281,
+      exteriorWallArea: 122,
+      exteriorCellingType:  "Flat"
+    },{
+      exteriorType: "Yard 3",
+      exteriorFloorArea: 206,
+      exteriorFloorMaterial:"",
+      exteriorFloorVolume: 1619,
+      exteriorWallArea: 147,
+      exteriorCellingType:  "Flat"
+    }];
+
+
+    Array.prototype.sum = function (prop) {
+           var total = 0
+           for ( var i = 0, _len = this.length; i < _len; i++ ) {
+               total += this[i][prop]
+           }
+           return total
+       }
+       $scope.totalFloorArea = ($scope.roomMeasurements.sum("floorArea"));
+       $scope.totalVolume = ($scope.roomMeasurements.sum("volume"));
+       $scope.totalWallArea = ($scope.roomMeasurements.sum("wallArea"));
+
+       $scope.exteriorTotalFloorArea = ($scope.exteriorMeasurements.sum("exteriorFloorArea"));
+       $scope.exteriorTotalVolume = ($scope.exteriorMeasurements.sum("exteriorFloorVolume"));
+       $scope.exteriorTotalWallArea = ($scope.exteriorMeasurements.sum("exteriorWallArea"));
 
 });
