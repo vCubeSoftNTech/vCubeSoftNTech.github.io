@@ -20,18 +20,18 @@
 <body>
     <div ng-app="InsideMapsWoodtex">
         <div ng-controller="MainCtrl">
-            <div class="container">
-                <div class="left col-sm-5 col-md-5"><img style="margin-top:4%" width="175" height="auto" ng-src="{{clientDetail.logo}}"></img>
+            <div class="container-fluid">
+                <div class="left col-sm-4 col-md-4"><img style="margin-top:4%" width="175" height="auto" ng-src="{{clientDetail.logo}}"></img>
                 </div>
-                <div class="col-sm-3 col-md-3">
+                <div class="col-sm-4 col-md-4">
                     <h3 class="text-center" ng-bind="clientDetail.houseNo"></h3>
                     <h4 class="text-center" ng-bind="clientDetail.area"></h4>
                 </div>
             </div>
 
-            <div class="container">
+            <div class="container-fluid">
                 <div class="col-sm-4 col-md-4">
-                    <img width="auto" height="200" ng-src="{{clientDetail.propertyImg}}"></img>
+                    <img width="auto" height="325" ng-src="{{clientDetail.propertyImg}}"></img>
                 </div>
                 <div class="col-sm-4 col-md-4 table-responsive home-detail-table">
                     <table class="table">

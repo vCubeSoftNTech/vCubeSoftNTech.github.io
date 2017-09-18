@@ -55,7 +55,7 @@ html, body {
     content: "\2297"; /* fa-chevron-up */
 }
 .body-panel-title>a:after {
-    transition: 1s;
+    transition: 0.7s;
     display: inline-block;
     -webkit-transform: rotate(45deg);
     -moz-transform: rotate(45deg);
@@ -65,7 +65,7 @@ html, body {
   }
 
   .body-panel-title>a[aria-expanded="true"]:after{
-    transition: 1s;
+    transition: 0.7s;
     display: inline-block;
     -webkit-transform: rotate(180deg);
     -moz-transform: rotate(180deg);
