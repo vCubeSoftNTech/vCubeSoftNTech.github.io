@@ -16,6 +16,10 @@ html, body {
   border-top: 1px solid transparent;
 }
 
+.property-bg-carpet, .property-bg-tile{
+  background: #ccc;
+ }
+
 .room-total-row {
   font-weight: bold;
 }
@@ -68,6 +72,35 @@ html, body {
     -o-transform: rotate(180deg);
     -ms-transform: rotate(180deg);
     transform: rotate(180deg);
+  }
+
+  .stylish-input-group .input-group-addon{
+      background: white !important;
+  }
+  .stylish-input-group .form-control{
+  	border-right:0;
+  	box-shadow:0 0 0;
+  	border-color:#ccc;
+  }
+
+  p.close {
+    padding: 8px;
+    background: #1870bb;
+    margin: -2% -2% 0 0;
+    border-radius: 60%;
+  }
+
+  .close {
+    opacity: 1;
+    color: #fff;
+  }
+
+  .stylish-input-group .form-control {
+    border-color: #fff;
+  }
+
+  .input-group-addon {
+    border: 1px solid #fff;
   }
 
 /*.double-border {

@@ -21,20 +21,22 @@
     <div ng-app="InsideMapsWoodtex">
         <div ng-controller="MainCtrl">
             <div class="container">
-                <h3 ng-bind="clientDetail.agencyName" class="left col-sm-5 col-md-5"></h3>
-                <div>
-                    <h3 ng-bind="clientDetail.houseNo"></h3>
-                    <h4 class="text-center" ng-bind="clientDetail.area"></h4></div>
+                <div class="left col-sm-5 col-md-5"><img style="margin-top:4%" width="175" height="auto" ng-src="{{clientDetail.logo}}"></img>
+                </div>
+                <div class="col-sm-3 col-md-3">
+                    <h3 class="text-center" ng-bind="clientDetail.houseNo"></h3>
+                    <h4 class="text-center" ng-bind="clientDetail.area"></h4>
+                </div>
             </div>
 
             <div class="container">
                 <div class="col-sm-4 col-md-4">
-                    <img width="auto" height="200" src="./img/od1.jpg"></img>
+                    <img width="auto" height="200" ng-src="{{clientDetail.propertyImg}}"></img>
                 </div>
                 <div class="col-sm-4 col-md-4 table-responsive home-detail-table">
                     <table class="table">
                         <tbody ng-repeat="homeDetail in homeDetails">
-                            <tr class="text-center">
+                            <tr ng-class="{'property-bg-carpet': homeDetail.key == 'Carpet Total', 'property-bg-tile': homeDetail.key == 'Tile Total'}" class="text-center">
                                 <td ng-bind="homeDetail.key"></td>
                                 <td ng-bind="homeDetail.val"></td>
                             </tr>
@@ -45,7 +47,8 @@
                     <table class="table">
                         <tbody ng-repeat="reportDetail in reportDetails">
                             <tr class="text-center">
-                                <td>{{reportDetail.key}} {{reportDetail.val}}</td>
+                                <td ng-show="reportDetail.key != '[link]'">{{reportDetail.key}} {{reportDetail.val}}</td>
+                                <td ng-show="reportDetail.key == '[link]'">{{reportDetail.key}} <a href="{{reportDetail.val}}" target="_blank">Link</a></td>
                             </tr>
                         </tbody>
                     </table>
@@ -53,92 +56,307 @@
             </div>
 
             <div class="container-fluid">
-              <div  role="tab" id="heading-1">
-                <h2 class="body-panel-title">
-                  <a class="" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-5" aria-expanded="false" aria-controls="collapse-5">
+                <div role="tab" id="">
+                    <h2 class="body-panel-title">
+                  <a class="" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-1" aria-expanded="false" aria-controls="collapse-1">
                       Room Measurements
                   </a>
                 </h2>
-              </div>
-
-              <div id="collapse-5" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-2">
-                <div class="container col-sm-12 col-md-12 table-responsive home-detail-table">
-
-                    <table class="table">
-                        <tr class="text-center">
-                            <td></td>
-                            <td>Floor area (ft<sup>2</sup>)</td>
-                            <td>Floor Material</td>
-                            <td>Volume (ft<sup>3</sup>)</td>
-                            <td>Wall area (ft<sup>2</sup>)</td>
-                            <td>Celling Type</td>
-                            <td>Avg Height</td>
-                        </tr>
-                        <tbody ng-repeat="roomMeasurement in roomMeasurements">
-                            <tr class="text-center">
-                                <td ng-bind="roomMeasurement.roomType"></td>
-                                <td ng-bind="roomMeasurement.floorArea"></td>
-                                <td ng-bind="roomMeasurement.floorMaterial"></td>
-                                <td ng-bind="roomMeasurement.volume"></td>
-                                <td ng-bind="roomMeasurement.wallArea"></td>
-                                <td ng-bind="roomMeasurement.cellingType"></td>
-                                <td ng-bind="roomMeasurement.avgHeight"></td>
-                            </tr>
-                        </tbody>
-                        <tfoot>
-                            <tr class="text-center" style="font-weight: bold">
-                                <td>Interior Total</td>
-                                <td>{{totalFloorArea}}</td>
-                                <td></td>
-                                <td>{{totalVolume}}</td>
-                                <td>{{totalWallArea}}</td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                        </tfoot>
-                    </table>
-                  </div>
-
-                <div class="container col-sm-12 col-md-12 table-responsive home-detail-table">
-                    <table class="table">
-
-                        <tr class="text-center" style="color: transparent">
-                            <td></td>
-                            <td>Floor area (ft<sup>2</sup>)</td>
-                            <td>Floor Material</td>
-                            <td>Volume (ft<sup>3</sup>)</td>
-                            <td>Wall area (ft<sup>2</sup>)</td>
-                            <td>Celling Type</td>
-                            <td>Avg Height</td>
-                        </tr>
-
-                        <tbody ng-repeat="exteriorMeasurement in exteriorMeasurements">
-                            <tr class="text-center">
-                                <td ng-bind="exteriorMeasurement.exteriorType"></td>
-                                <td ng-bind="exteriorMeasurement.exteriorFloorArea"></td>
-                                <td ng-bind="exteriorMeasurement.exteriorFloorMaterial"></td>
-                                <td ng-bind="exteriorMeasurement.exteriorFloorVolume"></td>
-                                <td ng-bind="exteriorMeasurement.exteriorWallArea"></td>
-                                <td ng-bind="exteriorMeasurement.exteriorCellingType"></td>
-                                <td></td>
-                            </tr>
-                        </tbody>
-                        <tfoot>
-                            <tr class="text-center" style="font-weight: bold">
-                                <td>Exterior Total</td>
-                                <td>{{exteriorTotalFloorArea}}</td>
-                                <td></td>
-                                <td>{{exteriorTotalVolume}}</td>
-                                <td>{{exteriorTotalWallArea}}</td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                        </tfoot>
-                    </table>
+                    <hr>
                 </div>
-              </div>
+
+                <div id="collapse-1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="">
+                    <div class="container col-sm-12 col-md-12 table-responsive home-detail-table">
+
+                        <table class="table">
+                            <tr class="text-center">
+                                <td></td>
+                                <td></td>
+                                <td>Floor area (ft<sup>2</sup>)</td>
+                                <td>Floor Material</td>
+                                <td>Volume (ft<sup>3</sup>)</td>
+                                <td>Wall area (ft<sup>2</sup>)</td>
+                                <td>Celling Type</td>
+                                <td>Avg Height</td>
+                            </tr>
+                            <tbody ng-repeat="roomMeasurement in roomMeasurements">
+                                <tr class="text-center">
+                                    <td class="text-left"><input type="checkbox" name="vehicle" value="" checked></td>
+                                    <td ng-bind="roomMeasurement.roomType"></td>
+                                    <td ng-bind="roomMeasurement.floorArea"></td>
+                                    <td ng-bind="roomMeasurement.floorMaterial"></td>
+                                    <td ng-bind="roomMeasurement.volume"></td>
+                                    <td ng-bind="roomMeasurement.wallArea"></td>
+                                    <td ng-bind="roomMeasurement.cellingType"></td>
+                                    <td ng-bind="roomMeasurement.avgHeight"></td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr class="text-center" style="font-weight: bold">
+                                    <td></td>
+                                    <td>Interior Total</td>
+                                    <td>{{totalFloorArea}}</td>
+                                    <td></td>
+                                    <td>{{totalVolume}}</td>
+                                    <td>{{totalWallArea}}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+
+                    <div class="container col-sm-12 col-md-12 table-responsive home-detail-table">
+                        <table class="table">
+
+                            <tr class="text-center" style="color: transparent">
+                                <td></td>
+                                <td></td>
+                                <td>Floor area (ft<sup>2</sup>)</td>
+                                <td>Floor Material</td>
+                                <td>Volume (ft<sup>3</sup>)</td>
+                                <td>Wall area (ft<sup>2</sup>)</td>
+                                <td>Celling Type</td>
+                                <td>Avg Height</td>
+                            </tr>
+
+                            <tbody ng-repeat="exteriorMeasurement in exteriorMeasurements">
+                                <tr class="text-center">
+                                    <td></td>
+                                    <td ng-bind="exteriorMeasurement.exteriorType"></td>
+                                    <td ng-bind="exteriorMeasurement.exteriorFloorArea"></td>
+                                    <td ng-bind="exteriorMeasurement.exteriorFloorMaterial"></td>
+                                    <td ng-bind="exteriorMeasurement.exteriorFloorVolume"></td>
+                                    <td ng-bind="exteriorMeasurement.exteriorWallArea"></td>
+                                    <td ng-bind="exteriorMeasurement.exteriorCellingType"></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr class="text-center" style="font-weight: bold">
+                                    <td></td>
+                                    <td>Exterior Total</td>
+                                    <td>{{exteriorTotalFloorArea}}</td>
+                                    <td></td>
+                                    <td>{{exteriorTotalVolume}}</td>
+                                    <td>{{exteriorTotalWallArea}}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
             </div>
+
+            <div class="container-fluid">
+                <div class="" role="tab" id="">
+                    <h2 class="body-panel-title">
+                                <a class="" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-2" aria-expanded="false" aria-controls="collapse-2">
+                                    APPLIANCES
+                                </a>
+                            </h2>
+                    <hr>
+                </div>
+
+                <div id="collapse-2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="">
+                    <div class="">
+                        <div class="col-sm-2 col-md-2" ng-repeat="appliance in appliances">
+                            <div class="text-center">
+                                <img style="border: 1px solid #9d9d9d" height="120" width="100" src="{{appliance.img}}" data-toggle="modal" data-target="#{{appliance.dt}}"></img>
+                                <p>{{appliance.name}}</p>
+                            </div>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="{{appliance.dt}}" role="dialog">
+                                <div class="modal-dialog">
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                        <p type="" class="close" data-dismiss="modal">&times;</p>
+                                        <div class="table-responsive">
+
+                                            <table class="table">
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="text-left">Location: {{appliance.location}}</td>
+                                                        <td class="text-center">Size: {{appliance.size}}</td>
+                                                        <td class="text-right">Color: {{appliance.color}}</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <img class="" height="auto" width="100%" src="{{appliance.img}}"></img>
+
+                                        <div class="input-group stylish-input-group input-group-lg">
+                                            <input type="text" class="form-control" placeholder="Notes:">
+                                            <span class="input-group-addon">
+                                                                  <i style="color: #31708f"class="glyphicon glyphicon-pencil"></i>
+                                                          </span>
+                                        </div><br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid">
+                <div class="" role="tab" id="">
+                    <h2 class="body-panel-title">
+                                <a class="" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-3" aria-expanded="false" aria-controls="collapse-3">
+                                    FLOORING
+                                </a>
+                            </h2>
+                    <hr>
+                </div>
+
+                <div id="collapse-3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="">
+                    <div class="">
+                        <div class="col-sm-2 col-md-2" ng-repeat="appliance in appliances">
+                            <div class="text-center">
+                                <img style="border: 1px solid #9d9d9d" height="120" width="100" src="{{appliance.img}}" data-toggle="modal" data-target="#{{appliance.dt}}"></img>
+                                <p>{{appliance.name}}</p>
+                            </div>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="{{appliance.dt}}" role="dialog">
+                                <div class="modal-dialog">
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                        <p type="" class="close" data-dismiss="modal">&times;</p>
+                                        <div class="table-responsive">
+
+                                            <table class="table">
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="text-left">Location: {{appliance.location}}</td>
+                                                        <td class="text-center">Size: {{appliance.size}}</td>
+                                                        <td class="text-right">Color: {{appliance.color}}</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <img class="" height="auto" width="100%" src="{{appliance.img}}"></img>
+
+                                        <div class="input-group stylish-input-group input-group-lg">
+                                            <input type="text" class="form-control" placeholder="Notes:">
+                                            <span class="input-group-addon">
+                                                                  <i style="color: #31708f"class="glyphicon glyphicon-pencil"></i>
+                                                          </span>
+                                        </div><br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="" role="tab" id="">
+                    <h2 class="body-panel-title">
+                                <a class="" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-4" aria-expanded="false" aria-controls="collapse-4">
+                                    DOORS
+                                </a>
+                            </h2>
+                    <hr>
+                </div>
+
+                <div id="collapse-4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="">
+                    <div class="">
+                        <div class="col-sm-2 col-md-2" ng-repeat="appliance in appliances">
+                            <div class="text-center">
+                                <img style="border: 1px solid #9d9d9d" height="120" width="100" src="{{appliance.img}}" data-toggle="modal" data-target="#{{appliance.dt}}"></img>
+                                <p>{{appliance.name}}</p>
+                            </div>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="{{appliance.dt}}" role="dialog">
+                                <div class="modal-dialog">
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                        <p type="" class="close" data-dismiss="modal">&times;</p>
+                                        <div class="table-responsive">
+
+                                            <table class="table">
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="text-left">Location: {{appliance.location}}</td>
+                                                        <td class="text-center">Size: {{appliance.size}}</td>
+                                                        <td class="text-right">Color: {{appliance.color}}</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <img class="" height="auto" width="100%" src="{{appliance.img}}"></img>
+
+                                        <div class="input-group stylish-input-group input-group-lg">
+                                            <input type="text" class="form-control" placeholder="Notes:">
+                                            <span class="input-group-addon">
+                                                                  <i style="color: #31708f"class="glyphicon glyphicon-pencil"></i>
+                                                          </span>
+                                        </div><br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid">
+                <div class="" role="tab" id="">
+                    <h2 class="body-panel-title">
+                                <a class="" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-5" aria-expanded="false" aria-controls="collapse-5">
+                                    WINDOWS
+                                </a>
+                            </h2>
+                    <hr>
+                </div>
+
+                <div id="collapse-5" class="panel-collapse collapse" role="tabpanel" aria-labelledby="">
+                    <div class="">
+                        <div class="col-sm-2 col-md-2" ng-repeat="appliance in appliances">
+                            <div class="text-center">
+                                <img style="border: 1px solid #9d9d9d" height="120" width="100" src="{{appliance.img}}" data-toggle="modal" data-target="#{{appliance.dt}}"></img>
+                                <p>{{appliance.name}}</p>
+                            </div>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="{{appliance.dt}}" role="dialog">
+                                <div class="modal-dialog">
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                        <p type="" class="close" data-dismiss="modal">&times;</p>
+                                        <div class="table-responsive">
+
+                                            <table class="table">
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="text-left">Location: {{appliance.location}}</td>
+                                                        <td class="text-center">Size: {{appliance.size}}</td>
+                                                        <td class="text-right">Color: {{appliance.color}}</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <img class="" height="auto" width="100%" src="{{appliance.img}}"></img>
+
+                                        <div class="input-group stylish-input-group input-group-lg">
+                                            <input type="text" class="form-control" placeholder="Notes:">
+                                            <span class="input-group-addon">
+                                                                  <i style="color: #31708f"class="glyphicon glyphicon-pencil"></i>
+                                                          </span>
+                                        </div><br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><br><br>
         </div>
     </div>
 </body>
+
 </html>

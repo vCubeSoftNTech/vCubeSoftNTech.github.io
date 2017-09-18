@@ -2,6 +2,8 @@ var app = angular.module('InsideMapsWoodtex', ['ui.bootstrap']);
 app.controller('MainCtrl', function($scope) {
 
     $scope.clientDetail = {
+        logo: "./img/odlogo.png",
+        propertyImg: "./img/od1.jpg",
         agencyName: "Opendoor",
         houseNo: "1731 Hidden Brook",
         area: "Grand Prairie, 75050"
@@ -58,7 +60,7 @@ app.controller('MainCtrl', function($scope) {
       val:"3"
     },{
       key:"[link]",
-      val:"Link"
+      val:"https://www.insidemaps.com"
     },{
       key:"Internal ID",
       val:"g9BtNgSOVn"
@@ -188,6 +190,48 @@ app.controller('MainCtrl', function($scope) {
       exteriorWallArea: 147,
       exteriorCellingType:  "Flat"
     }];
+
+    $scope.appliances = [{
+            name: "Dryer",
+            img: "./img/appliances/dryer.png",
+            dt: "aplnc1",
+            location: "Kitchen",
+            size: "25⨯25⨯25",
+            color: "White"
+        },
+        {
+            name: "Microwave",
+            img: "./img/appliances/microwave.jpg",
+            dt: "aplnc2",
+            location: "Kitchen",
+            size: "25⨯25⨯25",
+            color: "White"
+        },
+        {
+            name: "Refrigerator",
+            img: "./img/appliances/refrigerator.png",
+            dt: "aplnc3",
+            location: "Dining",
+            size: "45⨯45⨯45",
+            color: "Grey"
+        },
+        {
+            name: "Water-Heater",
+            img: "./img/appliances/waterheater.png",
+            dt: "aplnc4",
+            location: "Dining",
+            size: "20⨯20⨯20",
+            color: "White"
+        },
+        {
+            name: "Washing Machine",
+            img: "./img/appliances/wm.png",
+            dt: "aplnc5",
+            location: "Bathroom",
+            size: "35⨯35⨯35",
+            color: "White"
+        }
+    ];
 
 
     Array.prototype.sum = function (prop) {
